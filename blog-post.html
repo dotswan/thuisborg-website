@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overwaarde verzilveren | Thuisborg</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-header__topbar">
+        <div class="review">
+          <span>Klanten waarderen ons met een 9.0</span>
+          <div class="rating">
+            <img src="/template/images/star.png" />
+            <img src="/template/images/star.png" />
+            <img src="/template/images/star.png" />
+            <img src="/template/images/star.png" />
+            <img src="/template/images/star.png" />
+          </div>
+          <span>110 reviews</span>
+        </div>
+        <div class="contact__menu">
+          <ul>
+            <li>
+              <img src="/template/images/phone.png" />
+              <a href="call:0854015737">085-401 57 37</a>
+            </li>
+            <li>
+              <img src="/template/images/mail.png" />
+              <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+            </li>
+            <li>
+              <img src="/template/images/account.png" />
+              <a href="">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-header__menu">
+        <a class="logo" href="/">
+          <img src="/template/images/logo.png" alt="Thuisborg" />
+        </a>
+        <div class="nav-header__right-cont">
+          <ul class="nav-header__menu__items">
+            <li>
+              <a href="/verzilveren"> Verzilveren </a>
+              <ul>
+                <li>
+                  <a href="verzilveren">Overwaarde verzilveren</a>
+                </li>
+                <li>
+                  <a href="woningwaarde-calculator">Woningwaarde calculator</a>
+                </li>
+                <li>
+                  <a href="5-stappenplan">5-stappenplan verzilveren</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/zorgwoning"> Zorgwoning </a>
+              <ul>
+                <li>
+                  <a href="/zorgwoning">Zorgwoningen</a>
+                </li>
+                <li>
+                  <a href="/zorgwoning-45">Zorgwoning 45</a>
+                </li>
+                <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/investeren"> Investeren </a>
+            </li>
+            <li>
+              <a href="/over-ons"> Over ons </a>
+            </li>
+            <li>
+              <a href="/faq"> FAQ </a>
+            </li>
+            <li>
+              <a href="/contact"> Contact </a>
+            </li>
+            <li>
+              <a href="bekijk-uw-mogelijkheden" class="btn"> Bekijk uw mogelijkheden </a>
+            </li>
+          </ul>
+          <div class="nav-header__search" :class="[{'open': $store.getters.getSearch}]">
+            <span class="search__cta" @click="toggleSearch()">
+              <img src="/template/images/search.png" alt="" />
+            </span>
+            <form class="search__form">
+              <input type="text" name="search" placeholder="type here" />
+              <button class="btn white">zoek</button>
+            </form>
+          </div>
+          <hamburger></hamburger>
+        </div>
+      </div>
+      <div class="nav-menu__mobile" :class="[{'is-open': $store.getters.getNav}, {'is-closed': !$store.getters.getNav}]">
+        <ul>
+          <li>
+            <a href="/verzilveren"> Verzilveren </a>
+            <ul>
+              <li>
+                <a href="verzilveren">Overwaarde verzilveren</a>
+              </li>
+              <li>
+                <a href="woningwaarde-calculator">Woningwaarde calculator</a>
+              </li>
+              <li>
+                <a href="5-stappenplan">5-stappenplan verzilveren</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/zorgwoning"> Zorgwoning </a>
+            <ul>
+              <li>
+                <a href="/zorgwoning">Zorgwoningen</a>
+              </li>
+              <li>
+                <a href="/zorgwoning-45">Zorgwoning 45</a>
+              </li>
+              <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/investeren"> Investeren </a>
+          </li>
+          <li>
+            <a href="/over-ons"> Over ons </a>
+          </li>
+          <li>
+            <a href="/faq"> FAQ </a>
+          </li>
+          <li>
+            <a href="/contact"> Contact </a>
+          </li>
+          <li>
+            <a href="bekijk-uw-mogelijkheden" class="btn">Bekijk uw mogelijkheden</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="/template/images/phone.png" />
+            <a href="call:0854015737">085-401 57 37</a>
+          </li>
+          <li>
+            <img src="/template/images/mail.png" />
+            <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+          </li>
+          <li>
+            <img src="/template/images/account.png" />
+            <a href="">Login</a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="blog-post__hero no-cover">
+        <div class="blog-post__hero__image">
+          <!--				<img src="http://localhost:8000/media/4/xnThEbRpbJJo8fb9Z5zhJr0T14R9z5Wn0q0QYxMM.jpg" class="crop-radius bl">-->
+        </div>
+        <div class="blog-post__hero__text">
+          <div class="standard middle">
+            <div class="txt-cont">
+              <h1>Hello World</h1>
+              <p>This is the first post</p>
+            </div>
+            <div class="breadcrumb">
+              <div class="breadcrumb__cont">
+                <div class="standard middle">
+                  <ul class="breadcrumb__cont__items">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><span>Hello World</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <main class="main blog-page">
+        <section class="layout-6">
+          <div class="standard middle">
+            <div class="layout-6__cont">
+              <div class="l6_left">
+                <h2>Functie: Woningmakelaar Sale & Lease Back</h2>
+                <ul>
+                  <li class="checkmarked">Plaats: Arnhem</li>
+                  <li class="checkmarked">Contractduur: vanaf 7 maanden</li>
+                  <li class="checkmarked">Deadline sollicitaties: 1-10-2021</li>
+                  <li class="checkmarked">Soort dienstverband: Fulltime</li>
+                </ul>
+                <h3>Werken bij Thuisborg Finance B.V.</h3>
+                <p>
+                  Thuisborg is een bedrijf dat opereert op de Nederlandse vastgoedmarkt. Wij focussen ons op de aankoop en bemiddeling van Nederlandse woningen
+                  op basis van persoonlijke aanbiedingen voor sale & lease back. Het doel is om vermogen van mensen vrij te maken uit vastgoed, zonder dat ze
+                  daarvoor leningen hoeven aan te gaan.
+                </p>
+                <p>
+                  Onze klanten zijn zeer divers. Zo werken wij onder andere nauw samen met woningeigenaren, huurders, investeerders en projectontwikkelaars. Wij
+                  doen dit in onderlinge samenwerking tussen een aantal vastgoedondernemingen en -projecten zoals ook te zien op de eigen site van Thuisborg en
+                  op Borgplaats.nl en Hestiva.nl.
+                </p>
+                <p>Ben jij klaar om het verschil in de Nederlandse Vastgoedsector te maken?</p>
+                <h3>Functieomschrijving</h3>
+                <p>
+                  Voor verschillende activiteiten en projecten op het gebied van vastgoed en wonen zijn wij op zoek naar een aankoper, beheerder en bemiddelaar
+                  van woningen door heel Nederland. Daarnaast lever je een bijdrage aan de ontwikkeling van onze formules en websites. Jij zult samen met een
+                  team de fundering worden van ons aanbod voor institutionele beleggers. Met jouw nuchtere blik op cijfers en lange termijn waarde creatie
+                  zullen jij en jouw collega’s de brug vormen tussen mensen met woningen en mensen met vermogens.
+                </p>
+                <h3>Werkzaamheden</h3>
+                <ul>
+                  <li class="checkmarked">
+                    Optreden als eindverantwoordelijke voor verzilveren, identificeren van mogelijke transacties, doen van voorstellen voor bemiddeling en
+                    verzilvering (personaliseren standaard aanbiedingen voor Thuisborg of externe investeerders).
+                  </li>
+                  <li class="checkmarked">Up to date houden van zoekopdrachten en transactieprofielen op Borgplaats</li>
+                  <li class="checkmarked">Opstellen van pitches voor externe financiers (w.o. crowdfunders).</li>
+                  <li class="checkmarked">Onderzoeken, uitwerken en implementeren van mogelijkheden voor cross selling.</li>
+                  <li class="checkmarked">Bijhouden van de Thuisborg site en nieuwsbrieven over het onderwerp verzilveren.</li>
+                  <li class="checkmarked">Onderhouden van contacten met strategische (online) partners.</li>
+                  <li class="checkmarked">
+                    Onderhouden van contacten met woning eigenaren/huurders, overheden en bedrijven daar omheen (w.o. VVE's en gemeenten, nutsvoorzieningen,
+                    onderhoudsbedrijven, taxateur, notaris, verzekering, buurt- of wijkcoördinatoren)
+                  </li>
+                  <li class="checkmarked">
+                    Onderhouden van contacten met deskundigen (fiscalisten, vermogensplanners, ergotherapeuten) voor verder ontwikkeling van de sale & lease
+                    back concepten.
+                  </li>
+                </ul>
+                <h3>Dit is je profiel:</h3>
+                <ul>
+                  <li class="checkmarked">Een tot drie jaar ervaring in een functie als die van makelaar</li>
+                  <li class="checkmarked">Aantoonbare kennis op het gebied van vastgoedwaardering en -onderhoud</li>
+                  <li class="checkmarked">Onderhandelingsvaardigheden</li>
+                  <li class="checkmarked">Ervaring met Hubspot of een ander CRM systeem</li>
+                  <li class="checkmarked">Kennis van gemeentelijke processen en VVE’s is een pré.</li>
+                </ul>
+                <h3>Arbeidsvoorwaarden</h3>
+                <p>
+                  Als Woningmakelaar Sale & Lease Back zul je aan de slag gaan in een veelzijdige organisatie waar innovatie en waardecreatie voor onze huurders
+                  en investeerders de uitgangspunten zijn van onze werkzaamheden. Je zult meewerken aan groeistrategieën en ervoor zorgen dat de dienstverlening
+                  en informatieverstrekking tiptop in orde is. Het is een uitdagende, afwisselende baan binnen een dynamisch en groeiend bedrijf met een
+                  enthousiast team. Collegialiteit en samenwerking gaan hand in hand met een professionele houding.
+                </p>
+                <p>
+                  Wij bieden een marktconform salaris dat in overeenstemming is met de functie, leeftijd en werkervaring. Daarnaast ontvang je vakantiegeld en
+                  zijn er opleiding- en trainingsmogelijkheden.
+                </p>
+                <h3>Solliciteren?</h3>
+                <p>
+                  Mail je motivatiebrief en CV naar Samreen Vos-Virani via emailadres <a href="mailto:werken@hestiva.nl">werken@hestiva.nl</a> Voor meer
+                  informatie kun je uiteraard ook een email sturen naar het bovengenoemde emailadres.
+                </p>
+              </div>
+              <div class="l6_right">
+                <div class="box rounded gray">
+                  <h3>News</h3>
+                  <p>Majid Alavizadeh</p>
+                  <span>2022/02/17 16:04:46</span>
+                </div>
+                <div class="box rounded gray">
+                  <h3>Categorieën</h3>
+                  <ul class="cats-cont">
+                    <li>
+                      <a href="">
+                        <span>title</span>
+                        <b>16</b>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>title</span>
+                        <b>16</b>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>title</span>
+                        <b>16</b>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>title</span>
+                        <b>16</b>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>title</span>
+                        <b>16</b>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="contact-us">
+          <div class="middle standard">
+            <div class="contact-me">
+              <div class="middle standard">
+                <div class="contact-me__cont">
+                  <img src="/template/images/contact-me-in-new-items.png" />
+                  <div class="txt-cta">
+                    <h4>
+                      Uw huis verkopen, er blijven <br />
+                      <span class="green-text">wonen én financieel genieten</span>
+                    </h4>
+                    <a v-scroll-to="{ el: '#invest-form', offset: 0 }" @click="navClick($event)" class="btn">Download brochure</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="standard middle">
+          <div class="footer-cont">
+            <div class="col logo-address">
+              <a><img src="/template/images/logo.png" /></a>
+              <p>
+                Thuisborg Finance BV<br />
+                2021 © Thuisborg<br />
+                Mr. G. Groen van Prinstererlaan 88 A<br />
+                1181 TR Amstelveen<br />
+                <a href="call:0854015737">085 401 57 37</a>
+              </p>
+            </div>
+            <div class="col menu-cont">
+              <ul>
+                <li><a href="investeren">Investeren</a></li>
+                <li><a href="verzilveren">Verzilveren</a></li>
+                <li><a href="zorgwoning">Zorgwoning</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="https://thuisborg.nl/nieuws/">Nieuws</a></li>
+                <li>
+                  <a href="/docs/COOKIEVERKLARING-1.pdf">Cookie verklaring</a>
+                </li>
+                <li><a href="privacy-verklaring">Privacy verklaring</a></li>
+                <li>
+                  <a target="_blank" href="/docs/2.-AV-Thuisborg-2021-v3-NL.pdf">Algemene Voorwaarden</a>
+                </li>
+              </ul>
+              <!--						<a class="btn">call to action</a>-->
+            </div>
+            <div class="col contact-us">
+              <div class="contact-form">
+                <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
+                <form
+                  action="https://forms.zohopublic.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
+                  name="form"
+                  method="POST"
+                  onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+                  accept-charset="UTF-8"
+                  enctype="multipart/form-data"
+                  id="form"
+                >
+                  <input type="hidden" name="zf_referrer_name" value="" />
+                  <div class="form_hiddens">
+                    <input type="hidden" name="zf_redirect_url" value="" />
+                    <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+                    <input type="hidden" name="zc_gad" value="" />
+                    <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+                    <input type="hidden" name="utm_source" value="" />
+                    <input type="hidden" name="utm_medium" value="" />
+                    <input type="hidden" name="utm_campaign" value="" />
+                    <input type="hidden" name="utm_term" value="" />
+                    <input type="hidden" name="utm_content" value="" />
+                  </div>
+                  <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
+                  <button class="btn">Schrijf je in!</button>
+                </form>
+              </div>
+              <div class="sponsors">
+                <a href="">
+                  <img src="/template/images/sponsor-1.png" />
+                </a>
+                <a>
+                  <img src="/template/images/sponsor-2.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="copy__cont middle standard">
+            <div class="copy">
+              © 2021 Alle rechten voorbehouden <a>Disclaimer</a><a href="privacy-verklaring">Privacy Statement</a>
+              <a href="/docs/COOKIEVERKLARING-1.pdf">Cookies</a>
+            </div>
+            <div class="review">
+              <span>Klanten waarderen ons met een 9.0</span>
+              <div class="rating">
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+              </div>
+              <span>110 reviews</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

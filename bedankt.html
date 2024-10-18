@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overwaarde verzilveren | Thuisborg</title>
+  </head>
+  <body class="register-page">
+    <div id="app">
+      <div class="register">
+        <div class="register-form-cont">
+          <div class="register-form">
+            <div class="step-cont thank-you">
+              <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+              </svg>
+              <div class="title-cont">
+                <h1>Bedankt voor uw aanvraag!</h1>
+              </div>
+              <p>U kunt de brochure hier openen. De brochure ontvangt u ook nog per mail.</p>
+              <div class="al-center">
+                <a class="btn" href="/docs/Brochure-Woningwaarde-Vastgoed-Obligatie-Thuisborg-4.pdf">download brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+    <script>
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      var ADT = ADT || {};
+      ADT.Tag = ADT.Tag || {};
+      ADT.Tag.t = 4;
+      ADT.Tag.c = "EUR";
+      ADT.Tag.tp = 1650087066;
+      ADT.Tag.ti = getParameterByName("id");
+      ADT.Tag.xd = "";
+    </script>
+    <script defer src="https://at.thuisborg.nl/jsTag?ap=1650084161"></script>
+  </body>
+</html>
