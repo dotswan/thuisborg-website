@@ -632,7 +632,7 @@ export default {
 			}
 		}
 	},
-	mounted() {
+	onMounted() {
 	},
 	watch: {
 		inputs: {

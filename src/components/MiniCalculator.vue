@@ -113,7 +113,7 @@ export default {
       localStorage.setItem("calculator", JSON.stringify(calculatorData));
     },
   },
-  mounted() {
+  onMounted() {
     this.setUp();
   },
   watch: {

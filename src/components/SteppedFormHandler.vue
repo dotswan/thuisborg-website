@@ -290,7 +290,7 @@ export default {
       }
     },
   },
-  mounted() {
+  onMounted() {
     this.setUp();
     if (this.zohoSuccess) {
       this.parseZoho();

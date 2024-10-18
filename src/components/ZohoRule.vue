@@ -63,7 +63,7 @@ export default {
       this.checkLogic();
     },
   },
-  mounted() {
+  onMounted() {
     this.setUp();
   },
 };

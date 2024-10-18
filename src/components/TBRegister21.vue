@@ -1954,7 +1954,7 @@ export default {
       }, 100);
     },
   },
-  mounted() {
+  onMounted() {
     this.setUp();
     if (this.zohoSuccess) {
       this.parseZoho();

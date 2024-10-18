@@ -100,7 +100,7 @@ export default {
       }
     });
   },
-  mounted() {
+  onMounted() {
     if (!!this.popUpId) {
       this.id = this.popUpId;
     } else {

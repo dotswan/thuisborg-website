@@ -909,7 +909,7 @@ export default {
 			}
 		},
 	},
-	mounted() {
+	onMounted() {
 	},
 	watch: {
 		fields: {

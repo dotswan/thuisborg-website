@@ -76,7 +76,7 @@ export default {
       }
     },
   },
-  mounted() {
+  onMounted() {
     this.setUp();
   },
   watch: {},

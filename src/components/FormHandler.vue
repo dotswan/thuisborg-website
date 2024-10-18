@@ -186,7 +186,7 @@ export default {
       this.validateForm();
     },
   },
-  mounted() {
+  onMounted() {
     this.setUp();
   },
 };

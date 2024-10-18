@@ -364,7 +364,7 @@ export default {
       });
     },
   },
-  mounted() {
+  onMounted() {
     // let qsParsedObj = JSON.parse('{"' + decodeURI(window.location.search.substring(1)).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
     // this.q = qsParsedObj.q ? encodeURIComponent(qsParsedObj.q).replaceAll('%2', ' ') : '';
     this.setUp();
