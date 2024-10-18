@@ -1,16 +1,17 @@
 import { createStore } from "vuex";
 
 export default createStore({
+  state: {
+    baseUrl: '',
+  },
   mutations: {
     setBaseUrl(state) {
       state.baseUrl = window.location.origin;
-      if (state.baseUrl.includes("localhost")) {
-        state.baseUrl = "https://rawidea.org";
-      }
     },
   },
   actions: {
     setUp({ commit, state }) {
+      console.log('setUp action called');
       commit("setBaseUrl");
     },
   },

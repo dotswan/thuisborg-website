@@ -8,43 +8,100 @@
   </head>
   <body>
     <div id="app">
-      <div class="nav-header__topbar">
-        <div class="review">
-          <span>Klanten waarderen ons met een 9.0</span>
-          <div class="rating">
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
+      <header>
+        <div class="nav-header__topbar">
+          <div class="review">
+            <span>Klanten waarderen ons met een 9.0</span>
+            <div class="rating">
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+            </div>
+            <span>110 reviews</span>
           </div>
-          <span>110 reviews</span>
+          <div class="contact__menu">
+            <ul>
+              <li>
+                <img src="/template/images/phone.png" />
+                <a href="call:0854015737">085-401 57 37</a>
+              </li>
+              <li>
+                <img src="/template/images/mail.png" />
+                <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+              </li>
+              <li>
+                <img src="/template/images/account.png" />
+                <a href="">Login</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="contact__menu">
+        <div class="nav-header__menu">
+          <a class="logo" href="/">
+            <img src="/template/images/logo.png" alt="Thuisborg" />
+          </a>
+          <div class="nav-header__right-cont">
+            <ul class="nav-header__menu__items">
+              <li>
+                <a href="/verzilveren"> Verzilveren </a>
+                <ul>
+                  <li>
+                    <a href="verzilveren">Overwaarde verzilveren</a>
+                  </li>
+                  <li>
+                    <a href="woningwaarde-calculator">Woningwaarde calculator</a>
+                  </li>
+                  <li>
+                    <a href="5-stappenplan">5-stappenplan verzilveren</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/zorgwoning"> Zorgwoning </a>
+                <ul>
+                  <li>
+                    <a href="/zorgwoning">Zorgwoningen</a>
+                  </li>
+                  <li>
+                    <a href="/zorgwoning-45">Zorgwoning 45</a>
+                  </li>
+                  <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/investeren"> Investeren </a>
+              </li>
+              <li>
+                <a href="/over-ons"> Over ons </a>
+              </li>
+              <li>
+                <a href="/faq"> FAQ </a>
+              </li>
+              <li>
+                <a href="/contact"> Contact </a>
+              </li>
+              <li>
+                <a href="bekijk-uw-mogelijkheden" class="btn" ref="navcta"> Bekijk uw mogelijkheden </a>
+              </li>
+            </ul>
+            <div class="nav-header__search" :class="[{'open': $store.getters.getSearch}]">
+              <span class="search__cta" @click="toggleSearch()">
+                <img src="/template/images/search.png" alt="" />
+              </span>
+              <form class="search__form">
+                <input type="text" name="search" placeholder="type here" />
+                <button class="btn white">zoek</button>
+              </form>
+            </div>
+            <hamburger></hamburger>
+          </div>
+        </div>
+        <div class="nav-menu__mobile" :class="[{'is-open': $store.getters.getNav}, {'is-closed': !$store.getters.getNav}]">
           <ul>
-            <li>
-              <img src="/assets/images/phone.png" />
-              <a href="call:0854015737">085-401 57 37</a>
-            </li>
-            <li>
-              <img src="/assets/images/mail.png" />
-              <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
-            </li>
-            <li>
-              <img src="/assets/images/account.png" />
-              <a href="">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="nav-header__menu">
-        <a class="logo" href="/">
-          <img src="/assets/images/logo.png" alt="Thuisborg" />
-        </a>
-        <div class="nav-header__right-cont">
-          <ul class="nav-header__menu__items">
-            <li>
-              <a href="/verzilveren"> Verzilveren </a>
+            <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
+              <span class="js__toggle__handle"> Verzilveren </span>
               <ul>
                 <li>
                   <a href="verzilveren">Overwaarde verzilveren</a>
@@ -57,8 +114,8 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="/zorgwoning"> Zorgwoning </a>
+            <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
+              <span class="js__toggle__handle"> Zorgwoning </span>
               <ul>
                 <li>
                   <a href="/zorgwoning">Zorgwoningen</a>
@@ -82,85 +139,30 @@
               <a href="/contact"> Contact </a>
             </li>
             <li>
-              <a href="bekijk-uw-mogelijkheden" class="btn" ref="navcta"> Bekijk uw mogelijkheden </a>
+              <a href="bekijk-uw-mogelijkheden" class="btn">Bekijk uw mogelijkheden</a>
             </li>
           </ul>
-          <div class="nav-header__search" :class="[{'open': $store.getters.getSearch}]">
-            <span class="search__cta" @click="toggleSearch()">
-              <img src="/assets/images/search.png" alt="" />
-            </span>
-            <form class="search__form">
-              <input type="text" name="search" placeholder="type here" />
-              <button class="btn white">zoek</button>
-            </form>
-          </div>
-          <hamburger></hamburger>
+          <ul>
+            <li>
+              <img src="/template/images/phone.png" />
+              <a href="call:0854015737">085-401 57 37</a>
+            </li>
+            <li>
+              <img src="/template/images/mail.png" />
+              <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+            </li>
+            <li>
+              <img src="/template/images/account.png" />
+              <a href="">Login</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="nav-menu__mobile" :class="[{'is-open': $store.getters.getNav}, {'is-closed': !$store.getters.getNav}]">
-        <ul>
-          <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
-            <span class="js__toggle__handle"> Verzilveren </span>
-            <ul>
-              <li>
-                <a href="verzilveren">Overwaarde verzilveren</a>
-              </li>
-              <li>
-                <a href="woningwaarde-calculator">Woningwaarde calculator</a>
-              </li>
-              <li>
-                <a href="5-stappenplan">5-stappenplan verzilveren</a>
-              </li>
-            </ul>
-          </li>
-          <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
-            <span class="js__toggle__handle"> Zorgwoning </span>
-            <ul>
-              <li>
-                <a href="/zorgwoning">Zorgwoningen</a>
-              </li>
-              <li>
-                <a href="/zorgwoning-45">Zorgwoning 45</a>
-              </li>
-              <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="/investeren"> Investeren </a>
-          </li>
-          <li>
-            <a href="/over-ons"> Over ons </a>
-          </li>
-          <li>
-            <a href="/faq"> FAQ </a>
-          </li>
-          <li>
-            <a href="/contact"> Contact </a>
-          </li>
-          <li>
-            <a href="bekijk-uw-mogelijkheden" class="btn">Bekijk uw mogelijkheden</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <img src="/assets/images/phone.png" />
-            <a href="call:0854015737">085-401 57 37</a>
-          </li>
-          <li>
-            <img src="/assets/images/mail.png" />
-            <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
-          </li>
-          <li>
-            <img src="/assets/images/account.png" />
-            <a href="">Login</a>
-          </li>
-        </ul>
-      </div>
+      </header>
       <main class="main">
         <div class="hero-system">
           <div class="hero-wrapper">
             <div class="hero-image">
-              <img src="/assets/images/overwaarde-verzilveren-thuisborg.png" class="crop-radius bl" />
+              <img src="/template/images/overwaarde-verzilveren-thuisborg.png" class="crop-radius bl" />
             </div>
             <div class="hero-inner middle standard">
               <div class="hero-container">
@@ -197,34 +199,6 @@
             </div>
           </div>
         </div>
-        <!--			<section class="hero asym-image-text">-->
-        <!--				<div class="asym__image">-->
-        <!--					<img src="/assets/images/overwaarde-verzilveren-thuisborg.png" class="crop-radius bl">-->
-        <!--				</div>-->
-        <!--				<div class="asym__text">-->
-        <!--					<div class="standard middle">-->
-        <!--						<div class="asym__text__cont">-->
-        <!--							<h1>Verzilver de overwaarde<br>-->
-        <!--								<span class="green-text">van uw woning</span>-->
-        <!--							</h1>-->
-        <!--							<p>Uw huis verkopen, er blijven wonen én financieel genieten</p>-->
-        <!--							<ul>-->
-        <!--								<li class="checkmarked"><span>Vul uw inkomsten aan</span></li>-->
-        <!--								<li class="checkmarked"><span>Schenk belastingvrij aan familie of gezinsleden</span>-->
-        <!--								</li>-->
-        <!--								<li class="checkmarked"><span>Maak de reis van uw dromen</span></li>-->
-        <!--								<li class="checkmarked"><span>Pas uw woning aan voor zorg en zelfstandigheid</span></li>-->
-        <!--							</ul>-->
-        <!--						</div>-->
-        <!--						<div class="hero__search">-->
-        <!--							<form action="bekijk-uw-mogelijkheden" method="get" enctype="multipart/form-data">-->
-        <!--								<input name="q" placeholder="Uw straat & huisnummer">-->
-        <!--								<button class="btn white med">Bekijk uw mogelijkheden</button>-->
-        <!--							</form>-->
-        <!--						</div>-->
-        <!--					</div>-->
-        <!--				</div>-->
-        <!--			</section>-->
         <section class="mottos">
           <div class="standard middle">
             <ul>
@@ -256,8 +230,8 @@
           <div class="middle standard">
             <div class="twin">
               <div class="double-image pr-6-br half">
-                <img src="/assets/images/overwaarde-huis-opnemen.png" />
-                <img src="/assets/images/verzilver-woningwaarde.png" />
+                <img src="/template/images/overwaarde-huis-opnemen.png" />
+                <img src="/template/images/verzilver-woningwaarde.png" />
               </div>
               <div class="text-set half">
                 <h2>Waarom uw <span class="green-text">overwaarde</span> verzilveren?</h2>
@@ -282,7 +256,7 @@
             <div class="img-text-aligner img-is-left">
               <div class="standard">
                 <div class="img__cont">
-                  <img src="/assets/images/verzilverplan.png" />
+                  <img src="/template/images/verzilverplan.png" />
                 </div>
                 <div class="txt__cont">
                   <h3 class="section-subtitle">
@@ -332,7 +306,7 @@
                 </div>
               </div>
               <div class="img__cont">
-                <img src="/assets/images/stappenplan-woningwaarde-verzilveren.png" class="shadowed-image" />
+                <img src="/template/images/stappenplan-woningwaarde-verzilveren.png" class="shadowed-image" />
               </div>
             </div>
           </div>
@@ -340,7 +314,7 @@
             <h2 class="section-subtitle mobile__only js__toggle__handle">Woningwaarde calculator</h2>
             <div class="middle standard js__toggling-content__content">
               <div class="img__cont">
-                <img src="/assets/images/woningwaarde-calculator.jpg" class="shadowed-image" />
+                <img src="/template/images/woningwaarde-calculator.jpg" class="shadowed-image" />
               </div>
               <div class="txt__cont">
                 <h3 class="section-subtitle">Woningwaarde calculator</h3>
@@ -373,14 +347,14 @@
                   </div>
                 </div>
                 <div class="img-cont">
-                  <img src="/assets/images/modulaire-zorgwoningen.png" class="shadowed-image" />
+                  <img src="/template/images/modulaire-zorgwoningen.png" class="shadowed-image" />
                 </div>
               </div>
             </div>
             <div class="modular-aligner img-is-left">
               <div class="modular-aligner__cont middle standard">
                 <div class="img-cont">
-                  <img src="/assets/images/investeren-hero.png" class="shadowed-image" />
+                  <img src="/template/images/investeren-hero.png" class="shadowed-image" />
                 </div>
                 <div class="text-cont">
                   <h3 class="section-subtitle">Investeren</h3>
@@ -443,7 +417,7 @@
         </section>
         <section class="invest asym-image-text">
           <div class="asym__image">
-            <img src="/assets/images/invest.png" class="crop-radius bl" />
+            <img src="/template/images/invest.png" class="crop-radius bl" />
           </div>
           <div class="asym__text">
             <div class="standard middle">
@@ -456,7 +430,7 @@
                 <a class="mobile__only btn">Vraag brochure aan</a>
                 <p>Vraag nu geheel vrijblijvend de Woningwaarde de Verzilveren brochure aan</p>
                 <form
-                  action="https://forms.zohopublic.eu/soliditry/form/TBWoningwaardeobligatiesbrochurewebsite/formperma/c8mRw6jfbP2z3QNYCb_gbdeX2l3Z4q22F7j3Hy2KMWU/htmlRecords/submit"
+                  action="https://forms.zohotemplate.eu/soliditry/form/TBWoningwaardeobligatiesbrochurewebsite/formperma/c8mRw6jfbP2z3QNYCb_gbdeX2l3Z4q22F7j3Hy2KMWU/htmlRecords/submit"
                   name="form"
                   method="POST"
                   class="invest-form"
@@ -482,18 +456,6 @@
                   <input type="text" name="SingleLine1" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="Achternaam" />
                   <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
                   <input autocomplete="off" type="text" maxlength="255" name="SingleLine2" value="" placeholder="Telefoonnummer" />
-                  <!--								<div class="code-num">-->
-                  <!--									<input type="text" compname="PhoneNumber_countrycodeval"-->
-                  <!--									       name="PhoneNumber_countrycodeval" checktype="c7"-->
-                  <!--									       maxlength="10" phoneFormat="1" isCountryCodeEnabled=true-->
-                  <!--									       id="international_PhoneNumber_countrycodeval"-->
-                  <!--									       valType="code" placeholder="postcode"/>-->
-                  <!--									<input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode"-->
-                  <!--									       maxlength="20" checktype="c7" value="" phoneFormat="1"-->
-                  <!--									       isCountryCodeEnabled=true fieldType="11"-->
-                  <!--									       id="international_PhoneNumber_countrycode" valType="number"-->
-                  <!--									       phoneFormatType="1" placeholder="huisnummer"/>-->
-                  <!--								</div>-->
                   <div class="agreement">
                     <input type="checkbox" checktype="c1" id="DecisionBox" name="DecisionBox" />
                     <label for="DecisionBox">Ik ga akkoord met de <a>Algemene voorwaarden</a></label>
@@ -509,7 +471,7 @@
         <div class="standard middle">
           <div class="footer-cont">
             <div class="col logo-address">
-              <a><img src="/assets/images/logo.png" /></a>
+              <a><img src="/template/images/logo.png" /></a>
               <p>
                 Thuisborg Finance BV<br />
                 2021 © Thuisborg<br />
@@ -539,7 +501,7 @@
               <div class="contact-form">
                 <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
                 <form
-                  action="https://forms.zohopublic.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
+                  action="https://forms.zohotemplate.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
                   name="form"
                   method="POST"
                   onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
@@ -565,10 +527,10 @@
               </div>
               <div class="sponsors">
                 <a href="">
-                  <img src="/assets/images/sponsor-1.png" />
+                  <img src="/template/images/sponsor-1.png" />
                 </a>
                 <a>
-                  <img src="/assets/images/sponsor-2.png" />
+                  <img src="/template/images/sponsor-2.png" />
                 </a>
               </div>
             </div>
@@ -583,11 +545,11 @@
             <div class="review">
               <span>Klanten waarderen ons met een 9.0</span>
               <div class="rating">
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
               </div>
               <span>110 reviews</span>
             </div>
