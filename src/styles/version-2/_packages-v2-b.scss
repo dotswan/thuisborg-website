@@ -1,0 +1,154 @@
+.packages-v2-b {
+  padding: $padding-3-7 0 $padding-6-3 0;
+  background: $white;
+
+  .packages-container {
+    display: flex;
+    justify-content: space-around;
+
+    .pkg {
+      background: linear-gradient(180deg, rgba(50, 105, 162, 0) -169.41%, $navy-2 100%);
+      box-shadow: rgba(0, 0, 0, 0.05) 0 3px 33px;
+      overflow: hidden;
+      height: fit-content;
+
+      .pkg-head {
+        background: linear-gradient(180deg, rgba(50, 105, 162, 0) -169.41%, $navy-2 100%);
+        position: relative;
+        border-radius: 3rem 3rem 0 0;
+        overflow: hidden;
+
+        .pkg-title {
+          text-align: center;
+          color: $white;
+
+          h2 {
+            font-size: $txt-2-1;
+            font-weight: 600;
+            padding: $padding-2-8 0 $padding-4-3;
+          }
+        }
+      }
+
+      .pkg-body {
+        font-size: $txt-1-6;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          display: block;
+        }
+
+        .pkg-footer {
+          padding: 0 $padding-2-0 $padding-2-0;
+          position: absolute;
+          bottom: 0;
+
+          .checkmarked {
+            color: $white;
+            margin-bottom: $margin-2-0;
+            display: flex;
+            align-items: baseline;
+            font-weight: 400;
+            font-size: $txt-1-6;
+            line-height: 19px;
+            letter-spacing: 0.02em;
+
+            &:before {
+              flex: 0 0 auto;
+            }
+          }
+        }
+      }
+
+      .cta-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: $txt-1-4;
+        line-height: 2rem;
+        background: $green;
+        box-shadow: 0 2px 3px 1px rgb(0 0 0 / 25%);
+        border-radius: 2px;
+        color: $white;
+        width: 184px;
+        margin: $margin-6-2 auto;
+
+        .secondary {
+          color: $white;
+          padding: $padding-1-2;
+          font-weight: 700;
+          font-size: $txt-1-8;
+          line-height: 21px;
+        }
+      }
+
+      .layout-btn {
+        background: linear-gradient(360deg, #3269A2 -196.47%, rgba(50, 105, 162, 0) 178%);
+        border-radius: 0 0 20px 20px;
+        padding: $padding-2-7 0;
+        display: flex;
+        justify-content: center;
+
+        .btn-blue {
+          width: 184px;
+          text-align: center;
+          padding: $padding-1-2;
+
+          font-weight: 700;
+          font-size: $txt-1-8;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 860px) {
+    .packages-container {
+      gap: 3rem;
+      width: 90%;
+      margin: 0 auto;
+      .pkg {
+        .pkg-body {
+          .pkg-footer {
+            padding: 0;
+
+            .checkmarked {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 640px) {
+    .packages-container {
+      display: block;
+
+      .pkg {
+        width: 100% !important;
+        margin: $margin-2-0 0;
+
+        .pkg-body {
+          .pkg-footer {
+            padding: 0;
+          }
+        }
+        .cta-cont {
+          flex-flow: column;
+          margin: $margin-2-2 auto;
+        }
+      }
+    }
+  }
+}
+
+.back-blur {
+  border-radius: 2rem;
+  background: $green-light !important;
+  backdrop-filter: blur(0.5px);
+  padding: $padding-1-2 !important;
+}

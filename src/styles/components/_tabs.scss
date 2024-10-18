@@ -1,0 +1,65 @@
+.tabs {
+    background: $white;
+    border-radius: 2rem;
+    box-shadow: 0 3px 33px rgba($black, .05);
+    display: flex;
+    justify-content: space-between;
+
+    .nav {
+        border-right: .1rem solid rgba($navy, .5);
+        width: 30%;
+        flex: 0 0 auto;
+        display: inline-flex;
+        flex-flow: column;
+
+        .nav-item {
+            cursor: pointer;
+            font-size: 2.6rem;
+            font-weight: 500;
+            line-height: 4rem;
+            color: $navy;
+            padding: 4rem;
+            border-bottom: .1rem solid rgba($navy, .2);
+
+
+            &.active {
+                position: relative;
+                color: $green;
+                border-bottom: .1rem solid rgba($navy, .5);
+
+                &:after {
+                    position: absolute;
+                    left: 100%;
+                    border-right: .1rem solid white;
+                    width: 0;
+                    height: 100%;
+                    top: 0;
+                    content: '';
+                }
+            }
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .tab-contents {
+        padding: 5rem;
+        font-size: 2.3rem;
+        line-height: 4rem;
+        color: $black-1;
+
+        p {
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

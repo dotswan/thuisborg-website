@@ -1,0 +1,77 @@
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $blue;
+    transition: $transition-1;
+
+    &:hover {
+        opacity: .9;
+    }
+}
+
+.margin-0 {
+    margin: 0 !important;
+}
+
+.full {
+    width: 100%;
+}
+
+.half {
+    width: 50%;
+}
+
+.middle {
+    margin: 0 auto;
+}
+
+.isellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.standard {
+    width: $standard;
+    @media (max-width: 1640px) {
+        width: 1100px;
+    }
+    @media (max-width: 1440px) {
+        width: 1000px;
+    }
+    @media (max-width: 1000px) {
+        width: 96%;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.al-right {
+    text-align: right;
+}
+
+.al-center {
+    text-align: center;
+}
+
+*:focus {
+    outline: none;
+}
+
+.clrfx:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+* html .clrfx {
+    zoom: 1;
+}
+
+*:first-child + html .clrfx {
+    zoom: 1;
+}

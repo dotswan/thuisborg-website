@@ -1,0 +1,120 @@
+.property-items {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .property-items__item {
+        flex: 0 0 auto;
+        width: calc((100% - 7rem) / 3);
+        margin-bottom: 4.5rem;
+        background: $gray;
+        border-radius: 1.7rem;
+        overflow: hidden;
+        display: inline-flex;
+        flex-flow: column;
+        justify-content: space-between;
+        margin-right: 3.5rem;
+
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+
+        .img-cont {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            height: 34rem;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .txt-cont {
+            align-self: flex-end;
+            width: 100%;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+
+            p {
+                color: $navy;
+                font-size: 2.18rem;
+                margin-bottom: 3rem;
+                width: 100%;
+                line-height: 3.3rem;
+            }
+
+            .txt-cont__footer {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+
+                span {
+                    color: $black-1;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        margin-right: 0;
+        flex-flow: column;
+        .property-items__item {
+            width: 100%;
+            display: flex;
+            margin-bottom: 1.5rem;
+            flex-flow: row;
+
+            .img-cont {
+                display: inline-flex;
+                width: 13rem;
+                height: 20rem;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                flex: 0 0 auto;
+
+                img {
+                    width: auto;
+                    min-width: auto;
+                }
+            }
+
+            .txt-cont {
+                display: inline-flex;
+                padding: 1.5rem;
+
+                p {
+                    font-size: 1.5rem;
+                    line-height: 2.4rem;
+                    margin-bottom: 1rem;
+                }
+
+                .txt-cont__footer {
+                    align-items: flex-start;
+                    flex-flow: column;
+
+                    span {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+
+                    .btn {
+                        margin-top: 1rem;
+                        align-self: flex-end;
+                        font-size: 1.5rem;
+                        padding: 1.2rem 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}

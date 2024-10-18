@@ -1,0 +1,118 @@
+.inlin-cta {
+    display: flex;
+    justify-content: flex-start;
+    background: $white;
+
+    .inlin-cta__child {
+        width: 50%;
+        flex: 0 0 auto;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .img-cont {
+            max-width: 40%;
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+            flex: 0 0 auto;
+            display: inline-flex;
+            justify-content: flex-start;
+
+            img {
+                display: block;
+                height: auto;
+            }
+        }
+
+        .txt-cont {
+            padding: 5rem 10rem 5rem 0;
+
+            h4 {
+                color: $navy;
+                font-size: 3.3rem;
+                line-height: 4.5rem;
+                font-weight: 500;
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        &:first-of-type {
+            border-right: .1rem solid rgba($green, .4);
+        }
+        &.img-is-left{
+            .txt-cont {
+                padding: 5rem;
+            }
+        }
+        &.img-is-right {
+
+            .img-cont {
+                justify-content: flex-end;
+            }
+
+            .txt-cont {
+                padding: 5rem 0 5rem 10rem;
+            }
+        }
+    }
+
+    @include mobile {
+        flex-flow: column;
+        .inlin-cta__child {
+            width: 100%;
+            position: relative;
+
+            &:first-of-type {
+                border: none;
+            }
+
+
+            .img-cont {
+                z-index: 0;
+                max-width: none;
+                width: 100%;
+
+                img {
+                    height: 20rem;
+                    width: auto;
+                }
+            }
+
+            .txt-cont {
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 1.5rem;
+                z-index: 99;
+
+                h4 {
+                    font-size: 1.4rem;
+                    line-height: 2.5rem;
+                    padding-left: 40%;
+                    margin-bottom: 1.5rem;
+                }
+
+                .btn {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            &.img-is-right {
+                .txt-cont {
+                    padding: 1.5rem;
+
+                    h4 {
+                        padding-left: 0;
+                        padding-right: 40%;
+                    }
+                }
+
+                .img-cont {
+                    //justify-content: flex-start;
+                }
+            }
+        }
+    }
+}

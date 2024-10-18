@@ -1,0 +1,110 @@
+.contact-me-cont {
+    background: $white;
+
+}
+
+.contact-me {
+    padding: 5rem 0 8rem 0;
+
+    .contact-me-aligner {
+        max-width: 144rem;
+    }
+
+    .contact-me__cont {
+        background: $gray;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+            width: 40rem;
+        }
+
+        .txt-cta {
+            padding: 6rem 6rem 6rem 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+
+            h4 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: $navy;
+                line-height: 4.5rem;
+            }
+
+            .btn {
+                display: inline-flex;
+                flex: 0 0 auto;
+                margin: 0 1rem;
+            }
+        }
+
+        @media (min-width: 640px) and (max-width: 900px) {
+            img {
+                width: auto;
+            }
+            .txt-cta {
+                flex-wrap: wrap;
+
+                h4 {
+                    flex: 0 0 auto;
+                    width: 100%;
+                }
+
+                .btn {
+                    margin-top: 1rem;
+                    margin-left: 0;
+                }
+            }
+        }
+
+    }
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.blog-page .contact-me {
+    font-size: 20px;
+    padding: 2em 0;
+
+    .contact-me-aligner {
+        max-width: 100%;
+    }
+
+    .contact-me__cont {
+        img {
+            width: 10em;
+            margin: 0;
+        }
+
+        .txt-cta {
+            padding: 1em 1em 1em 0;
+
+            h4 {
+                font-size: .9em;
+                line-height: 1em;
+            }
+
+            .btn {
+                margin: 0 .5em;
+                padding: .5em 1em;
+                font-size: 0.6em;
+                flex: auto;
+                text-align: center;
+            }
+        }
+    }
+
+    @media (min-width: 640px) and (max-width: 900px) {
+        .contact-me__cont .txt-cta {
+            .btn {
+                margin: .5em 0;
+            }
+        }
+    }
+}

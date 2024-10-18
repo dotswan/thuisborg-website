@@ -1,0 +1,327 @@
+.register {
+	background: $white;
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+	
+	.logo-header {
+		padding: 2.5rem 4rem;
+		border-bottom: .1rem solid rgba($navy, .4);
+	}
+	
+	.register-form-cont {
+		padding-top: 7rem;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
+		
+		.register-form {
+			display: inline-flex;
+			text-align: center;
+			align-items: center;
+			flex-direction: column;
+			
+			.progress-bar {
+				border: .2rem solid rgba($black, .14);
+				background: $white;
+				border-radius: 1rem;
+				position: relative;
+				height: 1.4rem;
+				width: 55rem;
+				
+				.progress-bar__progress {
+					position: absolute;
+					top: -.2rem;
+					left: -.2rem;
+					background: $green;
+					height: 1rem;
+					box-sizing: content-box;
+					border: .2rem solid $green;
+					border-radius: 1rem;
+					transition: $transition-3;
+				}
+			}
+			
+			.title-cont {
+				text-align: center;
+				margin-top: 6rem;
+				margin-bottom: 2rem;
+				max-width: 85rem;
+				
+				h1 {
+					color: $navy;
+					font-weight: bold;
+					font-size: 4.5rem;
+					line-height: 6rem;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				
+				img {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+			
+			.step-cont {
+				display: flex;
+				text-align: center;
+				flex-direction: column;
+				animation-name: fadeIn;
+				animation-fill-mode: forwards;
+				animation-duration: .3s;
+				animation-timing-function: ease-in-out;
+				
+				> p {
+					color: $black-1;
+					font-size: 2.3rem;
+					line-height: 4rem;
+					margin-bottom: 5rem;
+					max-width: 55rem;
+				}
+				
+				.code-num {
+					width: 100%;
+					margin: 2rem 0;
+					
+					input {
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+			form {
+				width: 55rem;
+				
+				.field-row {
+					margin-bottom: 2rem;
+					text-align: left;
+					
+					&:after {
+						margin-top: 1rem;
+					}
+				}
+				
+				input[type="text"], input[type="number"] {
+					width: 100%;
+					color: $navy;
+					font-size: 2.2rem;
+					margin-bottom: 2rem;
+					
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+				}
+				
+				input[type="number"] {
+					font-size: 1.7rem;
+					line-height: 2;
+				}
+				
+				> p {
+					font-size: 1.8rem;
+					color: rgba($black-1, .8);
+					text-align: center;
+					width: 100%;
+					margin: 3rem 0;
+				}
+				
+				select {
+					border-radius: 1rem;
+					border: 0.2rem solid rgba($black, 0.14);
+					font-size: 2.2rem;
+					color: $navy;
+					width: 100%;
+					font-weight: 500;
+					line-height: 3rem;
+					padding: 1.2rem 1.5rem;
+				}
+				
+				.inpt-set {
+					margin-bottom: 3rem;
+					width: 55rem;
+					
+					p {
+						font-size: 1.8rem;
+						color: rgba($black-1, .8);
+						width: 100%;
+						margin-bottom: 1rem;
+						text-align: left;
+					}
+				}
+				
+				.agreement {
+					margin: 2rem 0;
+					display: flex;
+					align-items: center;
+					position: relative;
+					
+					&:after {
+						position: absolute;
+						top: 100%;
+						left: 0;
+					}
+					
+					input[type="checkbox"] {
+						margin-right: 1rem;
+					}
+					
+					label {
+						display: inline-block;
+						vertical-align: middle;
+						font-size: 2rem;
+						color: rgba($black-1, .8);
+						
+						a {
+							color: $black-1;
+							padding-bottom: .5rem;
+							border-bottom: .1rem solid;
+						}
+					}
+				}
+				
+				.btn {
+					margin-top: 2rem;
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+	}
+	
+	.thank-you {
+		.checkmark__circle {
+			stroke-dasharray: 166;
+			stroke-dashoffset: 166;
+			stroke-width: 2;
+			stroke-miterlimit: 10;
+			stroke: $green;
+			fill: none;
+			animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+		}
+		
+		.checkmark {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			display: block;
+			stroke-width: 2;
+			stroke: #ffffff;
+			stroke-miterlimit: 10;
+			margin: 0 auto;
+			box-shadow: inset 0px 0px 0px $green;
+			animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+		}
+		
+		.checkmark__check {
+			transform-origin: 50% 50%;
+			stroke-dasharray: 48;
+			stroke-dashoffset: 48;
+			animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+		}
+		
+		@keyframes stroke {
+			100% {
+				stroke-dashoffset: 0;
+			}
+		}
+		@keyframes scale {
+			0%, 100% {
+				transform: none;
+			}
+			50% {
+				transform: scale3d(1.1, 1.1, 1);
+			}
+		}
+		@keyframes fill {
+			100% {
+				box-shadow: inset 0px 0px 0px 30px $green;
+			}
+		}
+	}
+	
+	@include mobile {
+		.logo-header {
+			display: flex;
+			padding: 1.5rem;
+			justify-content: center;
+			
+			a {
+				display: inline-flex;
+				text-align: center;
+			}
+			
+			img {
+				display: inline-block;
+				width: auto;
+				height: 5rem;
+			}
+		}
+		.register-form-cont {
+			padding: 3rem 0;
+			
+			.register-form {
+				.progress-bar {
+					width: 100%;
+					border-radius: 0;
+					border-left: none;
+					border-right: none;
+					
+					.progress-bar__progress {
+						border-radius: 0 1rem 1rem 0;
+					}
+				}
+				
+				.title-cont {
+					width: 100%;
+					margin: 3rem 0 1rem 0;
+					
+					h1 {
+						font-size: 2.2rem;
+						line-height: 3rem;
+					}
+					
+					img {
+						width: 4rem;
+						height: 4rem;
+					}
+				}
+				
+				> p {
+					font-size: 1.5rem;
+					line-height: 2.5rem;
+					max-width: none;
+					padding: 0 1.5rem;
+					margin: 0 0 2rem;
+				}
+				
+				form {
+					width: 100%;
+					padding: 0 1.5rem;
+					
+					input[type=text], input[type="text"], select {
+						font-size: 1.8rem;
+					}
+					
+					.inpt-set {
+						width: 100%;
+						margin-bottom: 1rem;
+						
+						p {
+							font-size: 1.5rem;
+							line-height: 2.5rem;
+						}
+					}
+					
+					.agreement {
+						label {
+							font-size: 1.5rem;
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+	}
+}

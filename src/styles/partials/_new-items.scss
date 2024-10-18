@@ -1,0 +1,20 @@
+.new-items {
+    background: $white;
+    padding-bottom: 8rem;
+    @include mobile {
+        padding: 2rem 1.5rem;
+        .standard {
+            width: 100%;
+        }
+        .contact-me {
+            display: none;
+        }
+        .al-center {
+            padding: 4rem 0;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}

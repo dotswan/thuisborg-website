@@ -1,0 +1,68 @@
+.layout-3 {
+    position: relative;
+    overflow: hidden;
+    background: $white;
+
+    p {
+        color: $black-1;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        margin: 3rem 0;
+    }
+
+    .btn {
+        margin-top: 3rem;
+    }
+
+    .checkmarked {
+        font-size: 2.1rem;
+        line-height: 4rem;
+    }
+
+    .img-text-aligner {
+        align-items: center;
+
+        &:first-of-type {
+            margin-bottom: 10rem;
+        }
+    }
+
+    @include desktop-high {
+        .standard {
+            width: 100%;
+        }
+    }
+    @include mobile {
+        background: $gray;
+        .section-subtitle {
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+        .section-title {
+            text-align: center;
+            background: $white;
+        }
+        .js__toggle__handle {
+            padding: 2rem 2%;
+            font-size: 2rem;
+            line-height: 3.5rem;
+            font-weight: 500;
+        }
+        .standard {
+            width: 100%;
+        }
+        &:before {
+            display: none;
+        }
+        .checkmarked {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+        ul + div {
+            text-align: center;
+        }
+        .img-text-aligner:first-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.hero.calculator-page {
+    p {
+        color: $black-1;
+    }
+
+    .breadcrumb .breadcrumb__cont {
+        margin-top: 8rem;
+    }
+
+    &.asym-image-text .asym__text {
+        padding: 5rem 0;
+    }
+}
+
+.calculator-cont {
+    padding: 8rem 0;
+}
+
+@include mobile {
+    .calculator-cont {
+        padding: 4rem 0;
+    }
+    .hero.calculator-page {
+        .breadcrumb {
+            display: none;
+        }
+
+        &.asym-image-text .asym__text {
+            padding: 2rem;
+        }
+    }
+}

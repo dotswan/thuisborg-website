@@ -1,13 +1,600 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
+    <title>Overwaarde verzilveren | Thuisborg</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="app">
+      <div class="nav-header__topbar">
+        <div class="review">
+          <span>Klanten waarderen ons met een 9.0</span>
+          <div class="rating">
+            <img src="/assets/images/star.png" />
+            <img src="/assets/images/star.png" />
+            <img src="/assets/images/star.png" />
+            <img src="/assets/images/star.png" />
+            <img src="/assets/images/star.png" />
+          </div>
+          <span>110 reviews</span>
+        </div>
+        <div class="contact__menu">
+          <ul>
+            <li>
+              <img src="/assets/images/phone.png" />
+              <a href="call:0854015737">085-401 57 37</a>
+            </li>
+            <li>
+              <img src="/assets/images/mail.png" />
+              <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+            </li>
+            <li>
+              <img src="/assets/images/account.png" />
+              <a href="">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-header__menu">
+        <a class="logo" href="/">
+          <img src="/assets/images/logo.png" alt="Thuisborg" />
+        </a>
+        <div class="nav-header__right-cont">
+          <ul class="nav-header__menu__items">
+            <li>
+              <a href="/verzilveren"> Verzilveren </a>
+              <ul>
+                <li>
+                  <a href="verzilveren">Overwaarde verzilveren</a>
+                </li>
+                <li>
+                  <a href="woningwaarde-calculator">Woningwaarde calculator</a>
+                </li>
+                <li>
+                  <a href="5-stappenplan">5-stappenplan verzilveren</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/zorgwoning"> Zorgwoning </a>
+              <ul>
+                <li>
+                  <a href="/zorgwoning">Zorgwoningen</a>
+                </li>
+                <li>
+                  <a href="/zorgwoning-45">Zorgwoning 45</a>
+                </li>
+                <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/investeren"> Investeren </a>
+            </li>
+            <li>
+              <a href="/over-ons"> Over ons </a>
+            </li>
+            <li>
+              <a href="/faq"> FAQ </a>
+            </li>
+            <li>
+              <a href="/contact"> Contact </a>
+            </li>
+            <li>
+              <a href="bekijk-uw-mogelijkheden" class="btn" ref="navcta"> Bekijk uw mogelijkheden </a>
+            </li>
+          </ul>
+          <div class="nav-header__search" :class="[{'open': $store.getters.getSearch}]">
+            <span class="search__cta" @click="toggleSearch()">
+              <img src="/assets/images/search.png" alt="" />
+            </span>
+            <form class="search__form">
+              <input type="text" name="search" placeholder="type here" />
+              <button class="btn white">zoek</button>
+            </form>
+          </div>
+          <hamburger></hamburger>
+        </div>
+      </div>
+      <div class="nav-menu__mobile" :class="[{'is-open': $store.getters.getNav}, {'is-closed': !$store.getters.getNav}]">
+        <ul>
+          <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
+            <span class="js__toggle__handle"> Verzilveren </span>
+            <ul>
+              <li>
+                <a href="verzilveren">Overwaarde verzilveren</a>
+              </li>
+              <li>
+                <a href="woningwaarde-calculator">Woningwaarde calculator</a>
+              </li>
+              <li>
+                <a href="5-stappenplan">5-stappenplan verzilveren</a>
+              </li>
+            </ul>
+          </li>
+          <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
+            <span class="js__toggle__handle"> Zorgwoning </span>
+            <ul>
+              <li>
+                <a href="/zorgwoning">Zorgwoningen</a>
+              </li>
+              <li>
+                <a href="/zorgwoning-45">Zorgwoning 45</a>
+              </li>
+              <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/investeren"> Investeren </a>
+          </li>
+          <li>
+            <a href="/over-ons"> Over ons </a>
+          </li>
+          <li>
+            <a href="/faq"> FAQ </a>
+          </li>
+          <li>
+            <a href="/contact"> Contact </a>
+          </li>
+          <li>
+            <a href="bekijk-uw-mogelijkheden" class="btn">Bekijk uw mogelijkheden</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="/assets/images/phone.png" />
+            <a href="call:0854015737">085-401 57 37</a>
+          </li>
+          <li>
+            <img src="/assets/images/mail.png" />
+            <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+          </li>
+          <li>
+            <img src="/assets/images/account.png" />
+            <a href="">Login</a>
+          </li>
+        </ul>
+      </div>
+      <main class="main">
+        <div class="hero-system">
+          <div class="hero-wrapper">
+            <div class="hero-image">
+              <img src="/assets/images/overwaarde-verzilveren-thuisborg.png" class="crop-radius bl" />
+            </div>
+            <div class="hero-inner middle standard">
+              <div class="hero-container">
+                <h1>
+                  Verzilver de overwaarde<br />
+                  <span class="green-text">van uw woning</span>
+                </h1>
+                <p>Uw huis verkopen, er blijven wonen én financieel genieten</p>
+                <ul>
+                  <li class="checkmarked"><span>Vul uw inkomsten aan</span></li>
+                  <li class="checkmarked"><span>Schenk belastingvrij aan familie of gezinsleden</span></li>
+                  <li class="checkmarked"><span>Maak de reis van uw dromen</span></li>
+                  <li class="checkmarked"><span>Pas uw woning aan voor zorg en zelfstandigheid</span></li>
+                </ul>
+                <div class="hero__search">
+                  <form action="bekijk-uw-mogelijkheden" method="get" enctype="multipart/form-data">
+                    <input name="q" placeholder="Uw straat & huisnummer" />
+                    <button class="btn white med">Bekijk uw mogelijkheden</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-breadcrumb">
+            <div class="standard middle">
+              <div class="breadcrumb">
+                <div class="breadcrumb__cont">
+                  <ul class="breadcrumb__cont__items">
+                    <li><a href="">Home</a></li>
+                    <li><span>Over ons</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--			<section class="hero asym-image-text">-->
+        <!--				<div class="asym__image">-->
+        <!--					<img src="/assets/images/overwaarde-verzilveren-thuisborg.png" class="crop-radius bl">-->
+        <!--				</div>-->
+        <!--				<div class="asym__text">-->
+        <!--					<div class="standard middle">-->
+        <!--						<div class="asym__text__cont">-->
+        <!--							<h1>Verzilver de overwaarde<br>-->
+        <!--								<span class="green-text">van uw woning</span>-->
+        <!--							</h1>-->
+        <!--							<p>Uw huis verkopen, er blijven wonen én financieel genieten</p>-->
+        <!--							<ul>-->
+        <!--								<li class="checkmarked"><span>Vul uw inkomsten aan</span></li>-->
+        <!--								<li class="checkmarked"><span>Schenk belastingvrij aan familie of gezinsleden</span>-->
+        <!--								</li>-->
+        <!--								<li class="checkmarked"><span>Maak de reis van uw dromen</span></li>-->
+        <!--								<li class="checkmarked"><span>Pas uw woning aan voor zorg en zelfstandigheid</span></li>-->
+        <!--							</ul>-->
+        <!--						</div>-->
+        <!--						<div class="hero__search">-->
+        <!--							<form action="bekijk-uw-mogelijkheden" method="get" enctype="multipart/form-data">-->
+        <!--								<input name="q" placeholder="Uw straat & huisnummer">-->
+        <!--								<button class="btn white med">Bekijk uw mogelijkheden</button>-->
+        <!--							</form>-->
+        <!--						</div>-->
+        <!--					</div>-->
+        <!--				</div>-->
+        <!--			</section>-->
+        <section class="mottos">
+          <div class="standard middle">
+            <ul>
+              <li class="checkmarked">Flexibel op uw wensen afgestemd</li>
+              <li class="checkmarked">Geen makelaars, geen verborgen kosten</li>
+              <li class="checkmarked">Binnen 48 uur antwoord</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="new-calc-home">
+          <div class="inner-wrapper">
+            <div class="txt__cont">
+              <h2 class="section-subtitle">Woningwaarde calculator</h2>
+              <p>
+                Op basis van uw persoonlijke situatie kunt u berekenen welk bedrag u voor uw woning kunt krijgen. In 10 simpele stappen berekenen wij de
+                vermogensplanning die het beste bij uw persoonlijke situatie past.
+              </p>
+              <div class="cta-cont">
+                <a href="/woningwaarde-calculator" class="btn">Bereken uw woningwaarde</a>
+              </div>
+            </div>
+            <div class="calc-wrapper">
+              <mini-calculator></mini-calculator>
+            </div>
+          </div>
+        </section>
+        <section class="layout-1">
+          <div class="middle standard">
+            <div class="twin">
+              <div class="double-image pr-6-br half">
+                <img src="/assets/images/overwaarde-huis-opnemen.png" />
+                <img src="/assets/images/verzilver-woningwaarde.png" />
+              </div>
+              <div class="text-set half">
+                <h2>Waarom uw <span class="green-text">overwaarde</span> verzilveren?</h2>
+                <p>
+                  Wilt u onbezorgd en net zo lang als u wilt in uw eigen woonomgeving blijven wonen? En dit financieel mogelijk maken zonder te verhuizen? Dat
+                  kan! De wens van de overheid is dat ouderen in hun vertrouwde omgeving zelfstandig blijven wonen. Door de krapte op de woningmarkt kiezen
+                  mensen steeds vaker voor alternatieve mogelijkheden, zoals het verbouwen en/of aanpassen van de woning in plaats van te verhuizen. Thuisborg
+                  biedt mogelijkheden de overwaarde van uw huis op te nemen.
+                </p>
+                <div>
+                  <a href="verzilveren" class="btn">
+                    <span>Meer lezen</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="layout-2 js__toggling-content opened" v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}">
+          <h2 class="section-title js__toggle__handle">Mogelijkheden met <span class="green-text">Thuisborg</span></h2>
+          <div class="js__toggling-content__content middle standard">
+            <div class="img-text-aligner img-is-left">
+              <div class="standard">
+                <div class="img__cont">
+                  <img src="/assets/images/verzilverplan.png" />
+                </div>
+                <div class="txt__cont">
+                  <h3 class="section-subtitle">
+                    Woningwaarde <span class="green-text">Estate Plan</span> & Woningwaarde <span class="green-text">Verzilverplan</span>
+                  </h3>
+                  <p>
+                    Het Estate Plan is bedoeld voor woningeigenaren die het volledige eigendom van hun woning willen behouden, maar wel een gedeelte van de
+                    overwaarde daarvan willen inzetten. Met het Woningwaarde <b>Verzilverplan</b> koopt Thuisborg uw woning en verhuurt deze direct aan u terug.
+                    U krijgt zo dus direct de beschikking over het vermogen dat eerst in het huis vastzat. Wat wij bieden is ongestoord woongenot tegen een
+                    eerlijke prijs.
+                  </p>
+                  <div>
+                    <a href="verzilveren" class="btn">Bekijk uw plan</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="layout-3">
+          <h2 class="section-title">Onze werkwijze</h2>
+          <div class="img-text-aligner img-is-right js__toggling-content" v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}">
+            <h2 class="section-subtitle mobile__only js__toggle__handle">In <span class="green-text">5 heldere stappen</span> uw woningwaarde verzilveren</h2>
+            <div class="middle standard js__toggling-content__content">
+              <div class="txt__cont">
+                <h3 class="section-subtitle">In <span class="green-text">5 heldere stappen</span> uw<br />woningwaarde verzilveren</h3>
+                <p></p>
+                <ul>
+                  <li class="checkmarked">
+                    <span>Stap 1 - Intake</span>
+                  </li>
+                  <li class="checkmarked">
+                    <span>Stap 2 - Waardebepaling</span>
+                  </li>
+                  <li class="checkmarked">
+                    <span>Stap 3 - Berekening</span>
+                  </li>
+                  <li class="checkmarked">
+                    <span>Stap 4 -Voorstel</span>
+                  </li>
+                  <li class="checkmarked">
+                    <span>Stap 5 - Overeenkomst</span>
+                  </li>
+                </ul>
+                <div>
+                  <a href="5-stappenplan" class="btn">Bekijk stappen</a>
+                </div>
+              </div>
+              <div class="img__cont">
+                <img src="/assets/images/stappenplan-woningwaarde-verzilveren.png" class="shadowed-image" />
+              </div>
+            </div>
+          </div>
+          <div class="img-text-aligner img-is-left js__toggling-content" v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}">
+            <h2 class="section-subtitle mobile__only js__toggle__handle">Woningwaarde calculator</h2>
+            <div class="middle standard js__toggling-content__content">
+              <div class="img__cont">
+                <img src="/assets/images/woningwaarde-calculator.jpg" class="shadowed-image" />
+              </div>
+              <div class="txt__cont">
+                <h3 class="section-subtitle">Woningwaarde calculator</h3>
+                <p>
+                  Op basis van uw persoonlijke situatie kunt u berekenen welk bedrag u voor uw woning kunt krijgen. In 10 simpele stappen berekenen wij de
+                  vermogensplanning die het beste bij uw persoonlijke situatie past.
+                </p>
+                <div>
+                  <a href="woningwaarde-calculator" class="btn">Bereken direct</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="layout-4 js__toggling-content" v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}">
+          <h2 class="section-subtitle mobile__only js__toggle__handle">Modulaire zorgwoningen</h2>
+          <div class="js__toggling-content__content">
+            <div class="modular-aligner img-is-right">
+              <div class="modular-aligner__cont middle standard">
+                <div class="text-cont">
+                  <h3 class="section-subtitle">Modulaire zorgwoningen</h3>
+                  <p>
+                    Senioren of mensen met een beperking of chronische ziekte hebben vaker zorg en ondersteuning thuis nodig. Velen hebben de wens om
+                    zelfstandig te blijven wonen, maar dit is niet altijd haalbaar. Verhuizen naar een woning die bijvoorbeeld geschikt is voor een rollator is
+                    niet altijd even makkelijk, en bij velen bestaat de wens om graag thuis, in de vertrouwde buurt, te willen blijven wonen. Onze modulaire
+                    zorgwoningen bieden hier bij uitstek kans toe.
+                  </p>
+                  <div>
+                    <a href="zorgwoning" class="btn">Bekijk woningen</a>
+                  </div>
+                </div>
+                <div class="img-cont">
+                  <img src="/assets/images/modulaire-zorgwoningen.png" class="shadowed-image" />
+                </div>
+              </div>
+            </div>
+            <div class="modular-aligner img-is-left">
+              <div class="modular-aligner__cont middle standard">
+                <div class="img-cont">
+                  <img src="/assets/images/investeren-hero.png" class="shadowed-image" />
+                </div>
+                <div class="text-cont">
+                  <h3 class="section-subtitle">Investeren</h3>
+                  <p>
+                    De Woningwaarde Vastgoed Obligaties worden u aangeboden door Thuisborg Finance B.V. Deze zijn bedoeld voor investeerders die op
+                    maatschappelijk verantwoorde manier willen beleggen in de prijsontwikkeling van de Nederlandse woningmarkt.
+                  </p>
+                  <ul>
+                    <li class="checkmarked">Investeren kan al vanaf EUR 1.000,-</li>
+                    <li class="checkmarked">Vast rendement tot 7,5%</li>
+                    <li class="checkmarked">Rente per kwartaal uitbetaald</li>
+                    <li class="checkmarked">Na 1 jaar kosteloos uitstappen per kwartaal</li>
+                  </ul>
+                  <div>
+                    <a href="investeren" class="btn">Meer lezen</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="users-comments">
+          <div class="middle standard">
+            <div class="user-comments__title-row">
+              <h3 class="section-subtitle">Ervaringen</h3>
+              <a href="bekijk-uw-mogelijkheden">Bekijk uw mogelijkheden</a>
+            </div>
+            <comment-slider>
+              <div class="comments-slider__list__item">
+                <div class="comments-slider__list__item__comment">
+                  <span class="q">“</span>
+                  <q class="comment-text"
+                    >Ik was op zoek naar mogelijkheden om mijn geld uit de stenen te krijgen en zo mijn inkomsten te kunnen aanvullen en onderhoud aan zijn
+                    woning te laten uitvoeren.</q
+                  >
+                </div>
+                <p>Dhr. Visser - Verzilverde zijn woning</p>
+              </div>
+              <div class="comments-slider__list__item">
+                <div class="comments-slider__list__item__comment">
+                  <span class="q">“</span>
+                  <q class="comment-text"
+                    >Ik was genoodzaakt mijn appartement met huurders te verkopen. Dankzij Thuisborg konden de huurders er blijven wonen.</q
+                  >
+                </div>
+                <p>Dhr. Peters - Verzilverde zijn woning</p>
+              </div>
+              <div class="comments-slider__list__item">
+                <div class="comments-slider__list__item__comment">
+                  <span class="q">“</span>
+                  <q class="comment-text"
+                    >Wij konden geen nieuwe hypotheek krijgen voor het aanpassen van onze woning. Dankzij Thuisborg kunnen wij blijven wonen in onze huidige
+                    woning.</q
+                  >
+                </div>
+                <p>Verzilverden hun woning - doctor</p>
+              </div>
+            </comment-slider>
+          </div>
+        </section>
+        <section class="invest asym-image-text">
+          <div class="asym__image">
+            <img src="/assets/images/invest.png" class="crop-radius bl" />
+          </div>
+          <div class="asym__text">
+            <div class="standard middle">
+              <div class="asym__text__cont">
+                <h3 class="section-title">
+                  Uw huis verkopen, er<br />
+                  blijven wonen én<br />
+                  <span class="green-text">financieel genieten</span>
+                </h3>
+                <a class="mobile__only btn">Vraag brochure aan</a>
+                <p>Vraag nu geheel vrijblijvend de Woningwaarde de Verzilveren brochure aan</p>
+                <form
+                  action="https://forms.zohopublic.eu/soliditry/form/TBWoningwaardeobligatiesbrochurewebsite/formperma/c8mRw6jfbP2z3QNYCb_gbdeX2l3Z4q22F7j3Hy2KMWU/htmlRecords/submit"
+                  name="form"
+                  method="POST"
+                  class="invest-form"
+                  onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+                  accept-charset="UTF-8"
+                  enctype="multipart/form-data"
+                  id="form"
+                >
+                  <div class="form_hiddens">
+                    <input type="hidden" name="zf_referrer_name" value="" />
+                    <!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+                    <input type="hidden" name="zf_redirect_url" value="" />
+                    <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+                    <input type="hidden" name="zc_gad" value="" />
+                    <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+                    <input type="hidden" name="utm_source" value="" />
+                    <input type="hidden" name="utm_medium" value="" />
+                    <input type="hidden" name="utm_campaign" value="" />
+                    <input type="hidden" name="utm_term" value="" />
+                    <input type="hidden" name="utm_content" value="" />
+                  </div>
+                  <input type="text" name="SingleLine" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="Voornaam" />
+                  <input type="text" name="SingleLine1" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="Achternaam" />
+                  <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
+                  <input autocomplete="off" type="text" maxlength="255" name="SingleLine2" value="" placeholder="Telefoonnummer" />
+                  <!--								<div class="code-num">-->
+                  <!--									<input type="text" compname="PhoneNumber_countrycodeval"-->
+                  <!--									       name="PhoneNumber_countrycodeval" checktype="c7"-->
+                  <!--									       maxlength="10" phoneFormat="1" isCountryCodeEnabled=true-->
+                  <!--									       id="international_PhoneNumber_countrycodeval"-->
+                  <!--									       valType="code" placeholder="postcode"/>-->
+                  <!--									<input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode"-->
+                  <!--									       maxlength="20" checktype="c7" value="" phoneFormat="1"-->
+                  <!--									       isCountryCodeEnabled=true fieldType="11"-->
+                  <!--									       id="international_PhoneNumber_countrycode" valType="number"-->
+                  <!--									       phoneFormatType="1" placeholder="huisnummer"/>-->
+                  <!--								</div>-->
+                  <div class="agreement">
+                    <input type="checkbox" checktype="c1" id="DecisionBox" name="DecisionBox" />
+                    <label for="DecisionBox">Ik ga akkoord met de <a>Algemene voorwaarden</a></label>
+                  </div>
+                  <button class="btn">Vraag brochure aan</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="standard middle">
+          <div class="footer-cont">
+            <div class="col logo-address">
+              <a><img src="/assets/images/logo.png" /></a>
+              <p>
+                Thuisborg Finance BV<br />
+                2021 © Thuisborg<br />
+                Mr. G. Groen van Prinstererlaan 88 A<br />
+                1181 TR Amstelveen<br />
+                <a href="call:0854015737">085 401 57 37</a>
+              </p>
+            </div>
+            <div class="col menu-cont">
+              <ul>
+                <li><a href="investeren">Investeren</a></li>
+                <li><a href="verzilveren">Verzilveren</a></li>
+                <li><a href="zorgwoning">Zorgwoning</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="https://thuisborg.nl/nieuws/">Nieuws</a></li>
+                <li>
+                  <a href="/docs/COOKIEVERKLARING-1.pdf">Cookie verklaring</a>
+                </li>
+                <li><a href="privacy-verklaring">Privacy verklaring</a></li>
+                <li>
+                  <a target="_blank" href="/docs/2.-AV-Thuisborg-2021-v3-NL.pdf">Algemene Voorwaarden</a>
+                </li>
+              </ul>
+              <!--						<a class="btn">call to action</a>-->
+            </div>
+            <div class="col contact-us">
+              <div class="contact-form">
+                <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
+                <form
+                  action="https://forms.zohopublic.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
+                  name="form"
+                  method="POST"
+                  onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+                  accept-charset="UTF-8"
+                  enctype="multipart/form-data"
+                  id="form"
+                >
+                  <input type="hidden" name="zf_referrer_name" value="" />
+                  <div class="form_hiddens">
+                    <input type="hidden" name="zf_redirect_url" value="" />
+                    <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+                    <input type="hidden" name="zc_gad" value="" />
+                    <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+                    <input type="hidden" name="utm_source" value="" />
+                    <input type="hidden" name="utm_medium" value="" />
+                    <input type="hidden" name="utm_campaign" value="" />
+                    <input type="hidden" name="utm_term" value="" />
+                    <input type="hidden" name="utm_content" value="" />
+                  </div>
+                  <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
+                  <button class="btn">Schrijf je in!</button>
+                </form>
+              </div>
+              <div class="sponsors">
+                <a href="">
+                  <img src="/assets/images/sponsor-1.png" />
+                </a>
+                <a>
+                  <img src="/assets/images/sponsor-2.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="copy__cont middle standard">
+            <div class="copy">
+              © 2021 Alle rechten voorbehouden <a>Disclaimer</a><a href="privacy-verklaring">Privacy Statement</a>
+              <a href="/docs/COOKIEVERKLARING-1.pdf">Cookies</a>
+            </div>
+            <div class="review">
+              <span>Klanten waarderen ons met een 9.0</span>
+              <div class="rating">
+                <img src="/assets/images/star.png" />
+                <img src="/assets/images/star.png" />
+                <img src="/assets/images/star.png" />
+                <img src="/assets/images/star.png" />
+                <img src="/assets/images/star.png" />
+              </div>
+              <span>110 reviews</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

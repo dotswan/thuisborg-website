@@ -1,0 +1,175 @@
+.offering-properties {
+    padding: 6rem 0;
+}
+
+.offering-investment {
+    padding: 6rem 0;
+    background: $white;
+
+    .title-slides {
+        display: flex;
+        justify-content: space-between;
+
+        .desc-title {
+            width: 50%;
+            flex: 0 0 auto;
+
+            h1, h2, h3 {
+                font-size: 3.3rem;
+                font-weight: bold;
+                line-height: 4.5rem;
+                color: $navy;
+                margin-bottom: 2rem;
+            }
+
+            ul {
+                margin-bottom: 2rem;
+
+                li {
+                    font-size: 2.1rem;
+                    line-height: 4rem;
+
+                    &.checkmarked {
+                        display: flex;
+                        align-items: baseline;
+
+                        &:before {
+                            flex: 0 0 auto;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .property-slider {
+            width: 50%;
+            flex: 0 0 auto;
+            align-items: center;
+
+            .slide.agile__slide img {
+                width: 100% !important;
+            }
+
+            .agile__actions {
+                margin-top: 2rem;
+
+                .agile__nav-button {
+                    background: $navy;
+                    border-radius: 50%;
+                    border: none;
+                    font-size: 2rem;
+                    color: $white;
+                    padding: 0;
+                    width: 4rem;
+                    height: 4rem;
+                }
+
+                .agile__dots {
+                    .agile__dot {
+                        margin: 0 .5rem;
+
+                        button {
+                            padding: 0;
+                            border: none;
+                            border-radius: 50%;
+                            background-color: rgba(0, 0, 0, .2);
+                            width: 1rem;
+                            height: 1rem;
+                        }
+
+                        &.agile__dot--current {
+                            button {
+                                background-color: $navy;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include mobile {
+            flex-direction: column-reverse;
+            .desc-title {
+                width: 100%;
+            }
+            .property-slider {
+                margin-bottom: 4rem;
+                width: 100%;
+            }
+        }
+    }
+
+    p {
+        font-size: 2.3rem;
+        color: #595959;
+        line-height: 3.8rem;
+    }
+
+    .data-cont {
+        margin-top: 4rem;
+
+        h1, h2, h3 {
+            font-size: 3.3rem;
+            font-weight: bold;
+            line-height: 4.5rem;
+            color: $navy;
+            margin-bottom: 2rem;
+        }
+
+        .data-table {
+            font-size: 1.8rem;
+            color: $white;
+            line-height: 3rem;
+            display: grid;
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+            border-radius: 2rem;
+            grid-auto-rows: 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(30rem, calc((100% - 2rem) / 2)));
+
+            li {
+                background-color: $green;
+                padding: 2rem;
+                border-radius: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                > * {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    flex-wrap: wrap;
+
+                    &:before {
+                        position: absolute;
+                        content: '✔';
+                        filter: brightness(0) invert(1);
+                    }
+
+                    span {
+                        color: $black-3;
+                        padding-left: 4rem;
+                        padding-right: 2rem;
+                        flex: 0 0 auto;
+                    }
+
+                    b {
+                        color: $white;
+                        font-weight: 500;
+                    }
+
+                }
+
+            }
+
+            @media all and (max-width: 900px) {
+                grid-template-columns: repeat(auto-fill, calc(50% - 2rem));
+            }
+            @include mobile {
+                grid-template-columns: repeat(auto-fill, 100%);
+            }
+        }
+    }
+}

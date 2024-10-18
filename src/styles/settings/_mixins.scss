@@ -1,0 +1,25 @@
+/* mixins    */
+
+@mixin aboveMax {
+    @media (min-width: #{$max}) {
+        @content;
+    }
+}
+
+@mixin desktop-high {
+    @media (min-width: #{$ld-desktop}) and (max-width: #{$hd-desktop}) {
+        @content;
+    }
+}
+
+@mixin mobtop {
+    @media (min-width: #{$tablet}) and (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}

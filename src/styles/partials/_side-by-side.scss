@@ -1,0 +1,98 @@
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+    //align-items: center;
+
+    .side-by-side__item {
+        width: calc((100% - 6rem) / 2);
+        background: $white;
+        border-radius: 2rem;
+        padding: 4.5rem 3.5rem;
+        box-shadow: 0 3px 33px rgba($black, .05);
+
+        h3 {
+            font-size: 3.3rem;
+            font-weight: 500;
+            color: $navy;
+            line-height: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .img-cont {
+            border-radius: 2rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3.5rem;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        p {
+            font-size: 2.4rem;
+            color: $black-1;
+            line-height: 4rem;
+            margin-bottom: 3.5rem;
+        }
+
+        ul {
+            li {
+                font-size: 2.4rem;
+                line-height: 4rem;
+
+                &.checkmarked {
+                    display: flex;
+                    align-items: baseline;
+
+                    &:before {
+                        display: inline-flex;
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+
+            margin-bottom: 3.5rem;
+        }
+    }
+
+    @include mobile {
+        flex-flow: column;
+        .side-by-side__item {
+            box-shadow: none;
+            width: 100%;
+            padding: 2rem;
+
+            h3 {
+                font-size: 2rem;
+                line-height: 3rem;
+                margin-bottom: 0;
+            }
+
+            .img-cont {
+                margin: 2rem 0;
+            }
+
+            p {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                margin-bottom: 2rem;
+
+                li {
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                }
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.categories-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 96%;
+
+        li {
+            margin: .5rem;
+
+            a {
+                display: block;
+                background: $gray;
+                color: $navy;
+                padding: 1rem 3rem;
+                border-radius: .7rem;
+                text-align: center;
+                transition: $transition-3;
+            }
+
+            &.active, &:hover {
+                a {
+                    color: $white;
+                    background: $green;
+                }
+            }
+        }
+    }
+
+    select {
+
+    }
+
+    @include mobile {
+        ul {
+            display: none;
+        }
+        form {
+            width: 100%;
+
+            select {
+                width: 100%;
+                color: $navy;
+                display: block;
+                border-color: $navy;
+                border-radius: .7rem;
+                height: 5rem;
+                padding: 1rem;
+            }
+        }
+    }
+}

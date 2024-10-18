@@ -1,0 +1,65 @@
+.modular-aligner {
+    position: relative;
+    padding: 5.5rem 0;
+
+    &:before {
+        content: '';
+        background: $sky;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 0;
+    }
+
+    .modular-aligner__cont {
+        position: relative;
+        z-index: 9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > div {
+            width: 50%;
+            flex: 0 0 auto;
+        }
+    }
+
+    img {
+        border-radius: 6rem;
+        display: block;
+        max-width: 100%;
+    }
+
+    &.img-is-right {
+        .img-cont {
+            padding-left: 5.5rem;
+        }
+    }
+
+    &.img-is-left {
+        &:before {
+            right: 0;
+            left: auto;
+        }
+
+        .img-cont {
+            padding-right: 5.5rem;
+        }
+    }
+
+    @include mobile {
+        padding: 2rem 0;
+        &:before {
+            display: none;
+        }
+        .modular-aligner__cont {
+            flex-flow: column;
+
+            > div {
+                width: 100%;
+            }
+        }
+    }
+}

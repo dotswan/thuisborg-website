@@ -1,0 +1,187 @@
+.mini-calculator {
+	border-radius: 1rem;
+	background: $gray;
+	//background: #e3f1fb;
+	//background-color: #e9f7f5;
+	flex-flow: column;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 10px 31px rgba(0, 0, 0, 0.115);
+	border: 1px solid rgba(0, 0, 0, .02);
+	
+	.flex {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	
+	.link-to {
+		display: inline-flex;
+		align-items: center;
+		font-weight: bold;
+		font-size: 0.8em;
+		text-transform: capitalize;
+		opacity: 1;
+		transition: all ease-in-out .3s;
+		line-height: 1.2;
+		float: right;
+		background: $green;
+		border-radius: 4px;
+		padding: 0 0.8rem;
+		color: $white;
+		
+		i {
+			display: inline-block;
+			font-size: 1.5em;
+			font-weight: 500;
+		}
+		
+		&:hover {
+			opacity: .8;
+		}
+	}
+	
+	.flex-end {
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.title-lang {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 3rem 3rem 0 3rem;
+		
+		h3 {
+			font-weight: bold;
+			color: $green;
+			line-height: 1;
+			font-size: 2rem;
+		}
+		
+		.lang-switcher {
+			display: inline-flex;
+			background: $white;
+			border-radius: 4px;
+			
+			select {
+				background: none;
+				border: none;
+				font-size: 1.3rem;
+				cursor: pointer;
+				color: $navy;
+				font-weight: 500;
+				
+				option {
+					font-weight: 300;
+					text-align: center;
+				}
+			}
+		}
+	}
+	
+	.fields-wrapper {
+		padding: 3rem;
+	}
+	
+	.results-wrapper {
+		padding: 3rem;
+		//background: $green;
+		background-color: #e9f7f5;
+		color: $white;
+		line-height: 1.8;
+		
+		.result-row {
+			//color: $black-1;
+			color: #959595;
+		}
+		
+		.color-navy {
+			font-weight: 500;
+			color: $navy;
+			text-decoration: underline;
+			text-decoration-color: $green;
+			text-decoration-style: dashed;
+			text-underline-offset: 5px;
+		}
+	}
+	
+	.field-row {
+		margin-bottom: 2rem;
+		font-weight: 500;
+		color: $navy;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		
+		.value-cont {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 5%;
+			
+			.vue-slider {
+				flex: 1;
+				
+			}
+			
+			input {
+				width: 10rem;
+				border: none
+			}
+		}
+		
+	}
+	
+	.vue-slider-rail {
+		background: $white;
+	}
+	
+	.vue-slider-dot-handle {
+		background: $navy;
+		box-shadow: none;
+		
+		&:before {
+			position: absolute;
+			top: 1.3rem;
+			left: 0;
+			right: 0;
+			height: .1rem;
+			margin: auto;
+			background: rgba($white, .5);
+			width: 1.6rem;
+			content: '';
+		}
+		
+		&:after {
+			position: absolute;
+			top: 1.7rem;
+			left: 0;
+			right: 0;
+			height: .1rem;
+			margin: auto;
+			background: rgba($white, .5);
+			width: 1.6rem;
+			content: '';
+		}
+	}
+	
+	.vue-slider-process {
+		background: $green;
+	}
+	
+	.has-marks {
+		margin-bottom: 2rem;
+		
+		.vue-slider-marks {
+			
+			.vue-slider-mark-label {
+				font-weight: bold;
+				color: $green;
+			}
+		}
+	}
+}
+
