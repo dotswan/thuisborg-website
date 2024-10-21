@@ -72,6 +72,9 @@
                                 vertical-align: middle;
                                 display: inline-block;
                             }
+                            label {
+                                margin-left: 10px;
+                            }
                         }
                     }
 
@@ -98,6 +101,9 @@
 
                     a {
                         border-bottom: .1rem solid;
+                    }
+                    label {
+                        margin-left: 10px;
                     }
 
                     font-size: 2rem;
