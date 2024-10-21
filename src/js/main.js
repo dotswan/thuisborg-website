@@ -61,7 +61,7 @@ app
   .component("overzicht", Overzicht)
   .component("pop-up", PopUp)
   .component("price-input", PriceInput)
-  .component("registeration", Registeration)
+  .component("registration", Registeration)
   .component("stepped-form-handler", SteppedFormHandler)
   .component("tb-register-19", TBRegister19)
   .component("tb-register-20", TBRegister20)
