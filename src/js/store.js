@@ -2,8 +2,11 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    baseUrl: '',
-    currentLang: 'en', // Встановіть значення за замовчуванням
+    baseUrl: "",
+    currentLang: "en",
+    mobile: {
+      mobile: false,
+    },
   },
   mutations: {
     setBaseUrl(state) {
@@ -11,21 +14,22 @@ export default createStore({
     },
     detectLanguage(state) {
       const qs = new URL(document.location);
-      state.currentLang = qs.pathname.includes('/nl') ? 'nl' : 'en'; // Встановіть мову на основі URL
+      state.currentLang = qs.pathname.includes("/nl") ? "nl" : "en";
     },
     setCurrentLang(state, lang) {
-      state.currentLang = lang; // Додайте мутацію для зміни мови
+      state.currentLang = lang;
     },
   },
   actions: {
     setUp({ commit }) {
       commit("setBaseUrl");
-      commit('detectLanguage');
+      commit("detectLanguage");
     },
   },
   getters: {
-    currentLang: state => {
+    currentLang: (state) => {
       return state.currentLang;
     },
+    getMobile: (state) => state.mobile,
   },
 });

@@ -171,7 +171,7 @@
                   graag verder.
                 </p>
                 <div>
-                  <a v-scroll-to="{ el: '#verzil-form', offset: 0 }" @click="navClick($event)" class="btn">Adviesgesprek aanvragen</a>
+                  <a href="#verzil-form" class="btn">Adviesgesprek aanvragen</a>
                 </div>
               </div>
               <div class="breadcrumb">
@@ -202,74 +202,8 @@
             </p>
           </div>
         </section>
-        <section class="fs-tab-cta" v-toggler="{ toggler: 'js__tabs_toggler', className: 'verzilverplan'}">
-          <div class="middle standard">
-            <div class="al-center btns-cont">
-              <span class="btn js__tabs_toggler">Woningwaarde Estate Plan</span>
-              <span class="btn js__tabs_toggler outline navy verz">Woningwaarde Verzilverplan</span>
-            </div>
-          </div>
-          <div class="middle standard tabs-main-cont">
-            <div class="tab-5steps" :class="[{'mobile':$store.getters.getMobile.mobile}]" v-tabs handle-url="hash">
-              <div class="tab active" data-tab-title="Stap 1 - Intake">
-                <p>In een telefonisch intakegesprek worden de mogelijkheden met u besproken. Aanvullend kan er nog informatie naar u worden gestuurd.</p>
-              </div>
-              <div class="tab" data-tab-title="Stap 2 - Waardebepaling">
-                <p>
-                  Bij interesse zal Thuisborg voor u een waardebepaling van de woning opvragen. De kosten hiervoor EUR 50,-. Deze kosten zullen bij u in
-                  rekening worden gebracht. Wanneer wij tot overeenstemming komen nemen wij deze kosten over. Op basis van deze waardebepaling zal een
-                  indicatieve berekening worden gemaakt.
-                </p>
-              </div>
-              <div class="tab" data-tab-title="Stap 3 - Berekening">
-                <p>Zodra deze indicatie voor u bespreekbaar is, zullen wij uw woning komen bezichtigen.</p>
-              </div>
-              <div class="tab" data-tab-title="Stap 4 - Voorstel">
-                <p>
-                  Op basis van ons overleg, de bezichtiging en de verstrekte informatie zal een NWWI-taxatie en eventueel een bouwkundige keuring plaatsvinden.
-                  De kosten van deze taxatie zijn voor uw rekening, maar worden overgenomen wanneer wij tot een transactie komen. Op basis van de NWWI-taxatie
-                  zullen wij een voorstel doen.
-                </p>
-              </div>
-              <div class="tab" data-tab-title="Stap 5 - Overeenkomst">
-                <p>
-                  Na akkoord van dit voorstel wordt de koopovereenkomst opgemaakt, hierin is het recht van hypotheek op (de verkoopopbrengst van) uw woning
-                  opgenomen, als aanvullende zekerheid voor Thuisborg. Dit recht van hypotheek wordt door de notaris vastgelegd. Een uittreksel van onze
-                  koopovereenkomst wordt bij het Kadaster gedeponeerd.
-                </p>
-              </div>
-            </div>
-            <div class="tab-5steps verzilver" :class="[{'mobile':$store.getters.getMobile.mobile}]" v-tabs handle-url="hash">
-              <div class="tab active" data-tab-title="Stap 1 - Intake">
-                <p>In een telefonisch intakegesprek worden de mogelijkheden met u besproken. Aanvullend kan er nog informatie naar u worden gestuurd.</p>
-              </div>
-              <div class="tab" data-tab-title="Stap 2 – Waardebepaling">
-                <p>
-                  Wanneer u uw woning wilt verzilveren via Thuisborg of door plaatsing op Borgplaats, zal Thuisborg een waardebepaling van de woning opvragen.
-                  De kosten hiervoor bedragen EUR 50,- en zullen bij u in rekening worden gebracht. Wanneer Thuisborg uw woning verzilvert of wanneer er via
-                  Borgplaats een bemiddeling plaats vindt, nemen wij deze kosten over.
-                </p>
-              </div>
-              <div class="tab" data-tab-title="Stap 3 – Berekening">
-                <p>
-                  Thuisborg zal vervolgens een indicatieve berekening maken gebaseerd op de waardebepaling en de door u verstrekte gegevens. Zodra wij overgaan
-                  tot bezichtiging van uw woning dient er een overeenkomst tot dienstverlening getekend te worden.
-                </p>
-              </div>
-              <div class="tab" data-tab-title="Stap 4 – Voorstel">
-                <p>
-                  Komen de partijen tot overeenstemming over de prijzen, de vergoedingen en de levering, dan zal een NWWI-taxatie en eventueel een bouwkundige
-                  keuring plaatsvinden. Op basis van de NWWI-taxatie zullen wij een definitief voorstel doen.
-                </p>
-              </div>
-              <div class="tab" data-tab-title="Stap 5 – Overeenkomst">
-                <p>
-                  Na akkoord van dit voorstel worden de huur- en koopovereenkomst opgemaakt. De overdracht van de woning zal plaatsvinden bij een door Thuisborg
-                  aan te wijzen notaris.
-                </p>
-              </div>
-            </div>
-          </div>
+        <section class="fs-tab-cta">
+          <tabs></tabs>
         </section>
         <section class="layout-5" id="verzil-form">
           <div class="img-cont">
@@ -347,18 +281,6 @@
                     </div>
                     <div class="form-row__input">
                       <input autocomplete="off" type="text" maxlength="255" name="SingleLine2" value="" placeholder="Telefoonnummer" />
-                      <!--										<div class="code-num">-->
-                      <!--											<input type="text" compname="PhoneNumber_countrycodeval"-->
-                      <!--											       name="PhoneNumber_countrycodeval" checktype="c7"-->
-                      <!--											       maxlength="10" phoneFormat="1" isCountryCodeEnabled=true-->
-                      <!--											       id="international_PhoneNumber_countrycodeval"-->
-                      <!--											       valType="code" placeholder="postcode"/>-->
-                      <!--											<input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode"-->
-                      <!--											       maxlength="20" checktype="c7" value="" phoneFormat="1"-->
-                      <!--											       isCountryCodeEnabled=true fieldType="11"-->
-                      <!--											       id="international_PhoneNumber_countrycode" valType="number"-->
-                      <!--											       phoneFormatType="1" placeholder="huisnummer"/>-->
-                      <!--										</div>-->
                     </div>
                   </div>
                   <div class="agreement-submit">
@@ -375,71 +297,69 @@
         </section>
       </main>
       <footer class="footer">
-        <div class="standard middle">
-          <div class="footer-cont">
-            <div class="col logo-address">
-              <a><img src="/template/images/logo.png" /></a>
-              <p>
-                Thuisborg Finance BV<br />
-                2021 © Thuisborg<br />
-                Mr. G. Groen van Prinstererlaan 88 A<br />
-                1181 TR Amstelveen<br />
-                <a href="call:0854015737">085 401 57 37</a>
-              </p>
+        <div class="footer-cont">
+          <div class="col logo-address">
+            <a><img src="/template/images/logo.png" /></a>
+            <p>
+              Thuisborg Finance BV<br />
+              2021 © Thuisborg<br />
+              Mr. G. Groen van Prinstererlaan 88 A<br />
+              1181 TR Amstelveen<br />
+              <a href="call:0854015737">085 401 57 37</a>
+            </p>
+          </div>
+          <div class="col menu-cont">
+            <ul>
+              <li><a href="investeren">Investeren</a></li>
+              <li><a href="verzilveren">Verzilveren</a></li>
+              <li><a href="zorgwoning">Zorgwoning</a></li>
+              <li><a href="contact">Contact</a></li>
+              <li><a href="https://thuisborg.nl/nieuws/">Nieuws</a></li>
+              <li>
+                <a href="/docs/COOKIEVERKLARING-1.pdf">Cookie verklaring</a>
+              </li>
+              <li><a href="privacy-verklaring">Privacy verklaring</a></li>
+              <li>
+                <a target="_blank" href="/docs/2.-AV-Thuisborg-2021-v3-NL.pdf">Algemene Voorwaarden</a>
+              </li>
+            </ul>
+            <!--						<a class="btn">call to action</a>-->
+          </div>
+          <div class="col contact-us">
+            <div class="contact-form">
+              <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
+              <form
+                action="https://forms.zohopublic.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
+                name="form"
+                method="POST"
+                onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+                accept-charset="UTF-8"
+                enctype="multipart/form-data"
+                id="form"
+              >
+                <input type="hidden" name="zf_referrer_name" value="" />
+                <div class="form_hiddens">
+                  <input type="hidden" name="zf_redirect_url" value="" />
+                  <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+                  <input type="hidden" name="zc_gad" value="" />
+                  <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+                  <input type="hidden" name="utm_source" value="" />
+                  <input type="hidden" name="utm_medium" value="" />
+                  <input type="hidden" name="utm_campaign" value="" />
+                  <input type="hidden" name="utm_term" value="" />
+                  <input type="hidden" name="utm_content" value="" />
+                </div>
+                <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
+                <button class="btn">Schrijf je in!</button>
+              </form>
             </div>
-            <div class="col menu-cont">
-              <ul>
-                <li><a href="investeren">Investeren</a></li>
-                <li><a href="verzilveren">Verzilveren</a></li>
-                <li><a href="zorgwoning">Zorgwoning</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="https://thuisborg.nl/nieuws/">Nieuws</a></li>
-                <li>
-                  <a href="/docs/COOKIEVERKLARING-1.pdf">Cookie verklaring</a>
-                </li>
-                <li><a href="privacy-verklaring">Privacy verklaring</a></li>
-                <li>
-                  <a target="_blank" href="/docs/2.-AV-Thuisborg-2021-v3-NL.pdf">Algemene Voorwaarden</a>
-                </li>
-              </ul>
-              <!--						<a class="btn">call to action</a>-->
-            </div>
-            <div class="col contact-us">
-              <div class="contact-form">
-                <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
-                <form
-                  action="https://forms.zohopublic.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
-                  name="form"
-                  method="POST"
-                  onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
-                  accept-charset="UTF-8"
-                  enctype="multipart/form-data"
-                  id="form"
-                >
-                  <input type="hidden" name="zf_referrer_name" value="" />
-                  <div class="form_hiddens">
-                    <input type="hidden" name="zf_redirect_url" value="" />
-                    <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
-                    <input type="hidden" name="zc_gad" value="" />
-                    <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
-                    <input type="hidden" name="utm_source" value="" />
-                    <input type="hidden" name="utm_medium" value="" />
-                    <input type="hidden" name="utm_campaign" value="" />
-                    <input type="hidden" name="utm_term" value="" />
-                    <input type="hidden" name="utm_content" value="" />
-                  </div>
-                  <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
-                  <button class="btn">Schrijf je in!</button>
-                </form>
-              </div>
-              <div class="sponsors">
-                <a href="">
-                  <img src="/template/images/sponsor-1.png" />
-                </a>
-                <a>
-                  <img src="/template/images/sponsor-2.png" />
-                </a>
-              </div>
+            <div class="sponsors">
+              <a href="">
+                <img src="/template/images/sponsor-1.png" />
+              </a>
+              <a>
+                <img src="/template/images/sponsor-2.png" />
+              </a>
             </div>
           </div>
         </div>

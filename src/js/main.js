@@ -31,10 +31,10 @@ import TBRegister24 from "./components/TBRegister24.vue";
 import TBRegisterSteps19 from "./components/TBRegisterSteps19.vue";
 import ZohoRule from "./components/ZohoRule.vue";
 import ZohoSignature from "./components/ZohoSignature.vue";
+import Tabs from "./components/Tabs.vue";
 
 // Directives
 import AnimateDirective from "./components/directives/v-animate";
-import Tabs from "./components/directives/tabs";
 import Toggler from "./components/directives/toggler";
 
 const app = createApp({
@@ -45,7 +45,6 @@ const app = createApp({
 app
   .use(store)
   .directive("animate", AnimateDirective)
-  .directive("tabs", Tabs)
   .directive("toggler", Toggler)
   .component("calculator", Calculator)
   .component("calculator-2024", Calculator2024)
@@ -74,4 +73,5 @@ app
   .component("zoho-rule", ZohoRule)
   .component("zoho-signature", ZohoSignature)
   .component("vue-slider", VueSlider)
+  .component("tabs", Tabs)
   .mount("#app");
