@@ -5,7 +5,6 @@ import VueSlider from 'vue-slider-component';
 import VTooltip from 'v-tooltip';
 
 // Components
-import Calculator from "./components/Calculator.vue";
 import Calculator2024 from "./components/Calculator2024.vue";
 import CommentSlider from "./components/CommentSlider.vue";
 import Contact from "./components/Contact.vue";
@@ -48,7 +47,6 @@ app
   .use(VTooltip)
   .directive("animate", AnimateDirective)
   .directive("toggler", Toggler)
-  .component("calculator", Calculator)
   .component("calculator-2024", Calculator2024)
   .component("comment-slider", CommentSlider)
   .component("contact", Contact)
