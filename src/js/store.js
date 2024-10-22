@@ -7,6 +7,7 @@ export default createStore({
     mobile: {
       mobile: false,
     },
+    navStatus: false,
   },
   mutations: {
     setBaseUrl(state) {
@@ -19,6 +20,12 @@ export default createStore({
     setCurrentLang(state, lang) {
       state.currentLang = lang;
     },
+    toggleNav: function (state) {
+      state.navStatus = !state.navStatus;
+    },
+    hideNav: function (state) {
+      state.navStatus = false;
+    },
   },
   actions: {
     setUp({ commit }) {
@@ -29,6 +36,9 @@ export default createStore({
   getters: {
     currentLang: (state) => {
       return state.currentLang;
+    },
+    getNav: (state) => {
+      return state.navStatus;
     },
     getMobile: (state) => state.mobile,
   },
