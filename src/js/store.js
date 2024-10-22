@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import Axios from "axios"; // Ensure Axios is imported
+import Axios from "axios";
 
 export default createStore({
   state: {
@@ -9,7 +9,7 @@ export default createStore({
       mobile: false,
     },
     navStatus: false,
-    dictionary: [], // Assume this will hold the parsed dictionary
+    dictionary: [], 
     dictionaryLoaded: false,
   },
   mutations: {
@@ -17,7 +17,6 @@ export default createStore({
       let obj = state.dictionary;
       let out = [];
       if (obj.en && Array.isArray(obj.en)) {
-        // Check if obj.en is an array
         for (let i = 0; i < obj.en.length; i++) {
           let tmp = {};
           tmp.en = obj.en[i];
@@ -25,7 +24,7 @@ export default createStore({
           tmp.it = obj.it[i];
           out.push(tmp);
         }
-        state.dictionary = out; // Update the state with the parsed dictionary
+        state.dictionary = out; 
       }
     },
     parseLang(state) {
@@ -41,7 +40,7 @@ export default createStore({
         .then((response) => {
           state.dictionary = response.data;
           state.dictionaryLoaded = true;
-          this.commit("parseJSON"); // Call parseJSON after loading dictionary
+          this.commit("parseJSON");
         })
         .catch((error) => {
           console.log("error loading dictionary", error);
@@ -79,10 +78,10 @@ export default createStore({
     },
     getMobile: (state) => state.mobile,
     getDictionary: (state) => {
-      return state.dictionary; // This should be within getters
+      return state.dictionary;
     },
     getDictionaryLoaded: (state) => {
-      return state.dictionaryLoaded; // This should be within getters
+      return state.dictionaryLoaded;
     },
   },
 });

@@ -11,7 +11,7 @@
         </select>
       </div>
       <ul>
-        <li v-for="item in tabs" :class="[{ active: item.step === step }]" @click="changeStepTo(item.step)">
+        <li v-for="(item, index) in tabs" :key="index" :class="[{ active: item.step === step }]" @click="changeStepTo(item.step)">
           <div class="title">
             <h6 @click="changeStepTo(item.step)">{{ Translate(item.title, currentLang) }}</h6>
             <span @click="changeStepTo(item.step)">{{ Translate(item.sub, currentLang) }}</span>
@@ -557,14 +557,12 @@ export default {
     };
   },
   methods: {
-    // UI methods
     changeStepTo(inpt) {
       this.step = inpt;
     },
     showDetails(detail) {
       this.details = detail;
     },
-    // Calculation methods
     roundToNearestHalf(number) {
       return Math.round(number * 2) / 2;
     },
@@ -572,7 +570,6 @@ export default {
       const factor = 10 ** decimalPlaces;
       return Math.round(number * factor) / factor;
     },
-    // Rule methods
     inputsChanged() {
       this.checkQ4();
     },
@@ -599,13 +596,11 @@ export default {
       let res = input;
       const dic = this.$store.getters.getDictionary;
 
-      // Check if dictionary is loaded and valid
       if (!this.$store.getters.getDictionaryLoaded || this.isEmptyObject(dic)) {
         if (!load) {
           setTimeout(() => this.Translate(input, lang, 1), 300);
         }
       } else {
-        // Proceed only if dic is a valid object
         for (const [key, value] of Object.entries(dic)) {
           if (input === value["en"]) {
             res = value[lang];

@@ -23,7 +23,8 @@
           <div class="modal-footer" v-if="$store.getters.getModal.buttons">
             <slot name="footer">
               <span
-                v-for="btn in $store.getters.getModal.buttons"
+                v-for="(btn, index) in $store.getters.getModal.buttons"
+                :key="index"
                 class="modal-default-button"
                 :class="btn.class"
                 @click="btn.action == 'default' ? closeModal() : (btn.action(), closeModal())"

@@ -11,7 +11,7 @@
           <div class="control-section">
             <span class="cs-title">Selecteer de gewenste Obligaties serie:</span>
             <ul class="options-list">
-              <li class="btn btn-style" :class="[{ 'btn-deactivate': plan.id !== activePlan.id }]" v-for="plan in plans" @click="activatePlan(plan.id)">
+              <li class="btn btn-style" :class="[{ 'btn-deactivate': plan.id !== activePlan.id }]" v-for="(plan, index) in plans" :key="index" @click="activatePlan(plan.id)">
                 {{ plan.title }}
               </li>
             </ul>
@@ -22,14 +22,15 @@
               <li
                 class="btn btn-style"
                 :class="[{ 'btn-deactivate': !!investment || item !== investmentShortcut }]"
-                v-for="item in activePlan.primaryPrices"
+                v-for="(item, index) in activePlan.primaryPrices"
+                :key="index"
                 @click="changeInvestment(item)"
               >
                 € {{ euroSigned(item) }}
               </li>
               <select type="button" class="btn btn-style" :class="[{ 'btn-deactivate': !!!investment }]" v-model="investment">
                 <option :value="null">Aanpassen</option>
-                <option :value="item" v-for="item in activePlan.secondaryPrices">€{{ euroSigned(item) }}</option>
+                <option :value="item" v-for="(item, index) in activePlan.secondaryPrices" :key="index">€{{ euroSigned(item) }}</option>
               </select>
             </ul>
           </div>
@@ -39,7 +40,8 @@
               <li
                 class="btn btn-style"
                 :class="[{ 'btn-deactivate': !item.selected }]"
-                v-for="item in activePlan.calculations"
+                v-for="(item, index) in activePlan.calculations"
+                :key="index"
                 @click="calculationsChange(item)"
               >
                 {{ item.year }} jaar

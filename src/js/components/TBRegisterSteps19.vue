@@ -15,7 +15,7 @@
         </div>
         <div class="tabs-cont" :class="[{ intro: intro }]">
           <div class="tab-header" v-show="currentStep.type === 'tab'">
-            <div class="tab" v-for="tab in formSteps" :class="[{ active: tab.active }, 'type-' + tab.type]" v-if="tab.type === 'tab'">
+            <div class="tab" v-for="(tab, index) in formSteps" :key="index" :class="[{ active: tab.active }, 'type-' + tab.type]">
               <div class="title" v-html="tab.title"></div>
             </div>
           </div>

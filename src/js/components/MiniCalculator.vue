@@ -152,6 +152,3 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Додайте стилі для компонента тут */
-</style>

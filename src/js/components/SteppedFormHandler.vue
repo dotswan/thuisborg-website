@@ -10,12 +10,12 @@
         </div>
         <div class="tabs-cont" :class="[{ intro: intro }]">
           <div class="tab-header" v-show="currentStep.type === 'tab'">
-            <div class="tab" v-for="tab in formSteps" :class="[{ active: tab.active }, 'type-' + tab.type]" v-if="tab.type === 'tab'">
+            <div class="tab" v-for="(tab, index) in formSteps" :key="index" :class="[{ active: tab.active }, 'type-' + tab.type]">
               <div class="title" v-html="tab.title"></div>
             </div>
           </div>
           <div class="tab-body">
-            <div class="step" v-for="tab in formSteps" :class="['step-' + tab.id, { active: tab.active }, { intro: intro }]" v-show="tab.active">
+            <div class="step" v-for="(tab, index) in formSteps" :key="index" :class="['step-' + tab.id, { active: tab.active }, { intro: intro }]" v-show="tab.active">
               <slot :name="tab.alias" v-bind="{ changeStep, isStepValid, formSubmit, zohoSuccess, mollie, canPay }"> </slot>
             </div>
           </div>
