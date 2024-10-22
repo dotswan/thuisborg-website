@@ -1,50 +1,124 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overwaarde verzilveren | Thuisborg</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Thuisborg" />
+    <meta property="og:url" content="Thuisborg" />
+    <meta property="og:title" content="Thuisborg" />
+    <meta property="og:description" content="Thuisborg" />
+    <meta property="og:image" content="Thuisborg" />
+    <meta name="apple-mobile-web-app-title" content="Thuisborg" />
+    <meta name="application-name" content="Thuisborg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/template/fav/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/template/fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/template/fav/favicon-16x16.png" />
+    <link rel="manifest" href="/template/fav/site.webmanifest" />
+    <link rel="mask-icon" href="/template/fav/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <div id="app">
-      <div class="nav-header__topbar">
-        <div class="review">
-          <span>Klanten waarderen ons met een 9.0</span>
-          <div class="rating">
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
-            <img src="/assets/images/star.png" />
+      <header>
+        <div class="nav-header__topbar">
+          <div class="review">
+            <span>Klanten waarderen ons met een 9.0</span>
+            <div class="rating">
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+              <img src="/template/images/star.png" />
+            </div>
+            <span>110 reviews</span>
           </div>
-          <span>110 reviews</span>
+          <div class="contact__menu">
+            <ul>
+              <li>
+                <img src="/template/images/phone.png" />
+                <a href="call:0854015737">085-401 57 37</a>
+              </li>
+              <li>
+                <img src="/template/images/mail.png" />
+                <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+              </li>
+              <li>
+                <img src="/template/images/account.png" />
+                <a href="">Login</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="contact__menu">
+        <div class="nav-header__menu">
+          <a class="logo" href="/">
+            <img src="/template/images/logo.png" alt="Thuisborg" />
+          </a>
+          <div class="nav-header__right-cont">
+            <ul class="nav-header__menu__items">
+              <li>
+                <a href="/verzilveren"> Verzilveren </a>
+                <ul>
+                  <li>
+                    <a href="verzilveren">Overwaarde verzilveren</a>
+                  </li>
+                  <li>
+                    <a href="woningwaarde-calculator">Woningwaarde calculator</a>
+                  </li>
+                  <li>
+                    <a href="5-stappenplan">5-stappenplan verzilveren</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/zorgwoning"> Zorgwoning </a>
+                <ul>
+                  <li>
+                    <a href="/zorgwoning">Zorgwoningen</a>
+                  </li>
+                  <li>
+                    <a href="/zorgwoning-45">Zorgwoning 45</a>
+                  </li>
+                  <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/investeren"> Investeren </a>
+              </li>
+              <li>
+                <a href="/over-ons"> Over ons </a>
+              </li>
+              <li>
+                <a href="/nieuws"> Nieuws </a>
+              </li>
+              <li>
+                <a href="/faq"> FAQ </a>
+              </li>
+              <li>
+                <a href="/contact"> Contact </a>
+              </li>
+              <li>
+                <a href="bekijk-uw-mogelijkheden" class="btn" ref="navcta"> Bekijk uw mogelijkheden </a>
+              </li>
+            </ul>
+            <div class="nav-header__search" :class="[{'open': $store.getters.getSearch}]">
+              <span class="search__cta" @click="toggleSearch()">
+                <img src="/template/images/search.png" alt="" />
+              </span>
+              <form class="search__form">
+                <input type="text" name="search" placeholder="type here" />
+                <button class="btn white">zoek</button>
+              </form>
+            </div>
+            <hamburger></hamburger>
+          </div>
+        </div>
+        <div class="nav-menu__mobile" :class="[{'is-open': $store.getters.getNav}, {'is-closed': !$store.getters.getNav}]">
           <ul>
-            <li>
-              <img src="/assets/images/phone.png" />
-              <a href="call:0854015737">085-401 57 37</a>
-            </li>
-            <li>
-              <img src="/assets/images/mail.png" />
-              <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
-            </li>
-            <li>
-              <img src="/assets/images/account.png" />
-              <a href="">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="nav-header__menu">
-        <a class="logo" href="/">
-          <img src="/assets/images/logo.png" alt="Thuisborg" />
-        </a>
-        <div class="nav-header__right-cont">
-          <ul class="nav-header__menu__items">
-            <li>
-              <a href="/verzilveren"> Verzilveren </a>
+            <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
+              <span class="js__toggle__handle"> Verzilveren </span>
               <ul>
                 <li>
                   <a href="verzilveren">Overwaarde verzilveren</a>
@@ -57,9 +131,8 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="/zorgwoning"> Zorgwoning </a>
-
+            <li v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="has-children">
+              <span class="js__toggle__handle"> Zorgwoning </span>
               <ul>
                 <li>
                   <a href="/zorgwoning">Zorgwoningen</a>
@@ -77,86 +150,34 @@
               <a href="/over-ons"> Over ons </a>
             </li>
             <li>
+              <a href="/nieuws"> Nieuws </a>
+            </li>
+            <li>
               <a href="/faq"> FAQ </a>
             </li>
             <li>
               <a href="/contact"> Contact </a>
             </li>
             <li>
-              <a href="bekijk-uw-mogelijkheden" class="btn"> Bekijk uw mogelijkheden </a>
+              <a href="bekijk-uw-mogelijkheden" class="btn">Bekijk uw mogelijkheden</a>
             </li>
           </ul>
-          <div class="nav-header__search" :class="[{'open': $store.getters.getSearch}]">
-            <span class="search__cta" @click="toggleSearch()">
-              <img src="/assets/images/search.png" alt="" />
-            </span>
-            <form class="search__form">
-              <input type="text" name="search" placeholder="type here" />
-              <button class="btn white">zoek</button>
-            </form>
-          </div>
-          <hamburger></hamburger>
+          <ul>
+            <li>
+              <img src="/template/images/phone.png" />
+              <a href="call:0854015737">085-401 57 37</a>
+            </li>
+            <li>
+              <img src="/template/images/mail.png" />
+              <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
+            </li>
+            <li>
+              <img src="/template/images/account.png" />
+              <a href="">Login</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="nav-menu__mobile" :class="[{'is-open': $store.getters.getNav}, {'is-closed': !$store.getters.getNav}]">
-        <ul>
-          <li>
-            <a href="/verzilveren"> Verzilveren </a>
-            <ul>
-              <li>
-                <a href="verzilveren">Woningwaarde verzilveren</a>
-              </li>
-              <li>
-                <a href="woningwaarde-calculator">Woningwaarde calculator</a>
-              </li>
-              <li>
-                <a href="5-stappenplan">5 stappenplan </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="/zorgwoning"> Zorgwoning </a>
-            <ul>
-              <li>
-                <a href="/zorgwoning">Zorgwoningen</a>
-              </li>
-              <li>
-                <a href="/zorgwoning-45">Zorgwoning 45</a>
-              </li>
-              <li><a href="/zorgwoning-63">Zorgwoning 63</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="/investeren"> Investeren </a>
-          </li>
-          <li>
-            <a href="/over-ons"> Over ons </a>
-          </li>
-          <li>
-            <a href="/faq"> FAQ </a>
-          </li>
-          <li>
-            <a href="/contact"> Contact </a>
-          </li>
-          <li>
-            <a href="bekijk-uw-mogelijkheden" class="btn">Bekijk uw mogelijkheden</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <img src="/assets/images/phone.png" />
-            <a href="call:0854015737">085-401 57 37</a>
-          </li>
-          <li>
-            <img src="/assets/images/mail.png" />
-            <a href="mailto:info@thuisborg.nl">info@thuisborg.nl</a>
-          </li>
-          <li>
-            <img src="/assets/images/account.png" />
-            <a href="">Login</a>
-          </li>
-        </ul>
-      </div>
+      </header>
       <main class="main">
         <div class="breadcrumb">
           <div class="standard middle">
@@ -207,7 +228,7 @@
             <ul class="property-items">
               <li class="property-items__item" v-for="i in 6">
                 <div class="img-cont">
-                  <img src="/assets/images/property-item.jpg" class="shadowed-image" />
+                  <img src="/template/images/property-item.jpg" class="shadowed-image" />
                 </div>
                 <div class="txt-cont">
                   <p>Lorem ipsum dolor sit amettetur adipiscing elit, sed do eiusmod</p>
@@ -219,7 +240,7 @@
           <div class="contact-me">
             <div class="middle standard">
               <div class="contact-me__cont">
-                <img src="/assets/images/contact-me-in-new-items.png" />
+                <img src="/template/images/contact-me-in-new-items.png" />
                 <div class="txt-cta">
                   <h4>
                     Uw huis verkopen, er blijven <br />
@@ -230,26 +251,10 @@
               </div>
             </div>
           </div>
-          <div class="middle standard">
-            <ul class="property-items">
-              <li class="property-items__item" v-for="i in 6">
-                <div class="img-cont">
-                  <img src="/assets/images/property-item.jpg" class="shadowed-image" />
-                </div>
-                <div class="txt-cont">
-                  <p>Lorem ipsum dolor sit amettetur adipiscing elit, sed do eiusmod</p>
-                  <a href="" class="btn">Lees meer</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="al-center">
-            <a href="" class="btn">Laad meer nieuws</a>
-          </div>
         </section>
         <section class="invest asym-image-text" id="invest-form">
           <div class="asym__image">
-            <img src="/assets/images/invest.png" class="crop-radius bl" />
+            <img src="/template/images/invest.png" class="crop-radius bl" />
           </div>
           <div class="asym__text">
             <div class="standard middle">
@@ -312,71 +317,69 @@
         </section>
       </main>
       <footer class="footer">
-        <div class="standard middle">
-          <div class="footer-cont">
-            <div class="col logo-address">
-              <a><img src="/assets/images/logo.png" /></a>
-              <p>
-                Thuisborg Finance BV<br />
-                2021 © Thuisborg<br />
-                Mr. G. Groen van Prinstererlaan 88 A<br />
-                1181 TR Amstelveen<br />
-                <a href="call:0854015737">085 401 57 37</a>
-              </p>
+        <div class="footer-cont">
+          <div class="col logo-address">
+            <a><img src="/template/images/logo.png" /></a>
+            <p>
+              Thuisborg Finance BV<br />
+              2021 © Thuisborg<br />
+              Mr. G. Groen van Prinstererlaan 88 A<br />
+              1181 TR Amstelveen<br />
+              <a href="call:0854015737">085 401 57 37</a>
+            </p>
+          </div>
+          <div class="col menu-cont">
+            <ul>
+              <li><a href="investeren">Investeren</a></li>
+              <li><a href="verzilveren">Verzilveren</a></li>
+              <li><a href="zorgwoning">Zorgwoning</a></li>
+              <li><a href="contact">Contact</a></li>
+              <li><a href="https://thuisborg.nl/nieuws/">Nieuws</a></li>
+              <li>
+                <a href="/docs/COOKIEVERKLARING-1.pdf">Cookie verklaring</a>
+              </li>
+              <li><a href="privacy-verklaring">Privacy verklaring</a></li>
+              <li>
+                <a target="_blank" href="/docs/2.-AV-Thuisborg-2021-v3-NL.pdf">Algemene Voorwaarden</a>
+              </li>
+            </ul>
+            <!--						<a class="btn">call to action</a>-->
+          </div>
+          <div class="col contact-us">
+            <div class="contact-form">
+              <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
+              <form
+                action="https://forms.zohotemplate.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
+                name="form"
+                method="POST"
+                onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+                accept-charset="UTF-8"
+                enctype="multipart/form-data"
+                id="form"
+              >
+                <input type="hidden" name="zf_referrer_name" value="" />
+                <div class="form_hiddens">
+                  <input type="hidden" name="zf_redirect_url" value="" />
+                  <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+                  <input type="hidden" name="zc_gad" value="" />
+                  <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+                  <input type="hidden" name="utm_source" value="" />
+                  <input type="hidden" name="utm_medium" value="" />
+                  <input type="hidden" name="utm_campaign" value="" />
+                  <input type="hidden" name="utm_term" value="" />
+                  <input type="hidden" name="utm_content" value="" />
+                </div>
+                <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
+                <button class="btn">Schrijf je in!</button>
+              </form>
             </div>
-            <div class="col menu-cont">
-              <ul>
-                <li><a href="investeren">Investeren</a></li>
-                <li><a href="verzilveren">Verzilveren</a></li>
-                <li><a href="zorgwoning">Zorgwoning</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="https://thuisborg.nl/nieuws/">Nieuws</a></li>
-                <li>
-                  <a href="/docs/COOKIEVERKLARING-1.pdf">Cookie verklaring</a>
-                </li>
-                <li><a href="privacy-verklaring">Privacy verklaring</a></li>
-                <li>
-                  <a target="_blank" href="/docs/2.-AV-Thuisborg-2021-v3-NL.pdf">Algemene Voorwaarden</a>
-                </li>
-              </ul>
-              <!--						<a class="btn">call to action</a>-->
-            </div>
-            <div class="col contact-us">
-              <div class="contact-form">
-                <p>Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen</p>
-                <form
-                  action="https://forms.zohopublic.eu/soliditry/form/TBwebsitenewsletterform/formperma/0ZQEmPwLYan6m776lzxdVRvzICaFWRig7HSWrbwgtyE/htmlRecords/submit"
-                  name="form"
-                  method="POST"
-                  onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
-                  accept-charset="UTF-8"
-                  enctype="multipart/form-data"
-                  id="form"
-                >
-                  <input type="hidden" name="zf_referrer_name" value="" />
-                  <div class="form_hiddens">
-                    <input type="hidden" name="zf_redirect_url" value="" />
-                    <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
-                    <input type="hidden" name="zc_gad" value="" />
-                    <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
-                    <input type="hidden" name="utm_source" value="" />
-                    <input type="hidden" name="utm_medium" value="" />
-                    <input type="hidden" name="utm_campaign" value="" />
-                    <input type="hidden" name="utm_term" value="" />
-                    <input type="hidden" name="utm_content" value="" />
-                  </div>
-                  <input fieldType="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email" />
-                  <button class="btn">Schrijf je in!</button>
-                </form>
-              </div>
-              <div class="sponsors">
-                <a href="">
-                  <img src="/assets/images/sponsor-1.png" />
-                </a>
-                <a>
-                  <img src="/assets/images/sponsor-2.png" />
-                </a>
-              </div>
+            <div class="sponsors">
+              <a href="">
+                <img src="/template/images/sponsor-1.png" />
+              </a>
+              <a>
+                <img src="/template/images/sponsor-2.png" />
+              </a>
             </div>
           </div>
         </div>
@@ -389,11 +392,11 @@
             <div class="review">
               <span>Klanten waarderen ons met een 9.0</span>
               <div class="rating">
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
-                <img src="/assets/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
+                <img src="/template/images/star.png" />
               </div>
               <span>110 reviews</span>
             </div>
