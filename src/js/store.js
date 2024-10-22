@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import Axios from "axios"; // Ensure Axios is imported
 
 export default createStore({
   state: {
@@ -8,8 +9,44 @@ export default createStore({
       mobile: false,
     },
     navStatus: false,
+    dictionary: [], // Assume this will hold the parsed dictionary
+    dictionaryLoaded: false,
   },
   mutations: {
+    parseJSON(state) {
+      let obj = state.dictionary;
+      let out = [];
+      if (obj.en && Array.isArray(obj.en)) {
+        // Check if obj.en is an array
+        for (let i = 0; i < obj.en.length; i++) {
+          let tmp = {};
+          tmp.en = obj.en[i];
+          tmp.nl = obj.nl[i];
+          tmp.it = obj.it[i];
+          out.push(tmp);
+        }
+        state.dictionary = out; // Update the state with the parsed dictionary
+      }
+    },
+    parseLang(state) {
+      if (document.location.pathname === "/en") {
+        state.currentLang = "en";
+      } else {
+        state.currentLang = "nl";
+      }
+      Axios({
+        method: "GET",
+        url: "/template/lang/lang.json",
+      })
+        .then((response) => {
+          state.dictionary = response.data;
+          state.dictionaryLoaded = true;
+          this.commit("parseJSON"); // Call parseJSON after loading dictionary
+        })
+        .catch((error) => {
+          console.log("error loading dictionary", error);
+        });
+    },
     setBaseUrl(state) {
       state.baseUrl = window.location.origin;
     },
@@ -20,10 +57,10 @@ export default createStore({
     setCurrentLang(state, lang) {
       state.currentLang = lang;
     },
-    toggleNav: function (state) {
+    toggleNav(state) {
       state.navStatus = !state.navStatus;
     },
-    hideNav: function (state) {
+    hideNav(state) {
       state.navStatus = false;
     },
   },
@@ -41,5 +78,11 @@ export default createStore({
       return state.navStatus;
     },
     getMobile: (state) => state.mobile,
+    getDictionary: (state) => {
+      return state.dictionary; // This should be within getters
+    },
+    getDictionaryLoaded: (state) => {
+      return state.dictionaryLoaded; // This should be within getters
+    },
   },
 });

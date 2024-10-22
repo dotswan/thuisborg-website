@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import "@styles/main.scss";
 import store from "./store";
 import VueSlider from 'vue-slider-component';
-
+import VTooltip from 'v-tooltip';
 
 // Components
 import Calculator from "./components/Calculator.vue";
@@ -45,6 +45,7 @@ const app = createApp({
 });
 app
   .use(store)
+  .use(VTooltip)
   .directive("animate", AnimateDirective)
   .directive("toggler", Toggler)
   .component("calculator", Calculator)
