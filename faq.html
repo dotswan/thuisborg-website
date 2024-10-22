@@ -188,37 +188,7 @@
           </div>
         </section>
         <section class="faq-cont">
-          <div class="standard middle">
-            <div class="faq-set" v-for="faqSet in faqList">
-              <div v-if="!!faqSet.sectionTitle" class="faqsect">
-                <h2 class="faq-set__title">{{faqSet.sectionTitle}}</h2>
-                <div class="faq-rest" v-for="fq in faqSet.items">
-                  <h2 class="faq-set__title sub">{{fq.title}}</h2>
-                  <ul>
-                    <li class="faq-set__item" v-for="fqi in fq.items">
-                      <div class="faq-set__item__header" @click="toggleFaq($event)">
-                        <h4>{{fqi.question}}</h4>
-                        <span class="toggler"></span>
-                      </div>
-                      <div class="faq-set__item__desc" v-html="fqi.answer"></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div v-else class="faq-rest">
-                <h2 class="faq-set__title">{{faqSet.title}}</h2>
-                <ul>
-                  <li class="faq-set__item" v-for="faqItem in faqSet.items">
-                    <div class="faq-set__item__header" @click="toggleFaq($event)">
-                      <h4>{{faqItem.question}}</h4>
-                      <span class="toggler"></span>
-                    </div>
-                    <div class="faq-set__item__desc" v-html="faqItem.answer"></div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <faq></faq>
         </section>
         <section class="invest asym-image-text">
           <div class="asym__image">

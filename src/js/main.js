@@ -32,6 +32,7 @@ import TBRegisterSteps19 from "./components/TBRegisterSteps19.vue";
 import ZohoRule from "./components/ZohoRule.vue";
 import ZohoSignature from "./components/ZohoSignature.vue";
 import Tabs from "./components/Tabs.vue";
+import Faq from "./components/Faq.vue"
 
 // Directives
 import AnimateDirective from "./components/directives/v-animate";
@@ -74,4 +75,5 @@ app
   .component("zoho-signature", ZohoSignature)
   .component("vue-slider", VueSlider)
   .component("tabs", Tabs)
+  .component("faq", Faq)
   .mount("#app");
