@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+
+
+
+	IMPORTANT: All comments should be removed And all fields with --- should be replaced
+
+
+
+	-->
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>---page title---</title>
+
+	<!--	SEO - Open Graph Start -->
+	<meta name="description" content="---site description---"/>
+	<meta name="keywords" content="---site keywords---"/>
+	<meta property="og:title" content="---page title---"/>
+	<meta property="og:site_name" content="---project name---"/>
+	<meta property="og:description" content="---site description---"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="---site URL (https://www.example.com)---"/>
+	<meta property="og:image" content="---url to cover image---">
+	<!--	SEO - Open Graph End    -->
+
+	<!--	FAVICON Start    -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/template/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/template/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/template/fav/favicon-16x16.png">
+	<link rel="manifest" href="/template/fav/site.webmanifest">
+	<link rel="mask-icon" href="/template/fav/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!--	FAVICON End    -->
+
+	<!--	CSS Start    -->
+	<!--	<link rel="stylesheet" href="/template/css/app.css">-->
+	<!--	CSS End    -->
+
+	<!--	GOOGLE FONTS Start    -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+	<!--	GOOGLE FONTS End    -->
+
+	<!--[if lt IE 9]>
+	<script src="/template/js/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div id="app">
+		<main>
+			<section id="hero">
+				<article>
+					<h1>main</h1>
+					<p>desc</p>
+				</article>
+			</section>
+		</main>
+	</div>
+
+	<!--	JS for adding the header and footer to the page    -->
+	<!--	DO NOT COPY TO CMS    -->
+	<script>
+		if (window.location.hostname === 'localhost') {
+			fetch('/partials.html')
+					.then(response => response.text())
+					.then(html => {
+						const template = document.createElement('template');
+						template.innerHTML = html.trim();
+						const header = template.content.querySelector('header');
+						const footer = template.content.querySelector('footer');
+
+						// Insert the header and footer around the main content
+						const app = document.getElementById('app');
+						app.insertAdjacentElement('afterbegin', header);
+						app.appendChild(footer);
+					});
+		}
+	</script>
+	<!--	JS for adding the header and footer to the page   -->
+	<!--	Main JS Start    -->
+	<script type="module" src="/src/js/main.js"></script>
+	<!--	JS End    -->
+</body>
+</html>

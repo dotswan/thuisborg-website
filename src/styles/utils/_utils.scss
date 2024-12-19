@@ -1,0 +1,17 @@
+html, body {
+	@apply scroll-smooth;
+}
+
+#app {
+	@apply font-quicksand;
+}
+
+
+input {
+	outline: none;
+	
+	&:focus {
+		outline: none;
+	}
+}
+

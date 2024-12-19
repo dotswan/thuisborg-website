@@ -1,0 +1,447 @@
+[
+  {
+    "en": "% of house value",
+    "nl": "% van de woningwaarde",
+    "it": "% del valore della casa"
+  },
+  {
+    "en": "% of range",
+    "nl": "% van het bereik",
+    "it": "% dell'intervallo"
+  },
+  {
+    "en": "Admin variable",
+    "nl": "Admin variabele",
+    "it": "Variabile amministrativa"
+  },
+  {
+    "en": "Adustment value housing market",
+    "nl": "Correctiewaarde woningmarktontwikkeling",
+    "it": "Mercato immobiliare a valore economico"
+  },
+  {
+    "en": "After",
+    "nl": "Na",
+    "it": "Dopo"
+  },
+  {
+    "en": "An amount of",
+    "nl": "Een bedrag van",
+    "it": "Una quantità di"
+  },
+  {
+    "en": "As long as I want",
+    "nl": "Zo lang als ik wil",
+    "it": "Finché voglio"
+  },
+  {
+    "en": "Assumptions",
+    "nl": "Aannames",
+    "it": "Ipotesi"
+  },
+  {
+    "en": "Base value housing market development",
+    "nl": "Basiswaarde woningmarktontwikkeling",
+    "it": "Sviluppo del mercato immobiliare a valore base"
+  },
+  {
+    "en": "Between 10 and 35 years",
+    "nl": "Tussen de 10 en 35 jaar",
+    "it": "Tra i 10 ed i 35 anni"
+  },
+  {
+    "en": "Calculator new",
+    "nl": "Calculator nieuw",
+    "it": "Calcolatrice nuova"
+  },
+  {
+    "en": "Calculator output (extended version)",
+    "nl": "Calculator output (uitgebreide versie)",
+    "it": "Output della calcolatrice (versione estesa)"
+  },
+  {
+    "en": "Calculator output (short version)",
+    "nl": "Calculator output (korte versie)",
+    "it": "Output della calcolatrice (versione breve)"
+  },
+  {
+    "en": "Choose",
+    "nl": "Kiezen",
+    "it": "Scegliere"
+  },
+  {
+    "en": "Does this include any outstanding mortgage amounts?",
+    "nl": "Is dit inclusief een eventuele nog openstaande hypotheeklening?",
+    "it": "Ciò include eventuali importi ipotecari in sospeso?"
+  },
+  {
+    "en": "Don't know yet",
+    "nl": "Weet ik nog niet",
+    "it": "Non lo so ancora"
+  },
+  {
+    "en": "During this periode we expect a housing market development of",
+    "nl": "Gedurende deze periode verwachten wij een woningmarktontwikkeling van",
+    "it": "Durante questo periodo ci aspettiamo uno sviluppo del mercato immobiliare di"
+  },
+  {
+    "en": "Earns 0-5 % points (tied to NAP)",
+    "nl": "Levert 0-5% punten op (gekoppeld aan NAP)",
+    "it": "Guadagna 0-5% punti (legati al NAP)"
+  },
+  {
+    "en": "Earns 0-5 % points (tied to number of bedrooms)",
+    "nl": "Levert 0-5% punten op (gekoppeld aan het aantal slaapkamers)",
+    "it": "Guadagna 0-5% punti (in base al numero di camere da letto)"
+  },
+  {
+    "en": "Earns 0-5 % points (tied to terrain space)",
+    "nl": "Levert 0-5% punten op (gekoppeld aan terreinruimte)",
+    "it": "Guadagna 0-5% punti (legati allo spazio del terreno)"
+  },
+  {
+    "en": "Employee commissions",
+    "nl": "Commissies medewerkers",
+    "it": "Commissioni dei dipendenti"
+  },
+  {
+    "en": "Either 0 or 2 % points (attractiveness to Hestiva)",
+    "nl": "Of 0% of 2% punten (aantrekkelijkheid voor Hestiva)",
+    "it": "0 o 2% punti (attrattiva per Hestiva)"
+  },
+  {
+    "en": "End fee TB",
+    "nl": "Eindvergoeding TB",
+    "it": "Tassa finale TB"
+  },
+  {
+    "en": "EUR per month",
+    "nl": "EUR per maand",
+    "it": "euro al mese"
+  },
+  {
+    "en": "Extended home offer",
+    "nl": "Meer gespecificeerd woningaanbod",
+    "it": "Offerta domiciliare estesa"
+  },
+  {
+    "en": "Extended version",
+    "nl": "Meer gespecificeerde versie",
+    "it": "Versione estesa"
+  },
+  {
+    "en": "For a personal proposal based on an independent valuation.",
+    "nl": "Voor een persoonlijk voorstel op basis van een onafhankelijke taxatie.",
+    "it": "Per una proposta personale basata su una valutazione indipendente."
+  },
+  {
+    "en": "From",
+    "nl": "Van",
+    "it": "Da"
+  },
+  {
+    "en": "How big is the land around the house?",
+    "nl": "Hoe groot is het perceel waar het huis op staat?",
+    "it": "Quanto è grande il terreno intorno alla casa?"
+  },
+  {
+    "en": "How long do you want to live in your home?",
+    "nl": "Hoe lang wilt u in uw woning blijven wonen?",
+    "it": "Per quanto tempo vuoi vivere a casa tua?"
+  },
+  {
+    "en": "How many bedrooms does the house have?",
+    "nl": "Hoeveel slaapkamers heeft de woning?",
+    "it": "Quante camere da letto ha la casa?"
+  },
+  {
+    "en": "How much would you like to receive every month from Thuisborg?",
+    "nl": "Hoeveel wilt u elke maand ontvangen van Thuisborg?",
+    "it": "Quanto vorresti ricevere ogni mese de Thuisborg?"
+  },
+  {
+    "en": "How much would you like to receive on your account now?",
+    "nl": "Hoeveel wilt u nu op uw rekening ontvangen?",
+    "it": "Quanto vorresti ricevere sul tuo conto adesso?"
+  },
+  {
+    "en": "If no: what is the outstanding mortgage amount",
+    "nl": "Zo niet: wat is  op dit moment de restschuld van uw hypotheeklening?",
+    "it": "In caso negativo: qual è l'importo del mutuo residuo?"
+  },
+  {
+    "en": "Acquisition fee TB",
+    "nl": "Aankoopvergoeding vergoeding TB",
+    "it": "Tariffa iniziale TB"
+  },
+  {
+    "en": "Input variable",
+    "nl": "Invoervariabelen",
+    "it": "Variabile di ingresso"
+  },
+  {
+    "en": "Language ",
+    "nl": "Taal",
+    "it": " Lingua"
+  },
+  {
+    "en": "Legend",
+    "nl": "Legende",
+    "it": "Leggenda"
+  },
+  {
+    "en": "Maximum",
+    "nl": "Maximum",
+    "it": "Massimo"
+  },
+  {
+    "en": "Minimum",
+    "nl": "Minimum",
+    "it": "Minimo"
+  },
+  {
+    "en": "New in this version",
+    "nl": "Nieuw in deze versie",
+    "it": "Novità in questa versione"
+  },
+  {
+    "en": "Offer by Thuisborg",
+    "nl": "Aangeboden door Thuisborg",
+    "it": "Offerta di Thuisborg"
+  },
+  {
+    "en": "Parameters",
+    "nl": "Parameters",
+    "it": "Parametri"
+  },
+  {
+    "en": "p.a.",
+    "nl": "p.j.",
+    "it": "p.a."
+  },
+  {
+    "en": "Periodic downpayments as % of residual range",
+    "nl": "Periodieke aanbetalingen als % van de resterende range",
+    "it": "Acconti periodici in % dell'autonomia residua"
+  },
+  {
+    "en": "Periodic fee TB",
+    "nl": "Periodieke vergoeding TB",
+    "it": "Tariffa periodica TB"
+  },
+  {
+    "en": "Periodic Income Planner",
+    "nl": "Periodieke Inkomensplanner",
+    "it": "Pianificatore di Reddito Periodico"
+  },
+  {
+    "en": "Please consult our calculator for more detailed information.",
+    "nl": "Raadpleeg onze calculator voor meer gedetailleerde informatie.",
+    "it": "Si prega di consultare il nostro calcolatore per informazioni più dettagliate."
+  },
+  {
+    "en": "Redemption value",
+    "nl": "Verzilverwaarde",
+    "it": "Valore di riscatto"
+  },
+  {
+    "en": "Remarks",
+    "nl": "Opmerkingen",
+    "it": "Osservazioni"
+  },
+  {
+    "en": "Residual range",
+    "nl": "Resterend bereik",
+    "it": "Gamma residua"
+  },
+  {
+    "en": "Select",
+    "nl": "Selecteer",
+    "it": "Selezionare"
+  },
+  {
+    "en": "Short version",
+    "nl": "Verkorte versie",
+    "it": "Versione breve"
+  },
+  {
+    "en": "Slide",
+    "nl": "Slide",
+    "it": "Diapositiva"
+  },
+  {
+    "en": "So we expect your house to rise so much in value:",
+    "nl": "Wij verwachten daarmee dat uw huis zoveel in waarde zal stijgen:",
+    "it": "Quindi ci aspettiamo che il valore della tua casa aumenti così tanto:"
+  },
+  {
+    "en": "Standard value offer",
+    "nl": "Standaardwaarde van de aanbieding",
+    "it": "Offerta di valore standard"
+  },
+  {
+    "en": "Terms and conditions apply.",
+    "nl": "Voorwaarden zijn van toepassing.",
+    "it": "Si applicano i termini e condizioni."
+  },
+  {
+    "en": "This results in a staggered receipt of payment of the purchase price:",
+    "nl": "Dit levert een gespreide ontvangst op van de betaling van de koopsom:",
+    "it": "Ciò si traduce in una ricezione scaglionata del pagamento del prezzo di acquisto:"
+  },
+  {
+    "en": "To",
+    "nl": "Naar",
+    "it": "A"
+  },
+  {
+    "en": "To a total market value of",
+    "nl": "Voor een totale marktwaarde van",
+    "it": "Per un valore di mercato totale di"
+  },
+  {
+    "en": "Total addition to TB base offer",
+    "nl": "Totale aanvulling op het Thuisborg basisaanbod",
+    "it": "Aggiunta totale all'offerta base TB"
+  },
+  {
+    "en": "Total additional percentage points",
+    "nl": "Totaal aantal extra procentpunten",
+    "it": "Totale punti percentuali aggiuntivi"
+  },
+  {
+    "en": "Total home owner prepayment",
+    "nl": "Totale vooruitbetaling aan de verzilveraar",
+    "it": "Pagamento anticipato totale del proprietario della casa"
+  },
+  {
+    "en": "Total periodic downpayments",
+    "nl": "Totaal van de periodieke aanbetalingen",
+    "it": "Acconti periodici totali"
+  },
+  {
+    "en": "Total range",
+    "nl": "Totaal bereik",
+    "it": "Gamma totale"
+  },
+  {
+    "en": "Total TB periodic fee",
+    "nl": "Totale periodieke vergoeding voor TB",
+    "it": "Tariffa periodica totale per TB"
+  },
+  {
+    "en": "Transaction costs",
+    "nl": "Transactiekosten",
+    "it": "Costi di transazione"
+  },
+  {
+    "en": "VAT (effective)",
+    "nl": "BTW (effectief)",
+    "it": "IVA (effettiva)"
+  },
+  {
+    "en": "Website calculator",
+    "nl": "Website calculator",
+    "it": "Calcolatore del sito web"
+  },
+  {
+    "en": "What is the postal code of the house?",
+    "nl": "Wat is de postcode van het huis?",
+    "it": "Qual è il codice postale della casa?"
+  },
+  {
+    "en": "What is your current home value?",
+    "nl": "Wat is uw huidige woningwaarde?",
+    "it": "Qual è il valore attuale della tua casa?"
+  },
+  {
+    "en": "Would you consider to sublet part of your house?",
+    "nl": "Overweegt u ook een deel van uw woning onder te verhuren?",
+    "it": "Considereresti di subaffittare una parte della tua casa?"
+  },
+  {
+    "en": "Would you like to know more?",
+    "nl": "Wilt u meer weten?",
+    "it": "Volete saperne di più?"
+  },
+  {
+    "en": "You may also contact us here.",
+    "nl": "U kunt ook hier contact met ons opnemen.",
+    "it": "Puoi anche contattarci qui."
+  },
+  {
+    "en": "You may continue to live in your home as long as you want",
+    "nl": "U kunt in uw woning blijven wonen zo lang als u dat wilt.",
+    "it": "Puoi continuare a vivere nella tua casa per tutto il tempo che desideri"
+  },
+  {
+    "en": "You may receive from Thuisborg for your house",
+    "nl": "U kunt van Thuisborg voor uw woning ontvangen",
+    "it": "Potresti ricevere da Thuisborg per la tua casa"
+  },
+  {
+    "en": "switch language",
+    "nl": "van taal wisselen",
+    "it": "cambiare linguacambiare lingua"
+  },
+  {
+    "en": "property",
+    "nl": "eigendom",
+    "it": "proprietà"
+  },
+  {
+    "en": "property specification",
+    "nl": "eigendomsspecificatie",
+    "it": "specificazione della proprietà"
+  },
+  {
+    "en": "extended",
+    "nl": "verlengd",
+    "it": "esteso"
+  },
+  {
+    "en": "further information",
+    "nl": "verdere informatie",
+    "it": "ulteriori informazioni"
+  },
+  {
+    "en": "reserve call",
+    "nl": "reservegesprek",
+    "it": "prenotare Chiama"
+  },
+  {
+    "en": "we will call you",
+    "nl": "we zullen je bellen",
+    "it": "ti chiameremo"
+  },
+  {
+    "en": "yes",
+    "nl": "Ja",
+    "it": "SÌ"
+  },
+  {
+    "en": "no",
+    "nl": "Nee",
+    "it": "NO"
+  },
+  {
+    "en": "years",
+    "nl": "jaren",
+    "it": "anni"
+  },
+  {
+    "en": "extend",
+    "nl": "verlengen",
+    "it": "estendere"
+  },
+  {
+    "en": "see details",
+    "nl": "zie de details",
+    "it": "guarda i detagli"
+  },
+  {
+    "en": "previous step",
+    "nl": "vorige stap",
+    "it": "passo precedente"
+  }
+]
