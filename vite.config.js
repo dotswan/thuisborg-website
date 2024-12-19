@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue';
 import {visualizer} from 'rollup-plugin-visualizer';
 
 
-const portNumber = 4850;
+const portNumber = 6633;
 export default defineConfig({
     server: {
         port: portNumber,
