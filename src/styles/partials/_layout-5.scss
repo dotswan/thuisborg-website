@@ -1,0 +1,223 @@
+@use "@/styles/utils" as *;
+.layout-5 {
+    background: $white;
+    position: relative;
+
+    .img-cont {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+
+        img {
+            display: block;
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 3rem 0;
+
+        .form-cont {
+            width: 65%;
+            border-radius: 2rem;
+            background: $white;
+            padding: 5rem;
+            box-shadow: 0 3px 33px rgba($black, .05);
+
+            > h5 {
+                font-size: 3.3rem;
+                font-weight: 500;
+                line-height: 4rem;
+                color: $navy;
+            }
+
+            > p {
+                color: $black-1;
+                font-size: 2.3rem;
+                margin-bottom: 5rem;
+            }
+
+            .form-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 2rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                .form-row__input {
+                    width: 50rem;
+
+                    > input {
+                        line-height: 4.2rem;
+                        width: 100%;
+                    }
+
+                    &.radio-group {
+                        display: flex;
+                        align-items: center;
+
+                        .radio-set {
+                            margin-right: 3rem;
+
+                            input {
+                                vertical-align: middle;
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    .code-num {
+                        > input {
+                            line-height: 4.2rem;
+                        }
+
+                        width: 100%;
+                    }
+                }
+            }
+
+            .agreement-submit {
+                margin-top: 4rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .agreement {
+                    a, label {
+                        color: rgba($black, .8);
+                    }
+
+                    a {
+                        border-bottom: .1rem solid;
+                    }
+
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        display: flex;
+        flex-flow: column;
+        .img-cont {
+            img {
+                width: 100%;
+            }
+        }
+        .overlay {
+            position: relative;
+            padding: 2rem;
+            width: 100%;
+
+            .standard {
+                width: 100%;
+            }
+
+            .form-cont {
+                box-shadow: none;
+                width: 100%;
+                padding: 0;
+
+                > h5 {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    margin-bottom: 1rem;
+                }
+
+                > p {
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                }
+
+                .form-row {
+                    margin-bottom: 1rem;
+                    flex-flow: column;
+                    align-items: flex-start;
+
+                    .form-row__label {
+                        margin-bottom: .5rem;
+                    }
+
+                    .form-row__input {
+                        width: 100%;
+
+                        input[type="text"] {
+                            line-height: 2.2rem;
+                        }
+                    }
+
+                    &.mobile__inline {
+                        flex-flow: row;
+
+                        .form-row__label {
+                            margin-bottom: 0;
+                        }
+
+                        .form-row__input {
+                            margin-left: 2rem;
+                            width: auto;
+                        }
+                    }
+                }
+
+                .agreement-submit {
+                    flex-flow: column;
+
+                    .agreement {
+                        font-size: 1.5rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    .btn {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &.normalized {
+        padding: 4rem 0;
+
+        .overlay {
+            position: relative;
+            z-index: 999;
+        }
+
+        .img-cont {
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media all and (max-width: 640px) {
+            .overlay {
+                .form-cont {
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,101 @@
+@use "@/styles/utils" as *;
+.layout-10 {
+    padding: 8.5rem 0 17rem;
+    display: flex;
+    justify-content: center;
+    background-color: $white;
+
+    .layout-10-inner {
+        display: inline-block;
+        background: linear-gradient(180deg, rgba(244, 247, 250, 0.2) 0%, rgba(244, 247, 250, 0.16) 26.56%, rgba(244, 247, 250, 0.16) 50%, rgba(244, 247, 250, 0.2) 70.83%, rgba(244, 247, 250, 0.2) 86.98%, rgba(244, 247, 250, 0.2) 97.4%, rgba(244, 247, 250, 0.2) 100%);
+        border-radius: 1rem;
+        border: .2rem solid $green;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 6.5rem;
+        margin: 0 15rem;
+        backdrop-filter: blur(20px);
+
+        .title {
+            font-size: 3.7rem;
+            line-height: 5rem;
+            margin-bottom: 3rem;
+            font-weight: bold;
+            text-align: center;
+            color: $navy-3;
+        }
+
+        p {
+            font-size: 2.1rem;
+            line-height: initial;
+            text-align: center;
+            color: $black;
+        }
+
+        .layout-10-features {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6rem;
+
+            .l10-f {
+                display: inline-flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 2rem;
+
+                img {
+                    max-height: 8rem;
+                }
+
+                p {
+                    color: $navy;
+                    max-width: 18rem;
+                    font-size: 2.1rem;
+                    line-height: 2.7rem;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        padding: 4rem;
+        .layout-10-inner {
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+
+            .title {
+                font-size: 3rem;
+                line-height: initial;
+
+            }
+
+            p {
+                text-align: left;
+                font-size: 1.6rem;
+            }
+
+            .layout-10-features {
+                flex-flow: column;
+                gap: 2rem;
+
+                .l10-f {
+                    width: 100%;
+                    justify-content: flex-start;
+
+                    img {
+                        width: 4rem;
+                        height: auto;
+                    }
+
+                    p {
+                        font-size: 1.6rem;
+                        max-width: none;
+                    }
+                }
+            }
+        }
+    }
+}

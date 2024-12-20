@@ -1,0 +1,201 @@
+@use "@/styles/utils" as *;
+.popup-cont {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.popup-image {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+
+    a {
+        display: block;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    img {
+        max-width: 90vh;
+        height: auto;
+        display: block;
+        @media all and (orientation: portrait) {
+            max-width: 90vw;
+        }
+    }
+}
+
+.popup {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    text-align: center;
+    transition: all ease-in-out .3s;
+    opacity: 1;
+
+    .popup-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all ease-in-out .5s;
+        transform: scale(1);
+    }
+
+    i.close {
+        position: absolute;
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 1.8rem;
+        right: 5%;
+        top: 5%;
+        color: $white;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        border-radius: 50%;
+        background: $navy;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+        cursor: pointer;
+    }
+
+    &.hidden {
+        opacity: 0;
+        transform: scale(0);
+
+        .popup-wrapper {
+            transform: scale(0);
+        }
+    }
+}
+
+.popup-minified {
+    margin: 1rem;
+    background-color: $navy;
+    display: flex;
+    align-items: center;
+    color: $white;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    span {
+        padding: 0 1rem;
+    }
+
+    .closer {
+        border-left: .1rem solid rgba($white, .1);
+        padding: 0 1rem;
+    }
+}
+
+.popup-2023-10 {
+    .popup {
+        background: rgba(245, 245, 245, 0.10);
+        backdrop-filter: blur(2px);
+
+        .popup-wrapper {
+            max-width: 760px;
+            border-radius: 20px;
+            background: #E3F8F1;
+            border: 1.5px solid #2F66A0;
+            padding: 40px;
+            position: relative;
+            isolation: isolate;
+
+            &:before {
+                border-radius: 20px;
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: linear-gradient(180deg, #FFF -31.77%, rgba(255, 255, 255, 0.00) 162.38%);
+                z-index: -1;
+            }
+
+            .img-cont {
+                border-radius: 5px;
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .heading {
+                margin-top: 20px;
+                text-align: center;
+
+                h3 {
+                    color: #2F66A0;
+                    text-align: center;
+                    font-size: 30px;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    max-width: 91%;
+                }
+            }
+
+            .body {
+                max-width: 94%;
+                color: #000;
+                text-align: center;
+                font-size: 21px;
+                font-style: italic;
+                font-weight: 400;
+                line-height: 1.4;
+                margin-top: 1.5rem;
+            }
+
+            .footer {
+                background: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    display: inline-block;
+                    border-radius: 2px;
+                    background: #63D8B3;
+                    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.25);
+                    color: #FFF;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 1;
+                    letter-spacing: 0.36px;
+                    padding: 15px 50px;
+                }
+            }
+        }
+
+        i.close {
+            background: none;
+            font-size: 3.4rem;
+            right: 0;
+            top: 0;
+            width: 5rem;
+            height: 5rem;
+            color: $navy;
+        }
+    }
+}

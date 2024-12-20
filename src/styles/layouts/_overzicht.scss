@@ -1,0 +1,317 @@
+@use "@/styles/utils" as *;
+.overzicht {
+    background: $gray-2;
+    padding: $padding-3-3 0;
+
+    .overzicht-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .title-controls {
+            border-radius: 0 2rem 2rem 0;
+            background-color: $green-light;
+            width: 50%;
+            flex: 0 0 auto;
+            padding: $padding-3-6 $padding-1-0 $padding-3-6 $padding-7-2;
+
+            .title {
+                font-size: $txt-3-7;
+                line-height: 50px;
+                font-weight: bold;
+                color: $navy-3;
+            }
+
+            .controls {
+                .control-section {
+                    margin-top: $margin-3-5;
+
+                    .cs-title {
+                        font-size: $txt-2-1;
+
+                        &.navy {
+                            color: $navy-3;
+                        }
+                    }
+
+                    span {
+                        margin-right: $margin-5-0;
+                    }
+
+                    p {
+                        margin-bottom: $margin-1-8;
+                    }
+
+                    .options-list {
+                        display: inline-block;
+                        line-height: 6rem;
+
+                        .btn {
+                            font-size: $txt-1-8;
+                            font-weight: 700;
+                            line-height: 21px;
+                            margin: 0 $margin-3-0 0 0;
+                            padding: $padding-1-3 $padding-1-8;
+                            color: $black;
+
+                            &.btn-deactivate {
+                                color: $white;
+                            }
+
+                            &:last-child {
+                                margin-right: 0;
+                                height: auto;
+                            }
+                        }
+
+                        select.btn {
+                            padding: $padding-1-0 $padding-1-5;
+                            height: 4.5rem;
+                            line-height: 4.5rem;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .results {
+            width: 50%;
+            flex: 1;
+            justify-content: center;
+            display: inline-flex;
+            padding: 0 6.5rem;
+
+            .results-inner {
+                width: 100%;
+                display: flex;
+                flex: 0 0 auto;
+                flex-direction: column;
+                justify-content: space-between;
+                height: fit-content;
+
+                .title {
+                    color: $navy-3;
+                    font-size: $txt-2-7;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: $margin-1-0;
+                    line-height: 4rem;
+                }
+
+                .chart {
+                    background: $white;
+                    width: 100%;
+                    height: calc(100% - 16rem);
+                    display: flex;
+                    flex: 0 0 auto;
+                    flex-direction: column;
+
+                    .chart-title {
+                        width: 100%;
+                        padding: $padding-2-0 $padding-2-0 0 $padding-2-0;
+                        color: $navy;
+                        font-weight: bold;
+                        font-size: $txt-2-1;
+
+                        + h4 {
+                            padding: 0 $padding-2-0;
+                            margin-bottom: $padding-2-0;
+                            color: $navy;
+                            font-weight: bold;
+                        }
+                    }
+
+                    > div {
+                        width: 100%;
+                    }
+
+                    .highcharts-axis-title {
+                        font-family: $fontset;
+                        font-size: $txt-1-4;
+                        font-weight: bold;
+                    }
+                }
+
+                .result-actions {
+                    margin-top: $margin-6-2;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    span {
+                        font-weight: bold;
+                        font-size: $txt-2-1;
+
+                        b {
+                            color: $navy-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 1200px) {
+        .overzicht-wrapper {
+            .title-controls {
+                padding: $padding-3-6;
+            }
+
+            .results {
+                padding: 0 4%;
+
+                .results-inner {
+
+                    .chart .chart-title {
+                        font-size: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @media all and (max-width: 780px) {
+        .overzicht-wrapper {
+            flex-direction: column;
+
+            .title-controls {
+                width: 100%;
+                padding: $padding-3-0;
+                border-radius: 0;
+
+                .title {
+                    br {
+                        display: none;
+                    }
+                }
+
+                .controls {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+
+                    .control-section {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .cs-title {
+                            margin-right: 0;
+                            margin-bottom: 1.8rem;
+                        }
+
+                        .options-list {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            align-items: flex-start;
+
+                            .btn {
+                                width: 45%;
+                                margin-right: 0;
+                                margin-bottom: 2rem;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .results {
+                width: 100%;
+                padding: 0;
+                .results-inner {
+
+                    .title {
+                        display: none;
+                    }
+
+                    .chart {
+                        height: auto;
+                    }
+
+                    .result-actions {
+                        margin-top: $padding-3-6;
+                        justify-content: space-evenly;
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        .overzicht-wrapper {
+            .title-controls {
+                .title {
+                    font-size: 2.4rem;
+                    line-height: 3rem;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                .controls {
+                    flex-direction: column;
+
+                    .control-section {
+                        width: 100%;
+
+                        .cs-title {
+                            font-size: 1.6rem;
+
+                        }
+
+                        .options-list {
+                            gap: 1rem;
+
+                            .btn {
+                                margin-bottom: 0;
+                                white-space: nowrap;
+                                font-size: 1.4rem;
+                                text-align: center;
+                                height: auto;
+                                padding: 1rem 0;
+                            }
+
+                            select.btn {
+                                padding: 0.7rem;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .results {
+                .results-inner {
+
+                    .title {
+                    }
+
+                    .chart {
+                        .chart-title {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                        }
+                    }
+
+                    .result-actions {
+                        flex-direction: column;
+                        margin-top: 2rem;
+
+                        span {
+                            font-size: 1.4rem;
+                        }
+
+                        .btn {
+                            padding: 1rem 2rem;
+                            margin-top: 1rem;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

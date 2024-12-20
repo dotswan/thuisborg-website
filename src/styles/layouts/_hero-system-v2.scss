@@ -1,0 +1,401 @@
+@use "@/styles/utils" as *;
+.hero-system-v2 {
+    background: $gray-2;
+    position: relative;
+    padding: $padding-4-4 0;
+
+    &.bg-white {
+        background-color: $white;
+    }
+
+    .hero-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row-reverse;
+
+
+        .hero-image {
+            padding-right: 7rem;
+            max-width: calc(50% - 6rem);
+
+            img {
+                border-radius: 3rem;
+                width: 100%;
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 999;
+            max-width: 50%;
+
+            .hero-container {
+                position: relative;
+
+                .investeren-title {
+                    padding-left: $padding-7-0;
+
+
+                    h1, h2 {
+                        margin-bottom: $margin-2-5;
+                        color: $navy-3;
+                        font-weight: 700;
+                        font-size: 4.8rem;
+                        line-height: 6.5rem;
+                    }
+
+                    p {
+                        font-size: 2.1rem;
+                        letter-spacing: 0.02em;
+                        color: $black;
+                        margin-bottom: $margin-5-5;
+                    }
+
+                    ul {
+                        li {
+                            font-size: 2.1rem;
+                            line-height: 4rem;
+
+                            span {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+
+                .background-checkmark {
+                    background: $green-light;
+                    padding: 4.4rem 14rem 4.4rem 14rem;
+                    width: 100%;
+                    border-radius: 0 3rem 3rem 0;
+
+                    h2 {
+                        color: $grass-green-2;
+                        font-weight: 600;
+                        font-size: 2.1rem;
+                    }
+
+                    ul {
+                        font-weight: 500;
+                        font-size: $txt-1-8;
+                    }
+
+                    &.pad7 {
+                        padding-left: 7rem;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .arrow-container {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        padding-left: 7rem;
+
+        h3 {
+            font-size: 2.1rem;
+            position: relative;
+            font-weight: bold;
+            border-bottom: .4rem solid #63D8B3;
+        }
+
+        img {
+            margin-top: 4rem;
+        }
+    }
+
+    @media all and (max-width: 1280px) {
+        .hero-wrapper {
+            .hero-inner {
+                .hero-container {
+                    .background-checkmark {
+                        padding: 4.4rem 4.4rem 4.4rem 7rem;
+
+                        .checkmarked {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .arrow-container {
+            justify-content: space-between;
+
+            h3 {
+                flex: 0 0 auto;
+            }
+
+            img {
+                max-width: 30%;
+                object-fit: contain;
+                height: auto;
+            }
+        }
+    }
+    @media all and (max-width: 960px) {
+        padding: 4rem 0;
+        .hero-wrapper {
+            .hero-image {
+                padding-right: 4rem;
+            }
+
+            .hero-inner {
+                .hero-container {
+                    .investeren-title {
+                        padding: 0 0 0 4rem;
+
+                        h1, h2 {
+                            margin-bottom: 2rem;
+                        }
+
+                        p {
+                            margin-bottom: 2rem;
+                        }
+                    }
+
+                    .background-checkmark {
+                        padding: 4rem;
+
+                        .checkmarked {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .arrow-container {
+            padding-left: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+
+            img {
+                max-width: 25%;
+                object-fit: contain;
+                height: auto;
+            }
+        }
+    }
+    @media all and (max-width: 780px) {
+        padding: 0;
+        .hero-wrapper {
+            flex-flow: column;
+
+            .hero-image {
+                padding: 2rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-inner {
+                max-width: 100%;
+                width: 100%;
+                padding: 0 2rem;
+                margin-top: 2rem;
+
+                .hero-container {
+                    .investeren-title {
+                        padding: 0;
+
+                        h1, h2 {
+                            font-size: 3rem;
+                            line-height: initial;
+                        }
+
+                    }
+
+                    .background-checkmark {
+                        padding: 2rem;
+                        border-radius: 2rem;
+
+                        .checkmarked {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .arrow-container {
+            padding-left: 2rem;
+
+            h3 {
+                font-size: 1.6rem;
+            }
+
+            img {
+                max-width: 20%;
+                object-fit: contain;
+                height: auto;
+            }
+        }
+    }
+    @media all and (max-width: 480px) {
+        padding: 2rem 0;
+
+        .hero-wrapper {
+            .hero-image {
+                padding: 0 2rem;
+            }
+
+            .hero-inner {
+
+                .hero-container {
+
+                    .investeren-title {
+
+                        padding-right: 0;
+
+                        h1.h2 {
+                            font-size: 3rem;
+                            line-height: initial;
+                        }
+
+                        p {
+                            font-size: 1.8rem;
+                        }
+                    }
+
+                    .background-checkmark {
+                        h2 {
+                            font-size: 1.8rem;
+                            line-height: 2.4rem;
+                        }
+
+                        .checkmarked {
+                            font-size: 1.6rem;
+                        }
+
+                        .checkmarked {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.reversed {
+        .hero-wrapper {
+            flex-flow: row;
+
+            .hero-image {
+                padding-right: 0;
+                padding-left: 7rem;
+            }
+
+            .hero-inner {
+                .hero-container {
+                    .background-checkmark {
+                        border-radius: 2rem 0 0 2rem;
+                    }
+                }
+            }
+        }
+
+        @media all and (max-width: 1200px) {
+            .hero-wrapper {
+                .hero-inner {
+                    .hero-container {
+                        .background-checkmark {
+                            padding: 4.4rem 7rem 4.4rem;
+                        }
+                    }
+                }
+            }
+        }
+        @media all and (max-width: 960px) {
+            padding: 4rem 0;
+            .hero-wrapper {
+                .hero-image {
+                    padding: 0 4rem;
+                }
+
+                .hero-inner {
+                    .hero-container {
+                        .investeren-title {
+                            padding: 0 4rem 0 0;
+                        }
+                    }
+                }
+            }
+        }
+        @media all and (max-width: 780px) {
+            .hero-wrapper {
+                flex-flow: column;
+
+                .hero-inner {
+                    .hero-container {
+                        .background-checkmark {
+                            padding: 2rem;
+                            border-radius: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        @media all and (max-width: 480px) {
+            padding: 2rem 0;
+            .hero-wrapper {
+                .hero-image {
+                    padding: 0 2rem;
+                }
+
+                .hero-inner {
+                    .hero-container {
+                        .investeren-title {
+
+                            padding-right: 0;
+
+                            h1, h2 {
+                                font-size: 3rem;
+                                line-height: initial;
+                            }
+
+                            p {
+                                font-size: 1.8rem;
+                            }
+                        }
+
+                        .background-checkmark {
+                            padding: 2rem;
+
+                            &.pad7 {
+                                padding: 2rem;
+                            }
+
+                            h2 {
+                                font-size: 1.8rem;
+                                line-height: 2.4rem;
+                            }
+
+                            .checkmarked {
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-423 {
+        .hero-wrapper {
+            .hero-inner {
+                .hero-container {
+                    .background-checkmark {
+                        padding: 4rem 7rem;
+                        @media all and (max-width: 780px) {
+                            padding: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

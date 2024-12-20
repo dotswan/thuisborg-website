@@ -1,0 +1,71 @@
+.share-this {
+    z-index: 9999;
+    cursor: pointer;
+    position: relative;
+
+    .share-title {
+        display: block;
+        width: 100%;
+        font-weight: 900;
+        text-transform: capitalize;
+
+        .icon {
+            vertical-align: middle;
+            font-weight: bold;
+        }
+
+        &:hover {
+            color: $black;
+        }
+    }
+
+    ul.links {
+        position: absolute;
+        background: $black;
+        padding: 1.5rem;
+        top: calc(100% + 1.5rem);
+        right: 0;
+        line-height: 2rem;
+        border-radius: .4rem;
+        display: flex;
+        box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+
+        &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            right: 1.5em;
+            bottom: 100%;
+            border-right: 0.6rem solid transparent;
+            border-left: 0.6rem solid transparent;
+            border-bottom: 0.6rem solid $black
+        }
+
+        li {
+
+            a {
+                display: block;
+                padding: 0 1.5rem;
+                white-space: nowrap;
+                color: $white;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .icon {
+                margin-right: .5rem;
+                color: $white;
+            }
+        }
+    }
+}
+
+.tmpHidden {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}

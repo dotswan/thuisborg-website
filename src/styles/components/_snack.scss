@@ -1,0 +1,120 @@
+.snackContainer {
+    position: fixed;
+    max-width: 38rem;
+    bottom: 0;
+    z-index: 999999;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    .snack {
+        text-align: center;
+        border-radius: .4rem;
+        background: $blue;
+        min-height: 5rem;
+        line-height: 5rem;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: .5rem;
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+        > span {
+            float: left;
+            max-width: 28rem;
+            text-transform: capitalize;
+        }
+
+        .icon {
+            float: left;
+            margin: 1.5rem;
+            height: 2rem;
+            width: 2rem;
+            line-height: 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            background: #fff;
+            color: #1976d2;
+            text-align: center;
+
+            &:after {
+                font-family: icons;
+                content: '\e929';
+            }
+        }
+
+        .close {
+            float: right;
+            margin: 1rem;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            line-height: 2.7rem;
+            font-size: 2.4rem;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.06);
+            }
+        }
+
+        &.success {
+            background: #00e8a8;
+
+            .icon {
+                color: #00e8a8;
+
+                &:after {
+                    font-family: icons;
+                    content: '\e90f';
+                    font-size: 2.3rem;
+                    font-weight: normal;
+                    margin: 0.05rem 0 0 -0.1rem;
+                    display: inline-block;
+                }
+            }
+        }
+
+        &.error {
+            background: #d32f2f;
+
+            .icon {
+                color: #d32f2f;
+
+                &:after {
+                    font-family: icons;
+                    content: '\e929';
+                    display: inline-block;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &.warning {
+            background: $red;
+
+            .icon {
+                color: $red;
+            }
+        }
+
+        &.loading {
+            .loading-holder {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                float: left;
+                width: 4rem;
+                margin: .5rem;
+                height: 4rem;
+            }
+
+            svg.svg-loading {
+                stroke: $white;
+                max-width: 100%;
+            }
+        }
+    }
+
+}

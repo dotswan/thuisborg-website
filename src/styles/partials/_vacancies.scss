@@ -1,0 +1,35 @@
+@use "@/styles/utils" as *;
+.vacancies {
+    background: $white;
+    padding: 10rem 0;
+
+    h2 {
+        display: block;
+        font-size: 2.5rem;
+        color: $green;
+        font-weight: bold;
+        line-height: 2.4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    ul {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h3 {
+        display: block;
+        font-size: 2rem;
+        color: $navy;
+        font-weight: bold;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        color: $black-1;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin: 1rem 0;
+    }
+}

@@ -1,0 +1,71 @@
+@use "@/styles/utils" as *;
+.breadcrumb {
+    h1 {
+        font-size: 5.5rem;
+        font-weight: bold;
+        color: $navy;
+        padding: 10rem 0;
+        line-height: 4rem;
+    }
+
+    .breadcrumb__cont {
+        background: $white;
+        padding: 2.5rem;
+
+        .breadcrumb__cont__items {
+            display: flex;
+
+            li {
+                color: rgba($black, .6);
+                font-size: 1.5rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: .5rem;
+
+                &:after {
+                    content: '|';
+                    margin-left: .5rem;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                a {
+                    color: rgba($black, .6);
+                    font-size: 1.5rem;
+                    display: inline-block;
+                    transition: $transition-3;
+                    border-bottom: .1rem solid $white;
+
+                    &:hover {
+                        border-bottom: .1rem solid;
+                    }
+                }
+
+                span {
+                    border-bottom: .1rem solid $white;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        .standard {
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            line-height: 2.8rem;
+            padding: 1.5rem;
+        }
+        .breadcrumb__cont {
+            display: none;
+        }
+    }
+
+}

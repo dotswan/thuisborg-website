@@ -1,0 +1,63 @@
+@use "@/styles/utils" as *;
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	nav {
+		//background-color: $gray;
+		padding: 2rem 4rem;
+		border-radius: 1rem;
+		
+		ul {
+			display: flex;
+			align-items: center;
+			gap: clamp(20px, 2vw, 4rem);
+			line-height: 2rem;
+			
+			li {
+				display: inline-flex;
+				justify-content: center;
+				align-items: baseline;
+				line-height: 2rem;
+				
+				* {
+					display: inline-block;
+					vertical-align: middle;
+				}
+				
+				
+				> span {
+					font-size: 4rem;
+					font-weight: 100;
+					color: $navy;
+				}
+				
+				a {
+					font-weight: bold;
+					font-size: 1.8rem;
+					color: $navy;
+					padding: 1rem;
+					border-radius: 1.2rem;
+					min-width: 2rem;
+					
+					&[rel="next"], &[rel="prev"] {
+						font-size: 4rem;
+						font-weight: 100;
+					}
+					
+					
+					&:hover, &.active {
+						color: $green;
+						background-color: #ddf5ef;
+					}
+				}
+				
+				&.disabled {
+					opacity: .5;
+				}
+			}
+		}
+	}
+}

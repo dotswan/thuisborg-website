@@ -34,16 +34,9 @@ const app = createApp({
 });
 
 app
-        // Add mixins to Vue
         .mixin(translateMixin)
-
-        // Add vuex store to Vue
         .use(store)
-
-        // Add directives to Vue
         .directive('animate', Animate)
-
-        // Add component to Vue
         .component('hamburger', Hamburger)
 
         .mount('#app');

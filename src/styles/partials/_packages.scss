@@ -1,0 +1,173 @@
+@use "@/styles/utils" as *;
+.packages {
+    padding: 6rem 0;
+
+    .packages-container {
+        display: flex;
+        justify-content: space-evenly;
+
+        .pkg {
+            background: $white;
+            width: 35%;
+            box-shadow: rgba(0, 0, 0, 0.05) 0 3px 33px;
+            border-radius: 2rem;
+            overflow: hidden;
+
+            .pkg-head {
+                background-color: $green;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    content: '';
+                    border-top: 1rem solid $green;
+                    border-right: 1rem solid transparent;
+                    border-left: 1rem solid transparent;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+
+                .pkg-title {
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, .1);
+                    color: $white;
+
+                    h2 {
+                        font-size: 2.4rem;
+                        font-weight: bold;
+                        line-height: 8rem;
+                    }
+
+                }
+
+                .pkg-bold {
+                    padding: 4rem 2rem;
+                    color: $black-3;
+
+                    h3 {
+                        line-height: 1;
+                        font-size: 4rem;
+                        text-align: center;
+                        color: $white;
+                    }
+                }
+
+                .percent {
+                    text-align: center;
+                    font-size: 4rem;
+                    margin: 3rem 0;
+
+                    span {
+                        font-size: .5em;
+                        margin: 0 .5em;
+                    }
+
+                    b {
+                        font-weight: bold;
+                    }
+                }
+
+                .per {
+                    position: absolute;
+                    color: $white;
+                    bottom: 0;
+                    right: 0;
+                    line-height: 1;
+                    padding: 1rem;
+                }
+            }
+
+            .pkg-body {
+                font-size: 2rem;
+                padding: 2em 1em;
+
+                .checkmarked {
+                    color: $black-1;
+                    margin-bottom: 2rem;
+                    display: flex;
+                    align-items: baseline;
+
+                    &:before {
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+
+            .pkg-footer {
+                padding: 0 2em 2em;
+            }
+
+            .cta-cont {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                font-size: 1.4rem;
+                line-height: 2rem;
+
+                a {
+                    font-weight: bold;
+                    font-size: 1em;
+
+                    &.primary {
+                        border-radius: 5rem;
+                        border: .2rem solid $green;
+                        color: $green;
+                        padding: .5em .75em;
+
+                        &:after {
+                            display: inline-block;
+                            content: '>';
+                            font-size: 2rem;
+                            font-weight: 500;
+                            vertical-align: middle;
+                            margin-left: .5em;
+                        }
+
+                    }
+
+                    &.secondary {
+                        color: $black-3;
+                        line-height: 4rem;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media all and (max-width: 860px) {
+        .packages-container {
+            .pkg {
+                .cta-cont {
+                    flex-flow: column;
+
+                    a {
+                        margin-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    @media all and (max-width: 640px) {
+        .packages-container {
+            flex-flow: column;
+
+            .pkg {
+                width: 100%;
+                margin-bottom: 4rem;
+
+                .cta-cont {
+                    flex-flow: column;
+
+                    a {
+                        margin-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

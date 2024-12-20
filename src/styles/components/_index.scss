@@ -1,0 +1,19 @@
+@use "@/styles/utils" as *;
+
+//#TODO: resolve this 2 files
+
+//@import "~vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
+//@import '~vue-slider-component/theme/default.css';
+@forward "./btn";
+@forward "./property-items";
+@forward "./input";
+@forward "./users-comments";
+@forward "./hamburger";
+@forward "./modal";
+@forward "./tabs";
+@forward "./calculator";
+@forward "./tooltip";
+@forward "./form-handler";
+@forward "./loading";
+@forward "./min-calc";
+@forward "./calculator-2024";

@@ -1,0 +1,23 @@
+@use "@/styles/utils" as *;
+
+input {
+    border: .2rem solid rgba($black, .14);
+    font-size: 1.45rem;
+    padding: 1.2rem;
+    background: $white;
+    border-radius: 1rem;
+    transition: $transition-3;
+
+    &:focus {
+        border-color: rgba($navy, .5);
+    }
+}
+
+textarea {
+    border: .2rem solid rgba($black, .14);
+    font-size: 1.45rem;
+    padding: 1.2rem;
+    background: $white;
+    border-radius: 1rem;
+    transition: $transition-3;
+}

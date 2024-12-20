@@ -1,0 +1,124 @@
+@use "@/styles/utils" as *;
+.offer-comments {
+    background-color: $white;
+    padding: 8rem 0 8rem 7rem;
+
+    .wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        gap: 7rem;
+
+        .offer {
+            background-color: #DFEFEF;
+            width: 50%;
+            display: inline-flex;
+            border-radius: 1rem 0 0 1rem;
+            align-items: center;
+            position: relative;
+            padding: 4rem 0;
+
+            .img-cont {
+                display: inline-flex;
+                justify-content: flex-end;
+                position: absolute;
+                right: 0;
+                left: 0;
+                z-index: 0;
+                height: 100%;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .txt-cont {
+                position: relative;
+                z-index: 9;
+                padding-left: 7rem;
+                max-width: 60%;
+                flex: 0 0 auto;
+
+                h4 {
+                    font-size: 3.7rem;
+                    line-height: 5rem;
+                    color: $navy-3;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 2.4rem;
+                    line-height: 3.3rem;
+                    color: $navy-3;
+                    font-weight: 500;
+                    margin: 2rem 0;
+                }
+            }
+        }
+    }
+
+    .users-comments {
+        background: #ffffff;
+        display: inline-flex;
+        flex-flow: column;
+        width: 50%;
+
+        .section-subtitle {
+            font-size: 3.7rem;
+        }
+
+        .comments-slider {
+            .arrow {
+                width: 4rem;
+            }
+
+            .comments-slider__list {
+                .comments-slider__list__item {
+                    display: inline-flex;
+                    flex-flow: column;
+
+                    p {
+                        color: $navy-3;
+                        display: inline-flex;
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 780px) {
+        padding: 4rem 0;
+        .wrapper {
+            gap: 3rem;
+            flex-flow: column;
+
+            .offer {
+                width: calc(100% - 4rem);
+                align-self: flex-end;
+
+                .txt-cont {
+                    padding-left: 4rem;
+                    max-width: 70%;
+
+                    h4 {
+                        font-size: 2.5rem;
+                        line-height: initial;
+                    }
+
+                    p {
+                        font-size: 1.6rem;
+                        line-height: 2.3rem;
+                    }
+                }
+            }
+        }
+
+        .users-comments {
+            padding: 4rem;
+            width: 100%;
+        }
+
+
+    }
+}

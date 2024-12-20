@@ -1,8 +1,10 @@
-//	Basics
-@use "utils/utils.scss";
-
-//	Components
-@use "components/btn.scss";
-
-//	Complex reusable blocks
-@use "partials/load-spinner.scss";
+//utils
+@use "@/styles/utils/reset/reset.pc.css" as *;
+@use "@/styles/utils/reset/reset.mobile.css" as *;
+@use "@/styles/utils" as *;
+// components
+@use "@/styles/components" as *;
+// partials
+@use "@/styles/partials" as *;
+// layouts
+@use "@/styles/layouts" as *;

@@ -1,9 +1,13 @@
 import {addObserver} from '../helpers/utils.js';
+import calculator_module from './calculator_module';
 import {createStore} from 'vuex';
 
 export default createStore({
-    modules: {},
+    modules: {
+        calculator: calculator_module
+    },
     state: {
+        search: false,
         device: {
             mobile: false, width: 0, os: null,
         },
@@ -24,8 +28,22 @@ export default createStore({
             layout: 'modal',
             closeBtnClass: ''
         },
+        lightbox: {
+            index: null,
+            list: []
+        },
+        snackList: [],
     },
     mutations: {
+        //Lightbox
+        setLightbox: function (state, payload) {
+            state.lightbox = payload;
+        },
+        unsetLightbox: function (state) {
+            state.lightbox.index = null;
+            state.lightbox.list = [];
+        },
+        //Translation & language
         parseLang: function (state) {
             state.dictionary = []
             state.dictionaryLoaded = true;
@@ -41,12 +59,6 @@ export default createStore({
         setLang: function (state, lang) {
             state.lang = lang
         },
-        setDevice: function (state, obj) {
-            this.dispatch('isMobile').then(res => {
-                state.device.mobile = res;
-            })
-            state.device.width = window.innerWidth;
-        },
         detectLanguage: function (state) {
             const qs = new URL(document.location);
             if (qs.pathname.includes('/nl')) {
@@ -57,18 +69,26 @@ export default createStore({
                 state.lang = 'nl';
             }
         },
+        //Device
+        setBaseUrl(state) {
+            state.baseUrl = window.location.origin;
+            if (window.location.hostname === 'localhost') {
+                state.baseUrl = 'https://thuisborg.dotcms.online/';
+            }
+        },
+        setDevice: function (state, obj) {
+            this.dispatch('isMobile').then(res => {
+                state.device.mobile = res;
+            })
+            state.device.width = window.innerWidth;
+        },
         toggleNav: function (state) {
             state.navStatus = !state.navStatus;
         },
         hideNav: function (state) {
             state.navStatus = false;
         },
-        setBaseUrl(state) {
-            state.baseUrl = window.location.origin;
-            if (window.location.hostname === 'localhost') {
-                // state.baseUrl = window.location.origin;
-            }
-        },
+        //Modal
         showModal: function (state) {
             document.body.style.overflow = "hidden"
             state.modal = true;

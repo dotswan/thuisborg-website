@@ -1,0 +1,97 @@
+@use "@/styles/utils" as *;
+.asym-image-text {
+    position: relative;
+    background: $white;
+
+    .btn {
+        text-align: center;
+    }
+
+    &:before {
+        content: "";
+        z-index: 0;
+        width: 100%;
+        height: calc(100% - 6rem);
+        left: 0;
+        top: 0;
+        background: $gray;
+        position: absolute;
+    }
+
+    .asym__image {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100% + 6rem);
+        z-index: 0;
+
+
+        img {
+            position: relative;
+            z-index: 9;
+            object-fit: cover;
+            height: 100%;
+            max-width: calc(50% - 6rem);
+        }
+
+        &.limit-img-height {
+            height: 100%;
+            overflow: hidden;
+            align-items: flex-end;
+        }
+    }
+
+    .asym__text {
+        z-index: 99;
+        position: relative;
+        margin: auto;
+        padding: 11rem 0;
+
+        .asym__text__cont {
+            width: 50%;
+        }
+    }
+
+    @include desktop-high {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row-reverse;
+        align-items: flex-start;
+        padding-bottom: 10rem;
+        .asym__image {
+            justify-content: flex-end;
+            flex: 0 0 auto;
+            display: inline-flex;
+            width: 50%;
+            position: relative;
+
+            &:before {
+                display: none;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+        .asym__text {
+            width: 50%;
+            flex: 0 0 auto;
+            display: inline-flex;
+            position: relative;
+            padding: 5rem;
+
+            .standard {
+                width: 100%;
+                display: flex;
+                flex-flow: column;
+            }
+
+            .asym__text__cont {
+                width: auto;
+            }
+        }
+    }
+}

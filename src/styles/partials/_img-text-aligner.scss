@@ -1,0 +1,142 @@
+@use "@/styles/utils" as *;
+.img-text-aligner {
+    position: relative;
+    z-index: 9;
+
+    .standard {
+        display: flex;
+        justify-content: center;
+
+        > div {
+            width: 50%;
+            flex: 0 0 auto;
+        }
+
+    }
+
+    .img__cont {
+        display: inline-flex;
+
+        img {
+            display: block;
+            @media (min-width: 1921px) {
+                border-radius: 6rem;
+            }
+        }
+    }
+
+    &.img-is-left {
+        .img__cont {
+            justify-content: flex-end;
+            padding-right: 10rem;
+
+            img {
+                border-radius: 0 6rem 6rem 0;
+            }
+        }
+    }
+
+    &.img-is-right {
+        .img__cont {
+            justify-content: flex-start;
+            padding-left: 10rem;
+
+            img {
+                border-radius: 6rem 0 0 6rem;
+            }
+        }
+    }
+
+    &.single-block {
+
+        .standard {
+            flex-flow: column;
+
+            > div {
+                width: 100%;
+            }
+        }
+    }
+
+    @include desktop-high {
+        .img__cont {
+            align-self: flex-start;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &.img-is-right {
+            .txt__cont {
+                padding-left: 2rem;
+            }
+        }
+        &.img-is-left {
+            .txt__cont {
+                padding-right: 2rem;
+            }
+        }
+    }
+    @include mobile {
+        .standard {
+            flex-flow: column;
+
+            > div {
+                width: 100%;
+            }
+        }
+        &.img-is-left {
+            .img__cont {
+                padding-right: 2rem;
+
+                img {
+                    width: 100%;
+                    border-radius: 0 2rem 2rem 0;
+                }
+            }
+
+            .txt__cont {
+                padding: 2rem 2%;
+
+                p {
+                    margin: 0 0 2rem 0;
+                    font-size: 1.5rem;
+                    line-height: 2.8rem;
+
+                    + div {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        &.img-is-right {
+            .standard {
+                flex-direction: column-reverse;
+            }
+
+            .img__cont {
+                padding-left: 2rem;
+
+                img {
+                    width: 100%;
+                    border-radius: 2rem 0 0 2rem;
+                }
+            }
+
+            .txt__cont {
+                padding: 2rem 2%;
+
+                p {
+                    margin: 0 0 2rem 0;
+                    font-size: 1.5rem;
+                    line-height: 2.8rem;
+
+                    + div {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

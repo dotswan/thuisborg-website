@@ -1,0 +1,66 @@
+@use "@/styles/utils" as *;
+.layout-1 {
+    background: $white;
+    padding-bottom: 7rem;
+
+    .twin {
+        align-items: flex-start;
+    }
+
+    .text-set {
+        h2 {
+            font-size: 4.3rem;
+            font-weight: bold;
+            color: $navy;
+            line-height: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        p {
+            font-size: 2.3rem;
+            color: $black-1;
+            line-height: 3.8rem;
+            margin-bottom: 5rem;
+        }
+    }
+
+    .img-cont {
+        padding-left: 6rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @include mobile {
+        padding: 3rem 0;
+        .twin {
+            flex-flow: column;
+
+            .half {
+                width: 100%;
+            }
+
+            .double-image {
+                display: none;
+            }
+        }
+        .text-set {
+            h2 {
+                font-size: 2rem;
+                line-height: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                margin-bottom: 2.5rem;
+
+                + div {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

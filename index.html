@@ -1,19 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-	<!--
-
-
-
-	IMPORTANT: All comments should be removed And all fields with --- should be replaced
-
-
-
-	-->
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>---page title---</title>
-
+	<title>Thuisborg</title>
 	<!--	SEO - Open Graph Start -->
 	<meta name="description" content="---site description---"/>
 	<meta name="keywords" content="---site keywords---"/>
@@ -42,7 +32,7 @@
 	<!--	GOOGLE FONTS Start    -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 	<!--	GOOGLE FONTS End    -->
 
 	<!--[if lt IE 9]>
@@ -52,12 +42,326 @@
 </head>
 <body>
 	<div id="app">
-		<main>
-			<section id="hero">
-				<article>
-					<h1>main</h1>
-					<p>desc</p>
-				</article>
+		<main class="main">
+			<div class="hero-system">
+				<div class="hero-wrapper">
+					<div class="hero-image">
+						<img src="/template/images/overwaarde-verzilveren-thuisborg.png" class="crop-radius bl"/>
+					</div>
+					<div class="hero-inner middle standard">
+						<div class="hero-container">
+							<h1>Verzilver de overwaarde
+								<br/>
+								<span class="green-text">van uw woning</span>
+							</h1>
+							<p>Uw huis verkopen, er blijven wonen én financieel genieten
+							</p>
+							<ul>
+								<li class="checkmarked">
+									<span>Vul uw inkomsten aan</span>
+								</li>
+								<li class="checkmarked">
+									<span>Schenk belastingvrij aan familie of gezinsleden</span>
+								</li>
+								<li class="checkmarked">
+									<span>Maak de reis van uw dromen</span>
+								</li>
+								<li class="checkmarked">
+									<span>Pas uw woning aan voor zorg en zelfstandigheid</span>
+								</li>
+							</ul>
+							<div class="hero__search">
+								<form action="bekijk-uw-mogelijkheden" method="get" enctype="multipart/form-data">
+									<input name="q" placeholder="Uw straat & huisnummer"/>
+									<button class="btn white med">Bekijk uw mogelijkheden</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="mottos">
+				<div class="standard middle">
+					<ul>
+						<li class="checkmarked">Flexibel op uw wensen afgestemd
+						</li>
+						<li class="checkmarked">Geen makelaars, geen verborgen kosten
+						</li>
+						<li class="checkmarked">Binnen 48 uur antwoord
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="layout-1">
+				<div class="middle standard">
+					<div class="twin">
+						<div class="double-image pr-6-br half">
+							<img src="/template/images/overwaarde-huis-opnemen.png"/>
+							<img src="/template/images/verzilver-woningwaarde.png"/>
+						</div>
+						<div class="text-set half">
+							<h2>Waarom uw
+								<span class="green-text">overwaarde</span> verzilveren?
+							</h2>
+							<p>Wilt u onbezorgd en net zo lang als u wilt in uw eigen woonomgeving blijven wonen? En dit
+							   financieel mogelijk maken zonder te verhuizen? Dat kan! De wens van de overheid is dat
+							   ouderen in hun vertrouwde omgeving zelfstandig blijven wonen. Door de krapte op de
+							   woningmarkt kiezen mensen steeds vaker voor alternatieve mogelijkheden, zoals het
+							   verbouwen en/of aanpassen van de woning in plaats van te verhuizen. Thuisborg biedt
+							   mogelijkheden de overwaarde van uw huis op te nemen.
+							</p>
+							<div>
+								<a href="verzilveren" class="btn"><span>Meer lezen</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="layout-2 js__toggling-content opened">
+				<h2 class="section-title js__toggle__handle">Mogelijkheden met
+					<span class="green-text">Thuisborg</span>
+				</h2>
+				<div class="js__toggling-content__content middle">
+					<div class="img-text-aligner img-is-left">
+						<div class="standard">
+							<div class="img__cont">
+								<img src="/template/images/verzilverplan.png"/>
+							</div>
+							<div class="txt__cont">
+								<h3 class="section-subtitle">Woningwaarde
+									<span class="green-text">Estate Plan</span> &amp;
+								                             Woningwaarde
+									<span class="green-text">Verzilverplan</span>
+								</h3>
+								<p id="iglmg">Het Woningwaarde 
+									<b>Estate Plan
+									</b> is bedoeld voor woningeigenaren die het volledige eigendom van
+								              hun woning
+								              willen behouden, maar wel een gedeelte van de overwaarde daarvan willen inzetten. Met
+								              het
+								              Woningwaarde
+									<b>Verzilverplan
+									</b> koopt Thuisborg uw woning en verhuurt deze direct
+								              aan u
+								              terug.
+								              U krijgt zo dus direct de beschikking over het vermogen dat eerst in het huis
+								              vastzat.
+								              Wat wij bieden is ongestoord woongenot tegen een eerlijke prijs.
+								</p>
+								<div>
+									<a href="verzilveren" class="btn">Bekijk uw plan</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="layout-3">
+				<h2 class="section-title">Onze werkwijze
+				</h2>
+				<div v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="img-text-aligner img-is-right js__toggling-content">
+					<h2 class="section-subtitle mobile__only js__toggle__handle">
+						In
+						<span class="green-text">5 heldere stappen</span> uw woningwaarde verzilveren
+					</h2>
+					<div class="middle standard js__toggling-content__content">
+						<div class="txt__cont">
+							<h3 class="section-subtitle">In
+								<span class="green-text">5 heldere stappen</span> uw
+								<br/>woningwaarde
+							                             verzilveren
+							</h3>
+							<p>
+							</p>
+							<ul>
+								<li class="checkmarked">
+									<span>Stap 1 - Intake</span>
+								</li>
+								<li class="checkmarked">
+									<span>Stap 2 - Waardebepaling</span>
+								</li>
+								<li class="checkmarked">
+									<span>Stap 3 - Berekening</span>
+								</li>
+								<li class="checkmarked">
+									<span>Stap 4 -Voorstel</span>
+								</li>
+								<li class="checkmarked">
+									<span>Stap 5 - Overeenkomst</span>
+								</li>
+							</ul>
+							<div>
+								<a href="5-stappenplan" class="btn">Bekijk stappen</a>
+							</div>
+						</div>
+						<div class="img__cont">
+							<img src="/template/images/stappenplan-woningwaarde-verzilveren.png" class="shadowed-image"/>
+						</div>
+					</div>
+				</div>
+				<div v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="img-text-aligner img-is-left js__toggling-content">
+					<h2 class="section-subtitle mobile__only js__toggle__handle">Woningwaarde calculator
+					</h2>
+					<div class="middle standard js__toggling-content__content">
+						<div class="img__cont">
+							<img src="/template/images/woningwaarde-calculator.jpg" class="shadowed-image"/>
+						</div>
+						<div class="txt__cont">
+							<h3 class="section-subtitle">Woningwaarde calculator
+							</h3>
+							<p>Op basis van uw persoonlijke situatie kunt u berekenen welk bedrag u voor uw woning kunt
+							   krijgen. In 10 simpele stappen berekenen wij de vermogensplanning die het beste bij uw
+							   persoonlijke situatie past.
+							</p>
+							<div>
+								<a href="woningwaarde-calculator" class="btn">Bereken direct</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section v-toggler="{ toggler: 'js__toggle__handle', className: 'opened'}" class="layout-4 js__toggling-content">
+				<h2 class="section-subtitle mobile__only js__toggle__handle">Modulaire zorgwoningen
+				</h2>
+				<div class="js__toggling-content__content">
+					<div class="modular-aligner img-is-right">
+						<div class="modular-aligner__cont middle standard">
+							<div class="text-cont">
+								<h3 class="section-subtitle">Modulaire zorgwoningen
+								</h3>
+								<p>Senioren of mensen met een beperking of chronische ziekte hebben vaker zorg en
+								   ondersteuning thuis nodig. Velen hebben de wens om zelfstandig te blijven wonen, maar
+								   dit is niet altijd haalbaar. Verhuizen naar een
+								   woning die bijvoorbeeld geschikt is voor een rollator is niet altijd even makkelijk,
+								   en bij velen bestaat de wens om
+								   graag thuis, in de vertrouwde buurt, te willen blijven wonen. Onze modulaire
+								   zorgwoningen bieden hier bij uitstek
+								   kans toe.
+								</p>
+								<div>
+									<a href="zorgwoning" class="btn">Bekijk woningen</a>
+								</div>
+							</div>
+							<div class="img-cont">
+								<img src="/template/images/modulaire-zorgwoningen.png" class="shadowed-image"/>
+							</div>
+						</div>
+					</div>
+					<div class="modular-aligner img-is-left">
+						<div class="modular-aligner__cont middle standard">
+							<div class="img-cont">
+								<img src="https://thuisborg.nl/serve/77/investeer-obligaties-huurwoningen.png" class="shadowed-image"/>
+							</div>
+							<div class="text-cont">
+								<h3 class="section-subtitle">Investeren
+								</h3>
+								<p>De Woningwaarde Vastgoed Obligaties worden u aangeboden door Thuisborg Finance B.V.
+								   Deze zijn bedoeld voor investeerders die op maatschappelijk verantwoorde manier
+								   willen beleggen in de
+								   prijsontwikkeling van de Nederlandse woningmarkt.
+								</p>
+								<ul>
+									<li class="checkmarked">Investeren kan al vanaf EUR 1.000,-
+									</li>
+									<li class="checkmarked">Vast rendement tot 8%
+									</li>
+									<li class="checkmarked">Rente per kwartaal uitbetaald
+									</li>
+									<li class="checkmarked">Na 1 jaar kosteloos uitstappen per kwartaal
+									</li>
+								</ul>
+								<div>
+									<a href="investeren" class="btn">Meer lezen</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="users-comments">
+				<div class="middle standard">
+					<div class="user-comments__title-row">
+						<h3 class="section-subtitle">Ervaringen
+						</h3>
+						<a href="bekijk-uw-mogelijkheden">Bekijk uw mogelijkheden</a>
+					</div>
+					<comment-slider>
+						<div class="comments-slider__list__item">
+							<div class="comments-slider__list__item__comment">
+								<span class="q">“</span>
+								<q class="comment-text">Ik was op zoek naar mogelijkheden om mijn geld uit de stenen te
+								                        krijgen en zo mijn inkomsten te kunnen aanvullen en onderhoud
+								                        aan zijn woning te laten uitvoeren.</q>
+							</div>
+							<p>Dhr. Visser - Verzilverde zijn woning
+							</p>
+						</div>
+						<div class="comments-slider__list__item">
+							<div class="comments-slider__list__item__comment">
+								<span class="q">“</span>
+								<q class="comment-text">Ik was genoodzaakt mijn appartement met huurders te verkopen.
+								                        Dankzij Thuisborg konden de huurders er blijven wonen.</q>
+							</div>
+							<p>Dhr. Peters - Verzilverde zijn woning
+							</p>
+						</div>
+						<div class="comments-slider__list__item">
+							<div class="comments-slider__list__item__comment">
+								<span class="q">“</span>
+								<q class="comment-text">Wij konden geen nieuwe hypotheek krijgen voor het aanpassen van
+								                        onze woning. Dankzij Thuisborg kunnen wij blijven wonen in onze
+								                        huidige woning.</q>
+							</div>
+							<p>Verzilverden hun woning - Dokter
+							</p>
+						</div>
+					</comment-slider>
+				</div>
+			</section>
+			<section class="invest asym-image-text">
+				<div class="asym__image">
+					<img src="/template/images/invest.png" class="crop-radius bl"/>
+				</div>
+				<div class="asym__text">
+					<div class="standard middle">
+						<div class="asym__text__cont">
+							<h3 class="section-title">Uw huis verkopen, er
+								<br/>
+							                          blijven wonen én
+								<br/>
+								<span class="green-text">financieel genieten</span>
+							</h3>
+							<a class="mobile__only btn">Vraag brochure aan</a>
+							<p>Vraag nu geheel vrijblijvend de Woningwaarde
+							   de Verzilveren brochure aan
+							</p>
+							<form action="https://forms.zohopublic.eu/soliditry/form/TBWoningwaardeobligatiesbrochurewebsite/formperma/c8mRw6jfbP2z3QNYCb_gbdeX2l3Z4q22F7j3Hy2KMWU/htmlRecords/submit" name="form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="form" class="invest-form">
+								<div class="form_hiddens">
+									<input type="hidden" name="zf_referrer_name" value=""/>
+									<!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+									<input type="hidden" name="zf_redirect_url" value=""/>
+									<!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+									<input type="hidden" name="zc_gad" value=""/>
+									<!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+									<input type="hidden" name="utm_source" value=""/>
+									<input type="hidden" name="utm_medium" value=""/>
+									<input type="hidden" name="utm_campaign" value=""/>
+									<input type="hidden" name="utm_term" value=""/>
+									<input type="hidden" name="utm_content" value=""/>
+								</div>
+								<input type="text" name="SingleLine" checktype="c1" value="" maxlength="255" fieldtype="1" placeholder="Voornaam"/>
+								<input type="text" name="SingleLine1" checktype="c1" value="" maxlength="255" fieldtype="1" placeholder="Achternaam"/>
+								<input fieldtype="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email"/>
+								<input autocomplete="off" type="text" maxlength="255" name="SingleLine2" value="" placeholder="Telefoonnummer"/>
+								<div class="agreement">
+									<input type="checkbox" checktype="c1" id="DecisionBox" name="DecisionBox"/>
+									<label for="DecisionBox">Ik ga akkoord met de <a>Algemene voorwaarden</a></label>
+								</div>
+								<button class="btn">Vraag brochure aan</button>
+							</form>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
 	</div>
