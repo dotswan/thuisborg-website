@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>---page title---</title>
+
+	<!--	SEO - Open Graph Start -->
+	<meta name="description" content="---site description---"/>
+	<meta name="keywords" content="---site keywords---"/>
+	<meta property="og:title" content="---page title---"/>
+	<meta property="og:site_name" content="---project name---"/>
+	<meta property="og:description" content="---site description---"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="---site URL (https://www.example.com)---"/>
+	<meta property="og:image" content="---url to cover image---">
+	<!--	SEO - Open Graph End    -->
+
+	<!--	FAVICON Start    -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/template/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/template/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/template/fav/favicon-16x16.png">
+	<link rel="manifest" href="/template/fav/site.webmanifest">
+	<link rel="mask-icon" href="/template/fav/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!--	FAVICON End    -->
+
+	<!--	CSS Start    -->
+	<link rel="stylesheet" href="/template/css/app.css">
+	<!--	CSS End    -->
+
+	<!--	GOOGLE FONTS Start    -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<link
+			href="https://fonts.googleapis.com/css2?family=&display=swap"
+			rel="stylesheet"
+	/>
+	<!--	GOOGLE FONTS End    -->
+
+	<!--[if lt IE 9]>
+	<script src="/template/js/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div id="app">
+<main class="main">
+  <section class="hero-system-v2 reversed bg-white">
+	<div class="hero-wrapper">
+	  <div class="hero-image">
+		<img src="/template/images/aangeboden.jpg"/>
+	  </div>
+	  <div class="hero-inner">
+		<div class="hero-container">
+		  <div class="investeren-title">
+			<h1>Aangeboden
+			</h1>
+			<p>Het wordt steeds uitdagender om een beleggingspand te vinden in Nederland. Vanuit dit
+			  gegeven hebben wij gezocht naar de ideale oplossing voor onze relaties.
+			</p>
+		  </div>
+		  <div class="background-checkmark pad7">
+			<h2>Beleggingspanden in direct eigendom!
+			</h2>
+			<ul class="aligned-marks">
+			  <li class="checkmarked">
+				<span>Sociaal verantwoord investeren</span>
+			  </li>
+			  <li class="checkmarked">
+				<span>Transparant en controleerbaar</span>
+			  </li>
+			  <li class="checkmarked">
+				<span>Geheel gratis en vrijblijvende informatievoorziening</span>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="hero-system-v2">
+	<div class="hero-wrapper">
+	  <div class="hero-image">
+		<img src="/template/images/bieden.jpg"/>
+	  </div>
+	  <div class="hero-inner">
+		<div class="hero-container">
+		  <div class="investeren-title">
+			<h2>Wat bieden wij?
+			</h2>
+			<p id="ip1je-2-2">Wij bieden een direct rendement van circa 5% op het beleggingspand én een indirect
+			  rendement in de vorm van 100% van de waardestijging van het beleggingspand. Aan u de
+			  keuze welk type woning (appartement, tussenwoning of vrijstaand).
+			</p>
+		  </div>
+		  <div class="arrow-container">
+			<h3>Selecteer uw optie en bekijk de mogelijkheden
+			</h3>
+			<img src="/template/images/arrow-down.png"/>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="catalogs">
+	<div class="cat-cont">
+	  <h3 class="title">Overzicht beschikbare woningen
+	  </h3>
+	  <div class="tabs-main-cont">
+		<div :class="[{'mobile':$store.getters.getMobile.mobile}]" v-tabs="" handle-url="hash" class="tabs">
+		  <div data-tab-title="Direct eigenaar met huurinkomsten" class="tab active">
+			<div class="gridx3">
+			  <div class="catalog-item blur">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/template/images/investeren-nederlandse-woningen.png"/>
+				</div>
+				<div class="notice">
+				  <p>Foto vertegenwoordigt niet de huidige aanbieding
+				  </p>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="i4ydy-2-2">Postcodegebied
+					  </b>
+					  <span>4251</span>
+					</li>
+					<li>
+					  <b id="i8e6o-2-2">Te verzilveren bedrag
+					  </b>
+					  <span id="iqhsy-2-2">EURO 424.800,-</span>
+					</li>
+					<li>
+					  <b id="i58rr-2-2">Rendement
+					  </b>
+					  <span id="if59j-2-2">5% per jaar</span>
+					</li>
+					<li>
+					  <b id="iuhga-2-2">Periode
+					  </b>
+					  <span>10 jaar</span>
+					</li>
+					<li>
+					  <b id="iy5l6-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="/template/images/property-item.jpg"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="imh18-2-2">Postcodegebied
+					  </b>
+					  <span>5707</span>
+					</li>
+					<li>
+					  <b id="iw5q7h-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>EURO 436.000,-</span>
+					</li>
+					<li>
+					  <b id="igmlz5-2-2">Rendement
+					  </b>
+					  <span>5% per jaar</span>
+					</li>
+					<li>
+					  <b id="ieo5kg-2-2">Periode
+					  </b>
+					  <span>2-3 jaar</span>
+					</li>
+					<li>
+					  <b id="ixrgsa-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/56/direct-investeren-hoekwoning-alphen-aan-den-rijn.png"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="ivatif-2-2">Postcodegebied
+					  </b>
+					  <span>2408</span>
+					</li>
+					<li>
+					  <b id="i5zf9g-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>EURO 445.000,-</span>
+					</li>
+					<li>
+					  <b id="im1y9b-2-2">Rendement
+					  </b>
+					  <span>Circa 5% per jaar</span>
+					</li>
+					<li>
+					  <b id="inz8w2-2-2">Periode
+					  </b>
+					  <span>10 jaar</span>
+					</li>
+					<li>
+					  <b id="imq7qi-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/97/investeer-in-woning-wierum.PNG"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="i2edbe-2-2">Postcodegebied
+					  </b>
+					  <span>9141</span>
+					</li>
+					<li>
+					  <b id="iu9fgh-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>EURO 51.750,-</span>
+					</li>
+					<li>
+					  <b id="ic16lj-2-2">Rendement
+					  </b>
+					  <span id="icukjv-2-2">7% per jaar</span>
+					</li>
+					<li>
+					  <b id="ik25h7-2-2">Periode
+					  </b>
+					  <span>2 jaar</span>
+					</li>
+					<li>
+					  <b id="ihr657-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/23/investeer-woning-almere.jpg"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="in06zb-2-2">Postcodegebied
+					  </b>
+					  <span>1356</span>
+					</li>
+					<li>
+					  <b id="ipoekf-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>EURO 300.000,-</span>
+					</li>
+					<li>
+					  <b id="ifib4v-2-2">Rendement
+					  </b>
+					  <span id="idn7zi-2-2">4% per jaar</span>
+					</li>
+					<li>
+					  <b id="i14gdh-2-2">Periode
+					  </b>
+					  <span>5 - 10 jaar</span>
+					</li>
+					<li>
+					  <b id="iypf4h-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/95/direct-investeren-woning-deurne.PNG"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="ikr2ex-2-2">Postcodegebied
+					  </b>
+					  <span>5751</span>
+					</li>
+					<li>
+					  <b id="i9qfm7-2-2">Te verzilveren bedrag
+					  </b>
+					  <span id="i6dqc6-2-2">EURO 425.000,-</span>
+					</li>
+					<li>
+					  <b id="ihmtb2-2-2">Rendement
+					  </b>
+					  <span id="i62d2k-2-2">5,5% per jaar</span>
+					</li>
+					<li>
+					  <b id="izfwmr-2-2">Periode
+					  </b>
+					  <span>15 - 20 jaar</span>
+					</li>
+					<li>
+					  <b id="ie0fzz-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/43/investeer-woning-den-bosch.jpg"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="ihum9i-2-2">Postcodegebied
+					  </b>
+					  <span>5224</span>
+					</li>
+					<li>
+					  <b id="isy5gl-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>342.900,-</span>
+					</li>
+					<li>
+					  <b id="iz9zkt-2-2">Rendement
+					  </b>
+					  <span>4% per jaar</span>
+					</li>
+					<li>
+					  <b id="i9ebd4-2-2">Periode
+					  </b>
+					  <span>In overleg</span>
+					</li>
+					<li>
+					  <b id="is6ojc-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item double hint-cell">
+				<div class="wrapper">
+				  <img src="/template/images/shield.svg"/>
+				  <p>U investeert een bedrag bij aanvang van het Verzilveren van de woning, waarna de huidige bewoner(s) voor een vooraf afgesproken periode de woning terug gaan huren. Resulterend in een direct rendement in de vorm van maandelijkse huurinkomsten. Het restant van de vooraf afgesproken koopsom dient na de huurperiode voldaan te worden. 
+				  </p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div data-tab-title="Aankoop op termijn" class="tab">
+			<div class="gridx3">
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/60/direct-investeren-woning-te-goes.jpg"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="ikrbmg-2-2">Postcodegebied
+					  </b>
+					  <span>4464</span>
+					</li>
+					<li>
+					  <b id="i80orh-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>EUR 80.000,-</span>
+					</li>
+					<li>
+					  <b id="ij5hzl-2-2">Rendement
+					  </b>
+					  <span>100% Waardestrijging</span>
+					</li>
+					<li>
+					  <b id="i3wbcm-2-2">Periode
+					  </b>
+					  <span>15 jaar</span>
+					</li>
+					<li>
+					  <b id="ioco1h-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/96/direct-investeren-woning-pernis.PNG"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="i7p54a-3-2">Postcodegebied
+					  </b>
+					  <span>3195</span>
+					</li>
+					<li>
+					  <b id="ilc16g-3-2">Te verzilveren bedrag
+					  </b>
+					  <span>EURO 337.800,-</span>
+					</li>
+					<li>
+					  <b id="iznhh9-3-2">Rendement
+					  </b>
+					  <span>100% Waardestrijging</span>
+					</li>
+					<li>
+					  <b id="i2txja-3-2">Periode
+					  </b>
+					  <span>15 - 20 jaar</span>
+					</li>
+					<li>
+					  <b id="idvw2z-3-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item tripple hint-cell">
+				<div class="wrapper">
+				  <img src="/template/images/shield.svg"/>
+				  <p>U investeert een bedrag tot EUR 50.000,- bij aanvang, en gaat vervolgens de woning, in de vorm van maandelijkse aanbetalingen op de koopsom, op termijn aankopen. Uw rendement zit in de waardestijging van de woning. In sommige gevallen is het tevens mogelijk de overdrachtsbelasting uit te stellen. Het restant van de vooraf afgesproken koopsom dient na de aanbetalingsperiode te worden voldaan, indien van toepassing.
+				  </p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div data-tab-title="Geen eigenaar, wel direct rendement" class="tab">
+			<div class="gridx3">
+			  <div class="catalog-item blur">
+				<div class="img-cont">
+				  <img src="https://thuisborg.nl/serve/99/direct-investeren-rotterdam.PNG" id="iuacyb-2-2"/>
+				</div>
+				<div class="item-info">
+				  <h6>Vraag meer info en foto&#039;s aan via email
+				  </h6>
+				  <ul>
+					<li>
+					  <b id="i7p54a-2-2-2">Postcodegebied
+					  </b>
+					  <span>1356</span>
+					</li>
+					<li>
+					  <b id="ilc16g-2-2-2">Te verzilveren bedrag
+					  </b>
+					  <span>EURO 206.000,-</span>
+					</li>
+					<li>
+					  <b id="iznhh9-2-2-2">Rendement
+					  </b>
+					  <span>5 - 7% per jaar</span>
+					</li>
+					<li>
+					  <b id="i2txja-2-2-2">Periode
+					  </b>
+					  <span>3 - 5 jaar</span>
+					</li>
+					<li>
+					  <b id="idvw2z-2-2-2">Foto&#039;s
+					  </b>
+					  <span>Beschikbaar</span>
+					</li>
+				  </ul>
+				  <div class="al-center">
+					<span click="app.$store.commit('toggleContactModal')" class="toggle-contact">Neem contact op</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="catalog-item double hint-cell">
+				<div class="wrapper">
+				  <img src="/template/images/shield.svg"/>
+				  <p>Voor deze panden bieden wij u de mogelijkheid te (her)financieren, met een vast rendement en het eerste recht van hypotheek als extra zekerheid. U wordt ontzorgd: zaken zoals onderhoud, beheer en betalingen worden door ons geregeld. Wij bieden hierbij een vaste rendementsvergoeding tussen de 5 en 7%.
+				  </p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="investment-steps">
+	<h2>Hoe investeer ik in verzilverde woningen?
+	</h2>
+	<ul class="steps-wrapper">
+	  <li>
+		<img src="/template/images/icon-house.png"/>
+		<p id="isvfny1">U koopt een woning direct volledig aan of u kiest voor aanbetalingen.
+		</p>
+	  </li>
+	  <li>
+		<img src="/template/images/icon-deal.png"/>
+		<p id="ip78est">U krijgt daarvoor het eigendom van de woning of het recht van eerste hypotheek.
+		</p>
+	  </li>
+	  <li>
+		<img src="/template/images/icon-house-guarantee.png"/>
+		<p id="izmkliw">Wij leggen het onderhoudsplan vast met de verkopende woningeigenaar en beheren de woning voor
+		  u.
+		</p>
+	  </li>
+	  <li>
+		<img src="/template/images/icon-house-auction.png"/>
+		<p id="i6lrna9">Na afloop van de bewoning verkopen wij de woning en keren u de opbrengsten uit.
+		</p>
+	  </li>
+	  <li>
+		<img src="/template/images/icon-house-exchange.png"/>
+		<p id="iadr3y-2-2">Bemiddeling in geval van tussentijdse verkoop woning. Waardestijging woning wordt dan op basis van taxatie, netto aan u uitgekeerd.
+		</p>
+	  </li>
+	</ul>
+  </section>
+  <section class="hero-system-v2 reversed style-423">
+	<div class="hero-wrapper">
+	  <div class="hero-image">
+		<img src="/template/images/river-home.jpg"/>
+	  </div>
+	  <div class="hero-inner">
+		<div class="hero-container">
+		  <div class="investeren-title">
+			<h2 id="ijegxl-2-2">Graag bespreken we vrijblijvend 
+			  <br/>de mogelijkheden met u
+			</h2>
+		  </div>
+		  <div class="background-checkmark">
+			<div class="form-style12">
+			  <p class="form-desc">Vul hier uw gegevens in en dan nemen we op werkdagen binnen 24 uur contact met u op.
+			  </p>
+			  <form-handler :validations="['SingleLine',{name:'Email', validation: 'email'},'agreement']">
+				<form action="https://forms.zohopublic.eu/soliditry/form/TBbeleggingspandenmogelijkhedenaanvraagwebsite/formperma/6b1mVovBHjnCiY3IuGasncS5SuJqeR8mdVVnOzk1O0s/htmlRecords/submit" name="form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="request-call-2-2">
+				  <div class="form_hiddens">
+					<input type="hidden" name="zf_referrer_name" value=""/>
+					<!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+					<input type="hidden" name="zf_redirect_url" value=""/>
+					<!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+					<input type="hidden" name="zc_gad" value=""/>
+					<!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+					<input type="hidden" name="utm_source" value=""/>
+					<input type="hidden" name="utm_medium" value=""/>
+					<input type="hidden" name="utm_campaign" value=""/>
+					<input type="hidden" name="utm_term" value=""/>
+					<input type="hidden" name="utm_content" value=""/>
+				  </div>
+				  <div class="fields-wrapper">
+					<div class="form-row">
+					  <div class="form-row__input">
+						<input type="text" name="SingleLine" checktype="c1" value="" maxlength="255" fieldtype="1" placeholder="Naam"/>
+					  </div>
+					</div>
+					<div class="form-row">
+					  <div class="form-row__input">
+						<input fieldtype="9" type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="E-mail"/>
+					  </div>
+					</div>
+					<div class="form-row">
+					  <div class="form-row__input">
+						<input type="text" name="SingleLine2" checktype="c1" value="" maxlength="255" fieldtype="1" placeholder="Telefoon"/>
+					  </div>
+					</div>
+				  </div>
+				  <div class="agreement-submit">
+					<div class="agreement">
+					  <input type="checkbox" checktype="c1" id="DecisionBox-2-2" name="DecisionBox"/>
+					  <label for="DecisionBox" id="iygqq5-2-2"> Ik accepteer de voorwaarden van
+						Thuisborg.</label>
+					</div>
+					<button class="btn v2 some-green">Oriëntatiegesprek aanvragen</button>
+				  </div>
+				</form>
+			  </form-handler>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+</main>
+	</div>
+	<!--	JS Start    -->
+	<script type="module" src="/src/js/main.js"></script>
+	<!--	CSS End    -->
+</body>
+</html>

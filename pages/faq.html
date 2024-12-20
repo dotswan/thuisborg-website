@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>---page title---</title>
+
+	<!--	SEO - Open Graph Start -->
+	<meta name="description" content="---site description---"/>
+	<meta name="keywords" content="---site keywords---"/>
+	<meta property="og:title" content="---page title---"/>
+	<meta property="og:site_name" content="---project name---"/>
+	<meta property="og:description" content="---site description---"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="---site URL (https://www.example.com)---"/>
+	<meta property="og:image" content="---url to cover image---">
+	<!--	SEO - Open Graph End    -->
+
+	<!--	FAVICON Start    -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/template/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/template/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/template/fav/favicon-16x16.png">
+	<link rel="manifest" href="/template/fav/site.webmanifest">
+	<link rel="mask-icon" href="/template/fav/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!--	FAVICON End    -->
+
+	<!--	CSS Start    -->
+	<link rel="stylesheet" href="/template/css/app.css">
+	<!--	CSS End    -->
+
+	<!--	GOOGLE FONTS Start    -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<link
+			href="https://fonts.googleapis.com/css2?family=&display=swap"
+			rel="stylesheet"
+	/>
+	<!--	GOOGLE FONTS End    -->
+
+	<!--[if lt IE 9]>
+	<script src="/template/js/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div id="app">
+		<main class="main">
+			<section class="breadcrumb">
+				<div class="standard middle">
+					<h1>FAQ
+					</h1>
+				</div>
+				<div class="breadcrumb__cont">
+					<div class="standard middle">
+						<ul class="breadcrumb__cont__items">
+							<li>
+								<a href="">Home</a>
+							</li>
+							<li>
+								<span>faq</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="mottos">
+				<div class="standard middle">
+					<ul>
+						<li class="checkmarked">Flexibel op uw wensen afgestemd
+						</li>
+						<li class="checkmarked">Geen makelaars, geen verborgen kosten
+						</li>
+						<li class="checkmarked">Binnen 48 uur antwoord
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="faq-cont">
+				<div class="standard middle">
+					<div v-for="faqSet in faqList" class="faq-set">
+						<div v-if="!!faqSet.sectionTitle" class="faqsect">
+							<h2 class="faq-set__title">{{faqSet.sectionTitle}}
+							</h2>
+							<div v-for="fq in faqSet.items" class="faq-rest">
+								<h2 class="faq-set__title sub">{{fq.title}}
+								</h2>
+								<ul>
+									<li v-for="fqi in fq.items" class="faq-set__item">
+										<div @click="toggleFaq($event)" class="faq-set__item__header">
+											<h4>{{fqi.question}}
+											</h4>
+											<span class="toggler"></span>
+										</div>
+										<div v-html="fqi.answer" class="faq-set__item__desc">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div v-else="" class="faq-rest">
+							<h2 class="faq-set__title">{{faqSet.title}}
+							</h2>
+							<ul>
+								<li v-for="faqItem in faqSet.items" class="faq-set__item">
+									<div @click="toggleFaq($event)" class="faq-set__item__header">
+										<h4>{{faqItem.question}}
+										</h4>
+										<span class="toggler"></span>
+									</div>
+									<div v-html="faqItem.answer" class="faq-set__item__desc">
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="invest asym-image-text">
+				<div class="asym__image">
+					<img src="/template/images/invest.png" class="crop-radius bl"/>
+				</div>
+				<div class="asym__text">
+					<div class="standard middle">
+						<div class="asym__text__cont">
+							<h3 class="section-title">Uw huis verkopen, er
+								<br/>
+							                          blijven wonen én
+								<br/>
+								<span class="green-text">financieel genieten</span>
+							</h3>
+							<a class="mobile__only btn">Vraag brochure aan</a>
+							<p>Vraag nu geheel vrijblijvend de Woningwaarde
+							   de Verzilveren brochure aan
+							</p>
+							<form class="invest-form">
+								<input placeholder="Voornaam"/>
+								<input placeholder="Achternaam"/>
+								<input placeholder="Email"/>
+								<input placeholder="Telefoonnummer"/>
+								<div class="agreement">
+									<input id="agreement" type="checkbox"/>
+									<label for="agreement">Ik ga akkoord met de <a>Algemene voorwaarden</a></label>
+								</div>
+								<button class="btn">Vraag brochure aan</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<!--	JS Start    -->
+	<script type="module" src="/src/js/main.js"></script>
+	<!--	CSS End    -->
+</body>
+</html>

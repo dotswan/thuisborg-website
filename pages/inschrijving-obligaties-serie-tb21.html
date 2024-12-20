@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>---page title---</title>
+
+	<!--	SEO - Open Graph Start -->
+	<meta name="description" content="---site description---"/>
+	<meta name="keywords" content="---site keywords---"/>
+	<meta property="og:title" content="---page title---"/>
+	<meta property="og:site_name" content="---project name---"/>
+	<meta property="og:description" content="---site description---"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="---site URL (https://www.example.com)---"/>
+	<meta property="og:image" content="---url to cover image---">
+	<!--	SEO - Open Graph End    -->
+
+	<!--	FAVICON Start    -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/template/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/template/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/template/fav/favicon-16x16.png">
+	<link rel="manifest" href="/template/fav/site.webmanifest">
+	<link rel="mask-icon" href="/template/fav/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!--	FAVICON End    -->
+
+	<!--	CSS Start    -->
+	<link rel="stylesheet" href="/template/css/app.css">
+	<!--	CSS End    -->
+
+	<!--	GOOGLE FONTS Start    -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<link
+			href="https://fonts.googleapis.com/css2?family=&display=swap"
+			rel="stylesheet"
+	/>
+	<!--	GOOGLE FONTS End    -->
+
+	<!--[if lt IE 9]>
+	<script src="/template/js/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div id="app">
+	<main class="main">
+  <div class="register-v2">
+	<div class="register-v2-back-img">
+	  <img src="/template/images/back-reg.png" alt="back"/>
+	</div>
+	<div class="register-v2-wrapper">
+	  <tb-register-21 :steps="[
+							  {title:null, alias:'intro', id:0, active:true, type:'intro'},
+							  {title:'<b>1</b><span>Gewenst bedrag</span>', alias:'step1', id:1, active:false, type:'tab'},
+							  {title:'<b>2</b><span>Gegevens</span>', alias:'step2', id:2, active:false, type:'tab'},
+							  {title:'<b>3</b><span>Documenten</span>', alias:'step3', id:3, active:false, type:'tab'},
+							  {title:'<b>4</b><span>Akkoord</span>', alias:'step4', id:4, active:false, type:'tab'},
+							  {title:'<b>5</b><span>Betaling</span>', alias:'step5', id:5, active:false, type:'tab'}
+							  ]" :validations="[
+											   {name:'privacy', step:'intro'},
+											   {name:'instructions', step:'intro'},
+											   {name:'Date', validation:{type:'date'}, step: 'step1'},
+											   {name:'Number', step: 'step1', validation: {type:'min', valid_value:1000}},
+											   {name:'Checkbox', step: 'step1'},
+											   {name:'Radio', step:'step1', condition:{if:'values', field:'Checkbox', values:['3 jaar','5 jaar']}},
+											   {name:'Name_Salutation', step: 'step2'},
+											   {name:'Name_First', step: 'step2'},
+											   {name:'Name_Last', step: 'step2'},
+											   {name:'Date1', validation:{type:'date'},  step: 'step2'},
+											   {name:'Address_AddressLine1', step: 'step2'},
+											   {name:'Address_Region', step: 'step2'},
+											   {name:'Address_ZipCode', step: 'step2'},
+											   {name:'Address_City', step: 'step2'},
+											   {name:'PhoneNumber_countrycode', step: 'step2'},
+											   {name:'Email', validation:{type:'email'}, step: 'step2'},
+											   {name:'Date2',  validation:{type:'date'}, step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Name1_Salutation',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Name1_First',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Name1_Last',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Address2_Region',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Address2_ZipCode',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Address2_City',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Address2_AddressLine1',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'PhoneNumber1_countrycode',  step:'step2', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'Email1',  step:'step2', validation:{type:'email'}, condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'FileUpload1',  step:'step3', condition:{if:'true', field:'DecisionBox1'}},
+											   {name:'FileUpload', step: 'step3'},
+											   {name:'Address3_AddressLine1', step: 'step3'},
+											   {name:'Address3_AddressLine2', step: 'step3'},
+											   {name:'Address3_City', step: 'step3'},
+											   {name:'FileUpload2', step:'step3', condition:{if:'true', field:'DecisionBox'}},
+											   {name:'Signature', step: 'step4', validation:{type:'signature'}},
+											   {name:'Signature1', step: 'step4', validation:{type:'signature'}, condition:{if:'true', field:'DecisionBox1'}},
+											   ]">
+	  </tb-register-21>
+	</div>
+  </div>
+</main>
+	</div>
+	<!--	JS Start    -->
+	<script type="module" src="/src/js/main.js"></script>
+	<!--	CSS End    -->
+</body>
+</html>
