@@ -11,7 +11,7 @@
 				<h3>Selecteer een optie</h3>
 				<ul class="methods">
 					<li @click="changePaymentMethod('ideal')" :class="[{'selected': method==='ideal'}]">
-						<i><img src="https://www.ideal.nl/cms/themes/ideal_nl/img/ideal_logo.svg" alt="ideal"></i>
+						<img src="/template/images//ideal.svg">
 						<span>iDeal</span>
 					</li>
 					<li @click="changePaymentMethod('bank')" :class="[{'selected': method==='bank'}]">

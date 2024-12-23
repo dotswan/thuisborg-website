@@ -29,7 +29,7 @@
 							    @click="changeInvestment(item)">
 								€ {{ euroSigned(item) }}
 							</li>
-							<select type="button" class="btn btn-style" :class="[{'btn-deactivate': !!!investment}]"
+							<select class="btn btn-style" :class="[{'btn-deactivate': !!!investment}]"
 							        v-model="investment">
 								<option :value="null">Aanpassen</option>
 								<option :value="item" v-for="item in activePlan.secondaryPrices">€{{
@@ -131,6 +131,9 @@ export default {
 				],
 				legend: [],
 				credits: [],
+				accessibility: {
+					enabled: false
+				},
 				tooltip: {
 					formatter: function () {
 						let formatter = v => `${('' + v).replace(/\B(?=(\d{3})+(?!\d))/g, '.')},-`,

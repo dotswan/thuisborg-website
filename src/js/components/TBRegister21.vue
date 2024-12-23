@@ -12,7 +12,7 @@
 			      accept-charset='UTF-8'
 			      enctype='multipart/form-data'
 			      id='tb19form'
-			      onSubmit="javascript:document.charset='UTF-8'" ref="form">
+			      ref="form">
 				<div class="hiddens" v-show="false">
 					<input type="hidden" name="zf_referrer_name" value="">
 					<input type="hidden" name="zf_redirect_url" value="">
@@ -21,8 +21,8 @@
 				</div>
 				<div class="tabs-cont" :class="[{'intro':intro}]">
 					<div class="tab-header" v-show="currentStep.type === 'tab'">
-						<div class="tab" v-for="tab in formSteps" :class="[ {'active':tab.active}, 'type-'+tab.type]"
-						     v-if="tab.type === 'tab'">
+						<div class="tab" v-for="tab in filteredFormSteps"
+						     :class="[ {'active':tab.active}, 'type-'+tab.type]">
 							<div class="title" v-html="tab.title"></div>
 						</div>
 					</div>
@@ -605,7 +605,7 @@
 											<div class="multi-fields col-2">
 												<div class="col input">
 													<div class="note">Staat en huisnummer</div>
-														<input type="text" maxlength="255" name="Address_Region"
+													<input type="text" maxlength="255" name="Address_Region"
 													       checktype="c1"
 													       placeholder=""/>
 												</div>
@@ -1593,13 +1593,26 @@ export default {
 		intro() {
 			return (this.currentStep.type === 'intro' && this.currentStep.active);
 		},
+		filteredFormSteps() {
+			return this.formSteps.filter(tab => tab.type === 'tab');
+		}
 	},
 	props: {
-		formTag: {},
-		steps: [],
+		formTag: {
+			type: Object,
+			default: () => {
+			}
+		},
+		steps: {
+			type: Array,
+			default: () => []
+		},
 		recaptcha: false,
 		captcha: "",
-		validations: []
+		validations: {
+			type: Array,
+			default: () => []
+		},
 	},
 	data() {
 		return {
@@ -1826,7 +1839,7 @@ export default {
 						item.message = '';
 					}
 				} else {
-					console.log(item.value, item.name, item)
+					// console.log(item.value, item.name, item)
 					if (!!item.value) {
 						item.status = true;
 						item.message = '';
@@ -1843,7 +1856,7 @@ export default {
 								}
 							}
 							if (validationItem.type === "select-one") {
-								console.log(validationItem, validationItem.selected)
+								// console.log(validationItem, validationItem.selected)
 							}
 						});
 					} else {
@@ -2043,7 +2056,7 @@ export default {
 			let copy = this.form.elements;
 			for (var i = 0; i < copy.length; i++) {
 				if (copy[i].classList.contains('vdatetime-input')) {
-					console.log(copy[i].value, copy[i])
+					// console.log(copy[i].value, copy[i])
 				}
 			}
 		},

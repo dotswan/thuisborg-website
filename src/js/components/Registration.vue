@@ -176,7 +176,7 @@
 <script>
 
 export default {
-	name: 'Registration',
+	name: 'Registeration',
 	computed: {
 		isStepValid() {
 			let search = this.toValidate.filter(item => ((item.step === this.step) && !item.status));

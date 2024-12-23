@@ -1,12 +1,12 @@
 <template>
 	<div class="comments-slider">
-		<span class="arrow left" @click="slide('left', true)">
+		<span class="arrow left" @click="slide('left')">
 			<img src="/template/images/arrow.png">
 		</span>
 		<div class="comments-slider__list" ref="list">
 			<slot></slot>
 		</div>
-		<span class="arrow right" @click="slide('right', true)">
+		<span class="arrow right" @click="slide('right')">
 			<img src="/template/images/arrow.png">
 		</span>
 	</div>
@@ -31,7 +31,8 @@ export default {
 	},
 	methods: {
 		slide(inpt, click) {
-			if (inpt == 'right') {
+			console.log('slide', inpt)
+			if (inpt === 'right') {
 				if (this.activeIndex < this.count - 1) {
 					this.activeIndex++;
 					this.scroll += this.$refs.list.clientWidth;
@@ -47,16 +48,14 @@ export default {
 					this.moveIt()
 				}
 			}
-			if (!!click) {
-				this.resetTimer()
-			}
 		},
 		moveIt() {
 			this.$refs.list.scroll({
 				top: 0,
 				left: this.scroll,
 				behavior: 'smooth'
-			})
+			});
+			this.resetTimer()
 		},
 		setTimer() {
 			let _this = this;
@@ -66,7 +65,7 @@ export default {
 		},
 		resetTimer() {
 			clearInterval(this.interval);
-			this.setTimer();
+			// this.setTimer();
 		},
 		setUp() {
 			this.count = this.$refs.list.children.length;

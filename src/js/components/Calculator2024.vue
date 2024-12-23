@@ -31,7 +31,7 @@
 								<label>
 									<b class="number">1.</b>
 									<span>{{ Translate('What is your current home value?', currentLang) }}</span>
-									<span v-tooltip="{content:Translate('Select', currentLang )}"></span>
+									<span class="has-tooltip" v-tooltip="Translate('Select', currentLang )"></span>
 								</label>
 							</div>
 							<div class="field w-80">
@@ -47,7 +47,7 @@
 									<span>{{
 											Translate('How long do you want to live in your home?', currentLang)
 									      }}</span>
-									<span v-tooltip="{content:Translate('Tooltip', currentLang )}"></span>
+									<span class="has-tooltip" v-tooltip="Translate('Tooltip', currentLang )"></span>
 								</label>
 							</div>
 							<div class="field">
@@ -76,7 +76,7 @@
 									<span>{{
 											Translate('How much would you like to receive on your account now?', currentLang)
 									      }}</span>
-									<span v-tooltip="{content:Translate('Select', currentLang )}"></span>
+									<span class="has-tooltip" v-tooltip="Translate('Select', currentLang )"></span>
 								</label>
 							</div>
 							<div class="field w-80">
@@ -92,7 +92,7 @@
 									<span>{{
 											Translate('Does this include any outstanding mortgage amounts?', currentLang)
 									      }}</span>
-									<span v-tooltip="{content:Translate('Select', currentLang )}"></span>
+									<span class="has-tooltip" v-tooltip="Translate('Select', currentLang )"></span>
 								</label>
 							</div>
 							<div class="field">
@@ -121,7 +121,7 @@
 									<span>{{
 											Translate('If no: what is the outstanding mortgage amount', currentLang)
 									      }}</span>
-									<span v-tooltip="{content:Translate('Select', currentLang )}"></span>
+									<span class="has-tooltip" v-tooltip="Translate('Select', currentLang )"></span>
 								</label>
 							</div>
 							<div class="field w-80">

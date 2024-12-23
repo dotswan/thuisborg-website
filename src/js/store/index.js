@@ -33,24 +33,17 @@ export default createStore({
             list: []
         },
         snackList: [],
+        faqList: []
     },
     mutations: {
-        //Lightbox
-        setLightbox: function (state, payload) {
-            state.lightbox = payload;
-        },
-        unsetLightbox: function (state) {
-            state.lightbox.index = null;
-            state.lightbox.list = [];
-        },
         //Translation & language
         parseLang: function (state) {
             state.dictionary = []
             state.dictionaryLoaded = true;
             Axios({
-                method: "GET", url: state.baseUrl + '/api/v1/translations', //address
+                method: "GET", url: state.baseUrl + 'api/v1/translations', //address
             }).then(response => {
-                state.dictionary = response.data
+                state.dictionary = response.data;
                 state.dictionaryLoaded = true;
             }).catch(error => {
                 console.log('error loading ditionary')
@@ -82,6 +75,7 @@ export default createStore({
             })
             state.device.width = window.innerWidth;
         },
+        //nav
         toggleNav: function (state) {
             state.navStatus = !state.navStatus;
         },
@@ -90,12 +84,10 @@ export default createStore({
         },
         //Modal
         showModal: function (state) {
-            document.body.style.overflow = "hidden"
             state.modal = true;
         },
         hideModal: function (state) {
             state.modal = false;
-            document.body.style.overflow = "auto"
             if (state.modalObj.purgeOnClose) {
                 let _this = this;
                 setTimeout(function () {
@@ -111,9 +103,7 @@ export default createStore({
                 body: '',
                 class: '',
                 buttons: {},
-                components: [],
-                layout: 'modal',
-                closeBtnClass: ''
+                components: []
             };
         },
         setModal: function (state, obj) {
@@ -123,19 +113,104 @@ export default createStore({
             state.modalObj.body = obj.body;
             state.modalObj.class = obj.class;
             state.modalObj.component = obj.component;
-            state.modalObj.layout = obj.layout;
-            state.modalObj.closeBtnClass = obj.closeBtnClass;
             if (!!obj.buttons) {
                 state.modalObj.buttons = obj.buttons;
             } else {
                 state.modalObj.buttons = false;
             }
-            if (obj.loadType === 'component') {
+            if (obj.loadType == 'component') {
                 state.modalObj.components = [];
                 state.modalObj.components.push(obj.component.name);
             }
             this.commit('showModal');
         },
+        //search
+        toggleSearch: function (state) {
+            state.search = !state.search;
+        },
+        hideSearch: function (state) {
+            state.search = false;
+        },
+        toggleContactModal: function (state) {
+            let modal = {
+                loadType: 'component',
+                component: {name: 'contact', options: {}},
+                buttons: false,
+                class: 'modal-1',
+            };
+            this.commit('setModal', modal);
+        },
+        //faq
+        fetchFaq: function (state) {
+            Axios({
+                method: "GET", url: state.baseUrl + 'api/v1/content-manger/get-data/tb-faq?sortBy=id&orderBy=asc', //address
+            }).then(response => {
+                this.commit('parseFaq', response.data.result);
+            }).catch(error => {
+                console.log('error loading faq')
+            });
+        },
+        parseFaq: function (state, data) {
+            let items = data;
+            for (let i = 0; i < items.length; i++) {
+                let currentItem = items[i];
+                let category = currentItem.category;
+                let subcategory = currentItem.subcategory;
+
+                // Check if the category exists
+                let categoryEntry = state.faqList.find(f => f.title === category || f.sectionTitle === category);
+
+                if (subcategory) {
+                    // Handle subcategories
+                    if (categoryEntry) {
+                        // Find or create the subcategory in the category
+                        let subcategoryEntry = Array.isArray(categoryEntry.items)
+                                ? categoryEntry.items.find(subItem => subItem.title === subcategory)
+                                : null;
+
+                        if (subcategoryEntry) {
+                            // Subcategory exists, add item to it
+                            subcategoryEntry.items.push(currentItem);
+                        } else {
+                            // Subcategory doesn't exist, create it
+                            if (!Array.isArray(categoryEntry.items)) {
+                                categoryEntry.items = [];
+                            }
+                            categoryEntry.items.push({
+                                title: subcategory,
+                                items: [currentItem],
+                            });
+                        }
+                    } else {
+                        // Create a new category with subcategory
+                        state.faqList.push({
+                            sectionTitle: category,
+                            items: [
+                                {
+                                    title: subcategory,
+                                    items: [currentItem],
+                                },
+                            ],
+                        });
+                    }
+                } else {
+                    // Handle top-level categories
+                    if (categoryEntry) {
+                        // Add item to existing category
+                        if (!Array.isArray(categoryEntry.items)) {
+                            categoryEntry.items = [];
+                        }
+                        categoryEntry.items.push(currentItem);
+                    } else {
+                        // Create a new top-level category
+                        state.faqList.push({
+                            title: category,
+                            items: [currentItem],
+                        });
+                    }
+                }
+            }
+        }
     },
     getters: {
         getBaseUrl: state => {
@@ -165,12 +240,19 @@ export default createStore({
         getModalState: state => {
             return state.modal
         },
+        getSearch: state => {
+            return state.search
+        },
+        getFaq: state => {
+            return state.faqList
+        }
     }, actions: {
         setUp({commit, state}) {
             commit('setBaseUrl');
             commit('detectLanguage'); //translation mixin
             commit('setDevice'); //device status
             commit('parseLang'); //current language
+            commit('fetchFaq');
             window.addEventListener("resize", function (ev) {
                 commit('hideNav');
                 commit('setDevice');
@@ -182,6 +264,6 @@ export default createStore({
             } else {
                 return false;
             }
-        },
+        }
     }
 })

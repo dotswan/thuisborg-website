@@ -12,7 +12,7 @@
 			      accept-charset='UTF-8'
 			      enctype='multipart/form-data'
 			      id='tb20form'
-			      onSubmit="javascript:document.charset='UTF-8'" ref="form">
+			      ref="form">
 				<div class="hiddens" v-show="false">
 					<input type="hidden" name="zf_referrer_name" value="">
 					<input type="hidden" name="zf_redirect_url" value="">
@@ -20,8 +20,8 @@
 				</div>
 				<div class="tabs-cont" :class="[{'intro':intro}]">
 					<div class="tab-header" v-show="currentStep.type === 'tab'">
-						<div class="tab" v-for="tab in formSteps" :class="[ {'active':tab.active}, 'type-'+tab.type]"
-						     v-if="tab.type === 'tab'">
+						<div class="tab" v-for="tab in filteredFormSteps"
+						     :class="[ {'active':tab.active}, 'type-'+tab.type]">
 							<div class="title" v-html="tab.title"></div>
 						</div>
 					</div>
@@ -1582,13 +1582,26 @@ export default {
 		intro() {
 			return (this.currentStep.type === 'intro' && this.currentStep.active);
 		},
+		filteredFormSteps() {
+			return this.formSteps.filter(tab => tab.type === 'tab');
+		}
 	},
 	props: {
-		formTag: {},
-		steps: [],
+		formTag: {
+			type: Object,
+			default: () => {
+			}
+		},
+		steps: {
+			type: Array,
+			default: () => []
+		},
 		recaptcha: false,
 		captcha: "",
-		validations: []
+		validations: {
+			type: Array,
+			default: () => []
+		},
 	},
 	data() {
 		return {

@@ -1,10 +1,8 @@
 <template>
 	<div class="popup-cont" v-show="mayI">
-		<div class="popup" :class="[{'hidden': !display}]" ref="cont" @click.self="close()">
-			<div class="popup-wrapper">
-				<i class="close" @click="close()">⨯</i>
-				<slot></slot>
-			</div>
+		<div class="popup" :class="[{'hidden': !display}]" @click="close()" ref="cont">
+			<i class="close">⨯</i>
+			<slot></slot>
 		</div>
 		<div class="popup-minified" v-show="!display && shortcutDisplay" @click="shortcutClicked">
 			<span>{{ title }}</span>
@@ -16,20 +14,24 @@
 <script>
 export default {
 	props: {
-		default: false,
-		popUpId: '',
-		exceptions: [],
+		default: {
+			type: Boolean,
+			default: false
+		},
+		pid: '',
+		exceptions: {
+			type: Array,
+			default: () => []
+		},
 		title: '',
-		end: null,
-		delay: ''
+		end: null
 	},
 	data() {
 		return {
 			display: false,
 			id: '',
 			shortcutDisplay: true,
-			mayI: true,
-			wait: 3000
+			mayI: true
 		};
 	},
 	methods: {
@@ -52,7 +54,8 @@ export default {
 			let out = true
 			if (this.exceptions?.length) {
 				let url = window.location.href,
-						res = true
+						res = true;
+
 				this.exceptions.map(x => {
 					if (url.indexOf(x) > -1) {
 						out = res = res && false;
@@ -76,19 +79,6 @@ export default {
 		},
 		checkShow() {
 			this.mayI = this.checkUrl() && this.isDatePassed()
-		},
-		checkImageShowModal() {
-			let _this = this,
-					img = document.querySelectorAll('.popup img')[0];
-			if (!(!!this.$cookies.get(this.id))) {
-				setTimeout(() => {
-					if (img.complete) {
-						_this.show();
-					} else {
-						img.addEventListener('load', _this.show());
-					}
-				}, 3000);
-			}
 		}
 	},
 	created() {
@@ -101,16 +91,21 @@ export default {
 		});
 	},
 	mounted() {
-		if (!!this.popUpId) {
-			this.id = this.popUpId;
+		if (!!this.pid) {
+			this.id = this.pid;
 		} else {
-			this.id = 'popUp';
+			this.id = 'pip';
 		}
-		if (!!this.delay) {
-			this.wait = parseInt(this.delay) * 1000;
-			setTimeout(this.checkImageShowModal, this.wait)
-		} else {
-			this.checkImageShowModal()
+		let _this = this,
+				img = document.querySelectorAll('.popup img')[0];
+		if (!(!!this.$cookies.get(this.id))) {
+			setTimeout(() => {
+				if (img.complete) {
+					_this.show();
+				} else {
+					img.addEventListener('load', _this.show());
+				}
+			}, 3000);
 		}
 	}
 }

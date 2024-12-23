@@ -75,7 +75,7 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title">
 						<span>Wat is volgens u de vrije verkoopwaarde van uw woning op dit moment?</span>
-						<!--						<span v-tooltip="{content:'Schuif tussen minimum en maximum waarde'}"></span>-->
+						<!--						<span class="has-tooltip" v-tooltip="'Schuif tussen minimum en maximum waarde'"></span>-->
 						<span></span>
 					</p>
 					<div class="calculator__row__field price-input">
@@ -100,7 +100,7 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title">
 						<span>In welke plaats of gemeente staat de woning?</span>
-						<span v-tooltip="{content:'Voer plaatsnaam in'}"></span>
+						<span class="has-tooltip" v-tooltip="'Voer plaatsnaam in'"></span>
 					</p>
 					<div class="calculator__row__field">
 						<input type="text" v-model="fields.field2" placeholder="Voer plaatsnaam in" class="cw-40">
@@ -109,10 +109,10 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title cw-10">
 						<span>Hoe groot is uw ruimte aan grond rondom deze woning?</span>
-						<span v-tooltip="{content:'Selecteer'}"></span>
+						<span class="has-tooltip" v-tooltip="'Selecteer'"></span>
 					</p>
 					<div class="calculator__row__field">
-						<select type="text" v-model="fields.field3" class="cw-60">
+						<select v-model="fields.field3" class="cw-60">
 							<option value="0">Selecteer</option>
 							<option value="1">Tussen 0 en 100 m2</option>
 							<option value="2">Tussen 100 en 200 m2</option>
@@ -126,10 +126,10 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title">
 						<span>Hoeveel slaapkamers heeft uw woning?</span>
-						<span v-tooltip="{content:'Selecteer'}"></span>
+						<span class="has-tooltip" v-tooltip="'Selecteer'"></span>
 					</p>
 					<div class="calculator__row__field">
-						<select type="text" v-model="fields.field4" class="cw-60">
+						<select v-model="fields.field4" class="cw-60">
 							<option value="0">Selecteer</option>
 							<option value="0">1</option>
 							<option value="1">2</option>
@@ -143,7 +143,7 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title">
 						<span>Hoeveel jaar wilt u minimaal nog in uw woning blijven wonen?</span>
-						<span v-tooltip="{content:'Schuif tusen minimum en maximum waarde'}"></span>
+						<span class="has-tooltip" v-tooltip="'Schuif tusen minimum en maximum waarde'"></span>
 					</p>
 					<div class="calculator__row__field cw-50">
 						<vue-slider :min="0"
@@ -162,10 +162,10 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title">
 						<span>Wilt u een deel van uw woning onderverhuren tijdens bewoning?</span>
-						<span v-tooltip="{content:'Selecteer'}"></span>
+						<span class="has-tooltip" v-tooltip="'Selecteer'"></span>
 					</p>
 					<div class="calculator__row__field">
-						<select type="text" v-model="fields.field6" class="cw-50">
+						<select v-model="fields.field6" class="cw-50">
 							<option value="2">Nee</option>
 							<option value="3">Ja</option>
 							<option value="1">Weet niet / Graag overleg</option>
@@ -175,10 +175,10 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title">
 						<span>Is er nog een lopende hypotheek op de woning?</span>
-						<span v-tooltip="{content:'Selecteer'}"></span>
+						<span class="has-tooltip" v-tooltip="'Selecteer'"></span>
 					</p>
 					<div class="calculator__row__field">
-						<select type="text" v-model="fields.field7" class="cw-50">
+						<select v-model="fields.field7" class="cw-50">
 							<option value="2">Nee</option>
 							<option value="3">Ja</option>
 							<!--							<option value="1">Weet niet / Graag overleg</option>-->
@@ -187,7 +187,7 @@
 					<br>
 					<p class="calculator__row__title cw-10" v-show="fields.field7==3">
 						<span>Bij ja: wat is de openstaande hypotheekschuld?</span>
-						<span v-tooltip="{content:'Schuif tusen minimum en maximum waarde'}"></span>
+						<span class="has-tooltip" v-tooltip="'Schuif tusen minimum en maximum waarde'"></span>
 					</p>
 					<div class="calculator__row__field price-input" v-show="fields.field7==3">
 						<price-input v-model="fields.field7a" min="0" max="2500000" type="number"
@@ -202,7 +202,8 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title cw-10">
 						<span>Wat wilt u bij aanvang van verzilvering netto op uw rekening ontvangen, exclusief het bedrag van uw lopende hypotheek?</span>
-						<span v-tooltip="{content:'Wilt u bij aanvang van het verzilveren van uw woning meer dan EUR 50.000,- ontvangen (inclusief uw lopende hypotheek), dan maakt men gebruik van het Woningwaarde Verzilverplan. Wanneer het bedrag lager is dan EUR 50.000,- kunt u gebruik maken van het Estate Plan.'}"></span>
+						<span class="has-tooltip"
+						      v-tooltip="'Wilt u bij aanvang van het verzilveren van uw woning meer dan EUR 50.000,- ontvangen (inclusief uw lopende hypotheek), dan maakt men gebruik van het Woningwaarde Verzilverplan. Wanneer het bedrag lager is dan EUR 50.000,- kunt u gebruik maken van het Estate Plan.'"></span>
 					</p>
 					<div class="calculator__row__field price-input">
 						<price-input v-model="fields.field8" min="0" max="500000" type="number"
@@ -212,7 +213,8 @@
 				<div class="calculator__row">
 					<p class="calculator__row__title cw-10">
 						<span>Wat wilt u deze <b class="highlight">{{ fields.field5 }} jaar</b> maandelijks ontvangen als periodieke aanbetaling op de woning?</span>
-						<span v-tooltip="{content:'U maakt gebruik van ons Estate Plan wanneer u maandelijks een bedrag wenst te ontvangen als aanbetaling op de toekomstige koopsom, en deze hoger is dan het eventueel te betalen huurbedrag. Het bedrag wat u bij aanvang wenst te ontvangen is maximaal EUR 50.000,-'}"></span>
+						<span class="has-tooltip"
+						      v-tooltip="'U maakt gebruik van ons Estate Plan wanneer u maandelijks een bedrag wenst te ontvangen als aanbetaling op de toekomstige koopsom, en deze hoger is dan het eventueel te betalen huurbedrag. Het bedrag wat u bij aanvang wenst te ontvangen is maximaal EUR 50.000,-'"></span>
 					</p>
 					<div class="calculator__row__field cw-40">
 						<vue-slider :min="0"
@@ -231,7 +233,8 @@
 					<br></br>
 					<p class="calculator__row__title cw-10">
 						<span>Wat wilt u maandelijks betalen aan huur (vast bedrag) voor de woning?</span>
-						<span v-tooltip="{content:'U maakt gebruik van ons Woningwaarde Verzilverplan wanneer u kiest om maandelijks een bedrag als huur te betalen, en het bedrag aan huur hoger is dan een eventuele aanbetaling.'}"></span>
+						<span class="has-tooltip"
+						      v-tooltip="'U maakt gebruik van ons Woningwaarde Verzilverplan wanneer u kiest om maandelijks een bedrag als huur te betalen, en het bedrag aan huur hoger is dan een eventuele aanbetaling.'"></span>
 					</p>
 					<div class="calculator__row__field cw-40">
 						<vue-slider :min="0"
@@ -252,10 +255,11 @@
 					<p class="calculator__row__title">
 					<span>Bij het verlaten van uw woning ontvangt u nog een netto bedrag, na aftrek van alle lasten en kosten, als deel van de koopsom.
 Wilt u daarvoor een vast of een variabel bedrag ontvangen:</span>
-						<span v-tooltip="{content:'Wilt u een eindbetaling ontvangen die door de jaren heen mee verandert met de waarde van uw woning, of wilt u een eindbetaling ontvangen die vanaf het begin af aan al vastgesteld wordt?'}"></span>
+						<span class="has-tooltip"
+						      v-tooltip="'Wilt u een eindbetaling ontvangen die door de jaren heen mee verandert met de waarde van uw woning, of wilt u een eindbetaling ontvangen die vanaf het begin af aan al vastgesteld wordt?'"></span>
 					</p>
 					<div class="calculator__row__field">
-						<select type="text" v-model="fields.field10" class="cw-50">
+						<select v-model="fields.field10" class="cw-50">
 							<option value="0">Nee</option>
 							<option value="1">Vast</option>
 							<option value="2">Variabel</option>
@@ -265,7 +269,7 @@ Wilt u daarvoor een vast of een variabel bedrag ontvangen:</span>
 				<div class="calculator__row">
 					<p class="calculator__row__title cw-10">
 						<span>Een vast netto bedrag, van</span>
-						<!--						<span v-tooltip="{content:'Schuif tusen minimum en maximum waarde'}"></span>-->
+						<!--						<span class="has-tooltip" v-tooltip="'Schuif tusen minimum en maximum waarde'"></span>-->
 					</p>
 					<div class="calculator__row__field price-input">
 						<price-input v-model="fields.field10a" min="0" max="2500000" type="number"
@@ -274,7 +278,7 @@ Wilt u daarvoor een vast of een variabel bedrag ontvangen:</span>
 					<br>
 					<p class="calculator__row__title cw-10">
 						<span>Een variabel bedrag, gebaseerd op</span>
-						<!--						<span v-tooltip="{content:'Schuif tusen minimum en maximum waarde'}"></span>-->
+						<!--						<span class="has-tooltip" v-tooltip="'Schuif tusen minimum en maximum waarde'"></span>-->
 					</p>
 					<div class="calculator__row__field cw-40">
 						<vue-slider :min="0"
@@ -376,7 +380,7 @@ Wilt u daarvoor een vast of een variabel bedrag ontvangen:</span>
 						<span>Aanhef</span>
 					</p>
 					<div class="calculator__row__field ">
-						<select type="text" v-model="fields.aanhef" class="cw-60">
+						<select v-model="fields.aanhef" class="cw-60">
 							<option value="mevrouw">Mevrouw</option>
 							<option value="heer">heer</option>
 						</select>
@@ -728,7 +732,6 @@ export default {
 			return result;
 		}
 	},
-	props: {},
 	data() {
 		return {
 			loading: false,

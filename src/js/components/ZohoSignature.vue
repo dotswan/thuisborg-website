@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import * as ZS from '../zoho_signature';
-import {syncInputWithCanvas} from "../zoho_signature";
+import * as ZS from '@/js/helpers/zoho_signature';
+import {syncInputWithCanvas} from "@/js/helpers/zoho_signature";
 
 export default {
 	props: {

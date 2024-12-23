@@ -15,8 +15,14 @@ export default {
 	props: {
 		recaptcha: null,
 		captcha: "",
-		blacklist: [],
-		validations: []
+		blacklist: {
+			type: Array,
+			default: () => []
+		},
+		validations: {
+			type: Array,
+			default: () => []
+		}
 	},
 	data() {
 		return {

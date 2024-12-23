@@ -115,6 +115,9 @@ export default {
 		};
 	},
 	methods: {
+		langSwitch() {
+			console.log(this.currentLang)
+		},
 		setUp() {
 			if (localStorage.getItem('calculator')) {
 				this.fields = JSON.parse(localStorage.getItem('calculator')).fields;

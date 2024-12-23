@@ -46,20 +46,21 @@
 </head>
 <body>
 	<div id="app">
-	<main class="main">
-  <div class="register-v2">
-	<div class="register-v2-back-img">
-	  <img src="/template/images/back-reg.png" alt="back"/>
-	</div>
-	<div class="register-v2-wrapper">
-	  <tb-register-21 :steps="[
+		<main class="main">
+			<div class="register-v2">
+				<div class="register-v2-back-img">
+					<img src="/template/images/back-reg.png" alt="back"/>
+				</div>
+				<div class="register-v2-wrapper">
+					<tb-register-21 :steps="[
 							  {title:null, alias:'intro', id:0, active:true, type:'intro'},
 							  {title:'<b>1</b><span>Gewenst bedrag</span>', alias:'step1', id:1, active:false, type:'tab'},
 							  {title:'<b>2</b><span>Gegevens</span>', alias:'step2', id:2, active:false, type:'tab'},
 							  {title:'<b>3</b><span>Documenten</span>', alias:'step3', id:3, active:false, type:'tab'},
 							  {title:'<b>4</b><span>Akkoord</span>', alias:'step4', id:4, active:false, type:'tab'},
 							  {title:'<b>5</b><span>Betaling</span>', alias:'step5', id:5, active:false, type:'tab'}
-							  ]" :validations="[
+							  ]"
+					                :validations="[
 											   {name:'privacy', step:'intro'},
 											   {name:'instructions', step:'intro'},
 											   {name:'Date', validation:{type:'date'}, step: 'step1'},
@@ -95,11 +96,28 @@
 											   {name:'Signature', step: 'step4', validation:{type:'signature'}},
 											   {name:'Signature1', step: 'step4', validation:{type:'signature'}, condition:{if:'true', field:'DecisionBox1'}},
 											   ]">
-	  </tb-register-21>
+					</tb-register-21>
+				</div>
+			</div>
+		</main>
 	</div>
-  </div>
-</main>
-	</div>
+	<script>
+		if (window.location.hostname === 'localhost') {
+			fetch('/partials.html')
+					.then(response => response.text())
+					.then(html => {
+						const template = document.createElement('template');
+						template.innerHTML = html.trim();
+						const header = template.content.querySelector('header');
+						const footer = template.content.querySelector('footer');
+
+						// Insert the header and footer around the main content
+						const app = document.getElementById('app');
+						app.insertAdjacentElement('afterbegin', header);
+						app.appendChild(footer);
+					});
+		}
+	</script>
 	<!--	JS Start    -->
 	<script type="module" src="/src/js/main.js"></script>
 	<!--	CSS End    -->

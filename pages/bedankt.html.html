@@ -46,50 +46,71 @@
 </head>
 <body>
 	<div id="app">
-<section class="app-cont">
-  <div class="register">
-	<div class="logo-header">
-	  <a class="logo"><img src="/template/landingpage/assets/images/logo.png" alt="" id="i9ip"/></a>
-	</div>
-	<div class="register-form-cont">
-	  <div class="register-form">
-		<div class="step-cont thank-you">
-		  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" class="checkmark">
-			<circle cx="26" cy="26" r="25" fill="none" class="checkmark__circle">
-			</circle>
-			<path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="checkmark__check">
-			</path>
-		  </svg>
-		  <div class="title-cont">
-			<h1>Bedankt voor uw aanvraag!
-			</h1>
-		  </div>
-		  <p>U kunt de brochure hier openen.
-		  </p>
-		  <div class="al-center">
-			<a target="_blank" href="/template/landingpage/docs/Woningwaarde_verzilveren-5.pdf" class="btn">Download
-			  brochure</a>
-		  </div>
-		  <div class="extra-info">
-			<h2 id="ie03e">
-			  <br/>Extra informatie
-			</h2>
-			<div class="al-center">
-			  <a target="_blank" href="/template/landingpage/docs/Thuisborg-Inkomensaanvuller.pdf" id="ipm8d-2">Thuisborg
-				Inkomensaanvuller   </a>
-			  <a target="_blank" href="/template/landingpage/docs/Thuisborg-Estate-Plan.pdf" id="ipm8d">Thuisborg
-				Estate
-				Plan   </a>
-			  <a target="_blank" href="/template/landingpage/docs//Thuisborg-Verzilverplan.pdf" id="ienbi">  Thuisborg
-				Verzilverplan</a>
+		<section class="app-cont">
+			<div class="register">
+				<div class="logo-header">
+					<a class="logo"><img src="/template/landingpage/assets/images/logo.png" alt="" id="i9ip"/></a>
+				</div>
+				<div class="register-form-cont">
+					<div class="register-form">
+						<div class="step-cont thank-you">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" class="checkmark">
+								<circle cx="26" cy="26" r="25" fill="none" class="checkmark__circle">
+								</circle>
+								<path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="checkmark__check">
+								</path>
+							</svg>
+							<div class="title-cont">
+								<h1>Bedankt voor uw aanvraag!
+								</h1>
+							</div>
+							<p>U kunt de brochure hier openen.
+							</p>
+							<div class="al-center">
+								<a target="_blank" href="/template/landingpage/docs/Woningwaarde_verzilveren-5.pdf"
+								   class="btn">Download
+								               brochure</a>
+							</div>
+							<div class="extra-info">
+								<h2 id="ie03e">
+									<br/>Extra informatie
+								</h2>
+								<div class="al-center">
+									<a target="_blank" href="/template/landingpage/docs/Thuisborg-Inkomensaanvuller.pdf"
+									   id="ipm8d-2">Thuisborg
+									                Inkomensaanvuller   </a>
+									<a target="_blank" href="/template/landingpage/docs/Thuisborg-Estate-Plan.pdf"
+									   id="ipm8d">Thuisborg
+									              Estate
+									              Plan   </a>
+									<a target="_blank" href="/template/landingpage/docs//Thuisborg-Verzilverplan.pdf"
+									   id="ienbi">  Thuisborg
+									              Verzilverplan</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		  </div>
-		</div>
-	  </div>
+		</section>
 	</div>
-  </div>
-</section>
-	</div>
+	<script>
+		if (window.location.hostname === 'localhost') {
+			fetch('/partials.html')
+					.then(response => response.text())
+					.then(html => {
+						const template = document.createElement('template');
+						template.innerHTML = html.trim();
+						const header = template.content.querySelector('header');
+						const footer = template.content.querySelector('footer');
+
+						// Insert the header and footer around the main content
+						const app = document.getElementById('app');
+						app.insertAdjacentElement('afterbegin', header);
+						app.appendChild(footer);
+					});
+		}
+	</script>
 	<!--	JS Start    -->
 	<script type="module" src="/src/js/main.js"></script>
 	<!--	CSS End    -->

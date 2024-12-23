@@ -100,6 +100,23 @@
 			</div>
 		</main>
 	</div>
+	<script>
+		if (window.location.hostname === 'localhost') {
+			fetch('/partials.html')
+					.then(response => response.text())
+					.then(html => {
+						const template = document.createElement('template');
+						template.innerHTML = html.trim();
+						const header = template.content.querySelector('header');
+						const footer = template.content.querySelector('footer');
+
+						// Insert the header and footer around the main content
+						const app = document.getElementById('app');
+						app.insertAdjacentElement('afterbegin', header);
+						app.appendChild(footer);
+					});
+		}
+	</script>
 	<!--	JS Start    -->
 	<script type="module" src="/src/js/main.js"></script>
 	<!--	CSS End    -->
