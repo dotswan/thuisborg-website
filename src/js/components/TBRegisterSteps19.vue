@@ -1306,7 +1306,7 @@
 								                         in de Obligatievoorwaarden.
 								</p>
 								<br>
-								<p class="single-line-p">IBAN nummer: NL 95 ABNA 0425 8140 09</p>
+								<p class="single-line-p">IBAN nummer: {{$store.getters.getBankAccount}}</p>
 								<br>
 								<p class="single-line-p">Ten name van : Thuisborg Finance B.V. </p>
 								<br>

@@ -33,6 +33,7 @@ import TBRegister21 from '@/js/components/TBRegister21.vue';
 import TBRegister22 from '@/js/components/TBRegister22.vue';
 import TBRegister23 from '@/js/components/TBRegister23.vue';
 import TBRegister24 from '@/js/components/TBRegister24.vue';
+import TBRegister25 from '@/js/components/TBRegister25.vue';
 
 
 // Directive
@@ -131,6 +132,7 @@ app
         .component('tb-register-22', TBRegister22)
         .component('tb-register-23', TBRegister23)
         .component('tb-register-24', TBRegister24)
+        .component('tb-register-25', TBRegister25)
         .component('signature', ZohoSignature)
         .component('mollie', Mollie)
         .component('mollie-redirect', MollieRedirect)

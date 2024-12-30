@@ -5,19 +5,17 @@
 				<a class="logo" href="/">
 					<img src="/template/images/logo.png" class="logo-image" alt="Thuisborg">
 				</a>
-				<h1>Inschrijving Thuisborg Woningwaarde Vastgoed Obligaties Serie TB23</h1>
+				<h1>Inschrijving Thuisborg Woningwaarde Vastgoed Obligaties Serie TB25</h1>
 			</div>
-			<form action='https://forms.zohopublic.eu/soliditry/form/InschrijvingThuisborgWoningwaardeVastgoedObligatie5/formperma/0LzuimR9FxfeuEXQs80LCp8YNtQNjsTxL3lzMCVHMlY/htmlRecords/submit'
+			<form action='https://forms.zohopublic.eu/soliditry/form/InschrijvingThuisborgWoningwaardeVastgoedObligatie9/formperma/ucYwbHMzNTijNYJVDGixMAtNnOBVARBc3igfL_4bIqg/htmlRecords/submit'
 			      method='POST'
 			      accept-charset='UTF-8'
 			      enctype='multipart/form-data'
-			      id='tb19form'
-			      ref="form">
+			      id='tb20form' ref="form">
 				<div class="hiddens" v-show="false">
 					<input type="hidden" name="zf_referrer_name" value="">
 					<input type="hidden" name="zf_redirect_url" value="">
 					<input type="hidden" name="zc_gad" value="">
-					<input type="hidden" name="SingleLine1" v-model="totaalbedrag"/>
 				</div>
 				<div class="tabs-cont" :class="[{'intro':intro}]">
 					<div class="tab-header" v-show="currentStep.type === 'tab'">
@@ -36,7 +34,7 @@
 									</a>
 								</div>
 								<div class="intro-body">
-									<h1>Inschrijving Thuisborg Woningwaarde Vastgoed Obligaties Serie TB23</h1>
+									<h1>Inschrijving Thuisborg Woningwaarde Vastgoed Obligaties Serie TB25</h1>
 									<div class="intro-text">
 										<p>Voor het registratieproces is het belangrijk dat u een kopie van uw
 										   identiteitsbewijs
@@ -54,14 +52,12 @@
 									<div class="intro-agreement">
 										<div class="agreement-item">
 											<input type="checkbox" id="agreement" name="privacy">
-											<label for="agreement">Ik ben akkoord met de <a
-													href="https://thuisborg.nl/template/docs/av-thuisborg-v3.2-nl.pdf">
-												Algemene
-												Voorwaarden</a>
+											<label for="agreement">Ik ben akkoord met de <a href=""> Algemene
+											                                                         Voorwaarden</a>
 											                       en
 												<a
-														href="https://thuisborg.nl/privacy-verklaring">Privacy
-												                                                       Policy</a></label>
+														href="">Privacy
+												                Policy</a></label>
 										</div>
 										<div class="agreement-item">
 											<input type="checkbox" id="instructies" name="instructions">
@@ -90,7 +86,7 @@
 								<p class="single-line-h2">Geïnteresseerde(n) wenst of wensen zich in te schrijven voor
 								                          de
 								                          volgende Obliigaties:</p>
-								<p class="single-line-p bold">Thuisborg Woningwaarde Vastgoed Obligaties Serie TB23</p>
+								<p class="single-line-p bold">Thuisborg Woningwaarde Vastgoed Obligaties Serie TB25</p>
 								<div class="row required">
 									<div class="label">
 										<label>Datum</label>
@@ -100,15 +96,10 @@
 											<custom-date-picker simple format="dd-MM-yyyy" name="Date"
 											                    :locale-config="localeConfig"
 											                    @change="datesChangeListener"/>
-											<!--											<datetime :auto="true" name="Date"-->
-											<!--											          :flow="['year', 'month', 'date']"></datetime>-->
-											<!--											<datepicker name="Date" format="dd-MM-yyyy"-->
-											<!--											            :value="Date.now()" ></datepicker>-->
 											<div class="icon-cont">
 												<img src="/template/images/calendar-icon.svg">
 											</div>
 										</div>
-										<!--										<input type="Date" name="Date">-->
 									</div>
 								</div>
 								<div class="row required">
@@ -119,93 +110,89 @@
 										<input type="number" name="Number" maxlength="18" placeholder="">
 									</div>
 									<div class="note">
-										<p>Nominale waarde per Obligatie € 0,01. Minimaal deelnamebedrag van €
-										   1.000,-</p>
+										<p>Nominale waarde per Obligatie € 0,01. Minimaal deelnamebedrag van € 100.000,-
+										   bij inschrijving.</p>
 									</div>
 								</div>
-								<div class="row" v-show="!!emissionpercentage">
-									<div class="label">
-										<label>Emissiekosten {{ emissionpercentage }}%</label>
-									</div>
-									<div class="input">
-										<input type="text" name="Emissiekosten" v-model="emission" disabled>
-									</div>
-									<!--									<div class="note">-->
-									<!--										<p>Vast rendement wordt dan basis rendement, daar komt bovenop: de variabele-->
-									<!--										   rendementsvergoeding, gebaseerd op de prijsontwikkeling van de Nederlandse-->
-									<!--										   huizenmarkt, met een bandbreedte tussen -3% en 3%</p>-->
-									<!--									</div>-->
-								</div>
-								<div class="row" v-show="!!emissionpercentage">
-									<div class="label">
-										<label>Kortingscode</label>
-									</div>
-									<div class="input">
-										<input type="text" name="SingleLine" checktype="c1" value="" maxlength="255"
-										       fieldType=1 placeholder="" @input="fieldsChange" v-model="discountCode"/>
-									</div>
-									<div class="note"
-									     v-if="!!discountCode && discountCode !=='ThuisborgFinance'">
-										<p>* Deze code is niet correct</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="label">
-										<label>Totaalbedrag</label>
-									</div>
-									<div class="input">
-										<input type="text" name="totalbedrag" v-model="totaalbedrag" disabled>
-									</div>
-									<div class="note">
-										<p>Dit is het totale bedrag dat u dient over te maken voor deelname.</p>
-									</div>
-								</div>
+								<!--								<div class="row" v-show="!!emissionpercentage">-->
+								<!--									<div class="label">-->
+								<!--										<label>Emissiekosten {{ emissionpercentage }}%</label>-->
+								<!--									</div>-->
+								<!--									<div class="input">-->
+								<!--										<input type="text" name="Emissiekosten" v-model="emission" disabled>-->
+								<!--									</div>-->
+								<!--									&lt;!&ndash;									<div class="note">&ndash;&gt;-->
+								<!--									&lt;!&ndash;										<p>Vast rendement wordt dan basis rendement, daar komt bovenop: de variabele&ndash;&gt;-->
+								<!--									&lt;!&ndash;										   rendementsvergoeding, gebaseerd op de prijsontwikkeling van de Nederlandse&ndash;&gt;-->
+								<!--									&lt;!&ndash;										   huizenmarkt, met een bandbreedte tussen -3% en 3%</p>&ndash;&gt;-->
+								<!--									&lt;!&ndash;									</div>&ndash;&gt;-->
+								<!--								</div>-->
+								<!--								<div class="row" v-show="!!emissionpercentage">-->
+								<!--									<div class="label">-->
+								<!--										<label>Kortingscode</label>-->
+								<!--									</div>-->
+								<!--									<div class="input">-->
+								<!--										<input type="text" name="SingleLine" checktype="c1" value="" maxlength="255"-->
+								<!--										       fieldType=1 placeholder="" @input="fieldsChange"/>-->
+								<!--									</div>-->
+								<!--								</div>-->
+								<!--								<div class="row"> -->
+								<!--									<div class="label">-->
+								<!--										<label>Totaalbedrag</label>-->
+								<!--									</div>-->
+								<!--									<div class="input">-->
+								<!--										<input type="text" name="totalbedrag" v-model="totaalbedrag" disabled>-->
+								<!--									</div>-->
+								<!--									<div class="note">-->
+								<!--										<p>Dit is het totale bedrag dat u dient over te maken voor deelname.</p>-->
+								<!--									</div>-->
+								<!--								</div>-->
 								<div class="row required">
 									<div class="label">
-										<label>Looptijd (vanaf 1/3/5 jaar)</label>
+										<label>Looptijd (Vanaf 3 of 5 jaar)</label>
 									</div>
 									<div class="input">
 										<div class="checkbox-group">
+											<!--											<div class="checkbox-set">-->
+											<!--												<input type="radio" name="checkbox" value="1 jaar" id="Looptijd-1">-->
+											<!--												<label for="Looptijd-1">1 jaar</label>-->
+											<!--											</div>-->
 											<div class="checkbox-set">
-												<input type="radio" name="Checkbox" value="1 jaar" id="Looptijd-1">
-												<label for="Looptijd-1">1 jaar</label>
-											</div>
-											<div class="checkbox-set">
-												<input type="radio" name="Checkbox" value="3 jaar" id="Looptijd-3">
+												<input type="radio" name="checkbox" value="3 jaar" id="Looptijd-3">
 												<label for="Looptijd-3">3 jaar</label>
 											</div>
 											<div class="checkbox-set">
-												<input type="radio" name="Checkbox" value="5 jaar" id="Looptijd-5">
+												<input type="radio" name="checkbox" value="5 jaar" id="Looptijd-5">
 												<label for="Looptijd-5">5 jaar</label>
 											</div>
 
 										</div>
 									</div>
 								</div>
-								<div class="row required" v-show="isKeuze">
-									<div class="label">
-										<label>Keuze optie Prijsontwikkeling Woningmarkt -3% / +3%</label>
-									</div>
-									<div class="input">
-										<div class="radio-group">
-											<div class="radio-set">
-												<input type="radio" id="Keuze-ja" name="Radio"
-												       value="Ja">
-												<label for="Keuze-ja">Ja</label>
-											</div>
-											<div class="radio-set">
-												<input type="radio" id="Keuze-Nee" name="Radio"
-												       value="Nee">
-												<label for="Keuze-Nee">Nee</label>
-											</div>
-										</div>
-									</div>
-									<div class="note">
-										<p>Vast rendement wordt dan basis rendement, daar komt bovenop: de variabele
-										   rendementsvergoeding, gebaseerd op de prijsontwikkeling van de Nederlandse
-										   huizenmarkt, met een bandbreedte tussen -3% en 3%.</p>
-									</div>
-								</div>
+								<!--								<div class="row required" v-show="isKeuze">-->
+								<!--									<div class="label">-->
+								<!--										<label>Keuze optie Prijsontwikkeling Woningmarkt -3% / +3%</label>-->
+								<!--									</div>-->
+								<!--									<div class="input">-->
+								<!--										<div class="radio-group">-->
+								<!--											<div class="radio-set">-->
+								<!--												<input type="radio" id="Keuze-ja" name="Radio"-->
+								<!--												       value="Ja">-->
+								<!--												<label for="Keuze-ja">Ja</label>-->
+								<!--											</div>-->
+								<!--											<div class="radio-set">-->
+								<!--												<input type="radio" id="Keuze-Nee" name="Radio"-->
+								<!--												       value="Nee">-->
+								<!--												<label for="Keuze-Nee">Nee</label>-->
+								<!--											</div>-->
+								<!--										</div>-->
+								<!--									</div>-->
+								<!--									<div class="note">-->
+								<!--										<p>Vast rendement wordt dan basis rendement, daar komt bovenop: de variabele-->
+								<!--										   rendementsvergoeding, gebaseerd op de prijsontwikkeling van de Nederlandse-->
+								<!--										   huizenmarkt, met een bandbreedte tussen -3% en 3%.</p>-->
+								<!--									</div>-->
+								<!--								</div>-->
 							</div>
 							<div class="tab-footer">
 								<span @click="changeStep('next')"
@@ -1570,7 +1557,7 @@
 
 <script>
 export default {
-	name: "TBRegisterSteps23",
+	name: "TBRegisterSteps25",
 	computed: {
 		canPay() {
 			return this.isMollie
@@ -1635,7 +1622,6 @@ export default {
 			emission: 0,
 			emissionpercentage: 0,
 			discount: 0,
-			discountCode: null,
 			totaalbedrag: 0,
 			isKeuze: false,
 			organization: false,
@@ -1664,7 +1650,6 @@ export default {
 			return [day, month, year].join('-');
 		},
 		setUp() {
-
 			this.parseZoho();
 			this.form = this.$refs.body.getElementsByTagName('form')[0];
 			this.parseForm();
@@ -1735,7 +1720,6 @@ export default {
 					if (item.step === this.currentStep.alias) {
 						let closestInputParrent = item.nodes[0].closest('.input'),
 								parent = !!closestInputParrent ? closestInputParrent : !!item.nodes.length ? item.nodes[0].parentNode : item.nodes.parentNode;
-						// console.log(item.nodes, item.name, parent, closestInputParrent, item.status)
 						if (!!!item.status) {
 							parent.classList.add('js-validation-error');
 							parent.setAttribute('js-validation-message', item.message)
@@ -1842,7 +1826,6 @@ export default {
 						item.message = '';
 					}
 				} else {
-					// console.log(item.value, item.name, item)
 					if (!!item.value) {
 						item.status = true;
 						item.message = '';
@@ -1855,11 +1838,8 @@ export default {
 								// input must be more than value
 								if (parseInt(item.value) < parseInt(validationItem.valid_value)) {
 									item.status = false;
-									item.message = 'Het minimale deelnamebedrag is € 1000,-';
+									item.message = '- Het minimale deelnamebedrag is € 100.000,-';
 								}
-							}
-							if (validationItem.type === "select-one") {
-								// console.log(validationItem, validationItem.selected)
 							}
 						});
 					} else {
@@ -1871,17 +1851,12 @@ export default {
 
 			this.applyValidationMessages();
 		},
-		passNodes(name, type) {
+		passNodes(name, type,) {
 			let nodes = null;
 			if (type === 'textarea') {
 				nodes = this.$refs.body.querySelectorAll('textarea[name=' + name + ']')
 			} else if (type === 'select-one') {
 				nodes = this.$refs.body.querySelectorAll('select[name=' + name + ']')
-			} else if (type === undefined) {
-				let element = !!this.form.elements[name] ? this.form.elements[name] : false;
-				if (!!element.length) {
-					nodes = this.$refs.body.querySelectorAll('input[name=' + name + ']')
-				}
 			} else {
 				nodes = this.$refs.body.querySelectorAll('input[name=' + name + ']')
 			}
@@ -1894,7 +1869,6 @@ export default {
 					if (!!this.form.elements[item.name]) {
 						//if element exists
 						let element = !!this.form.elements[item.name] ? this.form.elements[item.name] : false;
-
 						if (!!element) {
 							if (!!item.validation && item.validation.type === 'signature') {
 								let component = !!this.$refs[item.name] ? this.$refs[item.name] : false;
@@ -1912,7 +1886,6 @@ export default {
 									this.toValidate.push(field)
 								}
 							} else {
-
 								let nodes = this.passNodes(item.name, element.type),
 										field = {},
 										type = null;
@@ -1930,16 +1903,14 @@ export default {
 								if (type == 'hidden') {
 									// todo
 								}
-								if (!!item.validation) {
+								if (!!item.validation)
 									field.validation.push(item.validation);
-								}
 								if (type === 'checkbox' || type === "radio") {
 									field.value = element.checked
 								}
 								nodes.forEach(item => {
 									item.addEventListener('input', this.fieldsChange);
 								})
-
 								//condition field
 								if (!!item.condition) {
 									field.condition = item.condition;
@@ -1948,16 +1919,15 @@ export default {
 									relatedElementNodes.forEach(item => {
 										item.addEventListener('input', this.fieldsChange);
 									});
-
 									field.condition.nodes = relatedElementNodes;
 									field.condition.type = relatedElementNodes[0].type;
 									field.condition.value = (field.condition.type === 'checkbox' || field.condition.type === "radio") ? relatedElement.checked : null
 								}
-
 								this.toValidate.push(field)
 							}
 						}
 					}
+
 				});
 			}
 		},
@@ -1968,9 +1938,9 @@ export default {
 			// if korting is equal to "thuisborgfinance" the emission will not apply
 			if (!!input) {
 				//emission
-				this.calculateEmission(input);
+				// this.calculateEmission(input);
 				//korting
-				this.countDiscount(input);
+				// this.countDiscount(input);
 				// totaalbedrag
 				this.totaalbedrag = this.countTotalBedrag(input);
 			}
@@ -2003,11 +1973,11 @@ export default {
 			return res;
 		},
 		checkKeuze() {
-			let val = !!this.form ? this.form.elements['Checkbox'].value : null;
+			let val = !!this.form ? this.form.elements['checkbox'].value : null;
 			this.isKeuze = (val.includes('3') || val.includes('5'));
 		},
 		fieldsChange(e) {
-			this.checkKeuze();
+			// this.checkKeuze();
 			this.updateLiveValues();
 			this.validateForm();
 		},
@@ -2071,12 +2041,6 @@ export default {
 		}
 	},
 	mounted() {
-		// November 2024 campaign for putting preset discount code
-		const today = new Date();
-		if (today.getFullYear() === 2024 && today.getMonth() === 10) {
-			this.discountCode = 'ThuisborgFinance';
-		}
-		// November 2024 campaign for putting preset discount code END
 		this.setUp();
 		if (this.zohoSuccess) {
 			this.parseZoho()
