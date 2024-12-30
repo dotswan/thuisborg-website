@@ -245,6 +245,15 @@ export default createStore({
         },
         getFaq: state => {
             return state.faqList
+        },
+        getBankAccount: state => {
+            let account = "NL 95 ABNA 0425 8140 09";
+            const switchDate = new Date('2025-01-01T14:00:00'); // #TODO: Remove after January 1, 2025, 2:00 PM
+            const now = new Date();
+            if (now > switchDate) {
+                account = "NL20 REVO 7261 5636 92";
+            }
+            return account;
         }
     }, actions: {
         setUp({commit, state}) {

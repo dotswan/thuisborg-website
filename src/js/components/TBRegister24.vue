@@ -1444,7 +1444,7 @@
 								                         in de Obligatievoorwaarden.
 								</p>
 								<br>
-								<p class="single-line-p">IBAN nummer: NL 95 ABNA 0425 8140 09</p>
+								<p class="single-line-p">IBAN nummer: {{$store.getters.getBankAccount}}</p>
 								<br>
 								<p class="single-line-p">Ten name van : Thuisborg Finance B.V. </p>
 								<br>
@@ -1526,7 +1526,7 @@
 										                                      deelnamebedrag hebben ontvangen ontvangt u
 										                                      hier per post een bevestiging van.</h2>
 										<p>U kunt het deelname bedrag overmaken op onderstaande rekening: <br>
-											<b>NL 95 ABNA 0425 8140 09</b> - t.n.v. Thuisborg Finance B.V.</p>
+											<b>{{$store.getters.getBankAccount}}</b> - t.n.v. Thuisborg Finance B.V.</p>
 									</div>
 								</div>
 							</div>
