@@ -8,3 +8,6 @@
 @use "@/styles/partials" as *;
 // layouts
 @use "@/styles/layouts" as *;
+
+//imports
+@import 'vue-slider-component/theme/antd.css';
