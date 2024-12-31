@@ -7,7 +7,8 @@ import axios from 'axios';
 window.Axios = axios;
 
 // Styles
-import '@/styles/main.scss'
+import '@/styles/main.scss';
+import 'vue-slider-component/theme/antd.css';
 
 // Components
 import Hamburger from "@/js/components/Hamburger.vue";
