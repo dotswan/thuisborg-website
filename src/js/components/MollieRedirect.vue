@@ -20,9 +20,15 @@
 					</li>
 				</ul>
 				<br>
-				<div class="al-center">
-					<span @click="startPayment()" class="btn reg-btn"
-					      :class="[{'disabled': !!!method}]">Volgende stap</span>
+				<div class="btn-loading">
+					<div class="bl-inner">
+						<span @click="startPayment()" class="btn reg-btn"
+						      :class="[{'disabled': (!!!method || methodsLoading)}]">Volgende stap</span>
+						<div class="loading-wrapper">
+							<loading v-show="methodsLoading"></loading>
+						</div>
+					</div>
+
 				</div>
 			</div>
 			<!--			<div class="redirect-cont">-->
@@ -57,7 +63,7 @@
 			                                      deelnamebedrag hebben ontvangen ontvangt u
 			                                      hier per post een bevestiging van</h2>
 			<p>U kunt het deelname bedrag overmaken op onderstaande rekening: <br>
-				<b>{{$store.getters.getBankAccount}}</b> - t.n.v. Thuisborg Finance B.V.</p>
+				<b>{{ $store.getters.getBankAccount }}</b> - t.n.v. Thuisborg Finance B.V.</p>
 		</div>
 		<div class="payment-status" v-if="paid">
 			<div class="paid">
@@ -108,7 +114,8 @@ export default {
 			paymentCode: null,
 			method: null,
 			goBank: false,
-			paymentStatus: null
+			paymentStatus: null,
+			methodsLoading: false
 		};
 	},
 	methods: {
@@ -116,10 +123,12 @@ export default {
 			this.method = to;
 		},
 		startPayment() {
-			if (this.method === 'bank') {
-				this.goBank = true
-			} else if (this.method === 'ideal') {
-				this.redirectNow()
+			if (!!this.method && !this.methodsLoading) {
+				if (this.method === 'bank') {
+					this.goBank = true
+				} else if (this.method === 'ideal') {
+					this.redirectNow()
+				}
 			}
 		},
 		euroSigned(v) {
@@ -129,22 +138,22 @@ export default {
 			if (!!this.data.status) {
 				this.fetchPayment(this.data.status);
 			} else {
-				this.fetchLinkViaApi();
+				// this.fetchLinkViaApi();
 				// this.startTimer();
 			}
 		},
 		fetchPayment(code) {
+			//https://thuisborg.dotcms.online/api/v1/payment/status?id=PAYMENT_UUID
 			const form = new FormData(),
 					_this = this;
-			form.append("payment_id", code);
+			form.append("id", code);
 			this.paymentCode = code;
 			const options = {
 				method: 'POST',
-				url: 'https://thuisborg.nl/api/v1/payment/status',
+				url: 'https://thuisborg.dotcms.online/api/v1/payment/status',
 				headers: {
-					'Content-Type': 'multipart/form-data; boundary=---011000010111000001101001',
-					Accept: 'application/json',
-					Authorization: 'Bearer 8Ji0YxXYrynmlIYmIRvqeHTjHMaZstmBgd8eyRLcaxJBHNcUR147Kvs2yO8hkYeVc66nVX1NBhPBSJfZvjwe347bLJWEz1C7dhJ7W87XEghU2cKbJhpoiSmbFP4mPNSO'
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
 				},
 				data: form
 			};
@@ -191,25 +200,27 @@ export default {
 			return amount
 		},
 		fetchLinkViaApi() {
+			//https://thuisborg.dotcms.online/api/v1/payment/thuisborg-mollie-payment/request
 			const form = new FormData();
+			this.methodsLoading = true;
 			form.append("amount", this.parseAmount(this.data.amount));
 			form.append("description", this.data.desc);
 			form.append("email", this.data.email);
 			form.append("name", this.data.name);
-			form.append("redirect", window.location.href);
+			form.append("redirect", window.location.href); //
+			form.append("metadata", JSON.stringify({id: 0})); // JSON.stringify(this.data.metadata)
 			const options = {
 				method: 'POST',
-				url: 'https://thuisborg.nl/api/v1/payment/request',
+				url: 'https://thuisborg.dotcms.online/api/v1/payment/thuisborg-mollie-payment/request',
 				headers: {
-					'Content-Type': 'multipart/form-data; boundary=---011000010111000001101001',
-					Accept: 'application/json',
-					Authorization: 'Bearer 8Ji0YxXYrynmlIYmIRvqeHTjHMaZstmBgd8eyRLcaxJBHNcUR147Kvs2yO8hkYeVc66nVX1NBhPBSJfZvjwe347bLJWEz1C7dhJ7W87XEghU2cKbJhpoiSmbFP4mPNSO'
+					'Content-Type': 'application/json',
+					'Accept': 'application/json',
 				},
 				data: form
 			};
-			let _this = this;
-			Axios.request(options).then(function (response) {
-				_this.link = response.data.data.redirect
+			Axios.request(options).then((response) => {
+				this.methodsLoading = false;
+				this.link = response.data.data.redirect
 			}).catch(function (error) {
 				console.error(error);
 			});
@@ -235,6 +246,11 @@ export default {
 		data() {
 			if (this.hasValue) {
 				this.setUp();
+			}
+		},
+		method() {
+			if (this.method === 'ideal') {
+				this.fetchLinkViaApi();
 			}
 		}
 	}
